@@ -1,0 +1,50 @@
+﻿<Window x:Class="AIT.TFS.SyncService.View.Controls.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          Icon="/TFS.SyncService.View.Controls;component/Resources/AITLogo.gif"
+            Title="Settings" Width="399" WindowStartupLocation="CenterOwner"
+    ResizeMode="NoResize" ShowInTaskbar="False" SizeToContent="Height">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" Margin="6,6,6,6" BorderThickness="1" BorderBrush="Black">
+
+            <StackPanel Orientation="Vertical">
+                <TextBlock Grid.Column="0" Grid.Row="0" Margin="0,0,-176,0">Debug Settings</TextBlock>
+                <ComboBox Grid.Row="4" 
+                          Width="100" 
+                          Height="23" 
+                          HorizontalAlignment="Left" 
+                          Margin="6,3,0,0" 
+                          Name="chkDebugLog" 
+                          VerticalAlignment="Top" 
+                          ItemsSource="{Binding Path=AvailableLevels}" 
+                          SelectedValue="{Binding SelectedLevel,UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                          >
+                </ComboBox>
+                <Button  Name="buttonOpenDebugLog" Margin="0,0,6,6" HorizontalAlignment="Right" Width="100" Click="HandleButtonOpenDebugLogClick" Height="20" VerticalAlignment="Bottom">Open _Log</Button>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="1" Margin="6,6,6,6" BorderThickness="1" BorderBrush="Black">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Grid.Column="0" Grid.Row="0">Console Extension Settings</TextBlock>
+                <CheckBox Content="Activate console extension" Grid.Row="1" Height="16" HorizontalAlignment="Left" Margin="6,3,0,0" Name="chkActivateConsoleExtension" VerticalAlignment="Top" IsChecked="{Binding IsConsoleExtensionActivated}"/>
+                <Button  Name="buttonOpenInstallPath" Margin="0,0,6,6" HorizontalAlignment="Right" Width="100" Click="HandleButtonInstallPathClick" Height="20" VerticalAlignment="Bottom">Open Install Path</Button>
+
+            </StackPanel>
+        </Border>
+
+
+
+        <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Width="110" RenderTransformOrigin="0.788,0.846">
+            <Button  Name="buttonOk" Margin="0,0,6,6" HorizontalAlignment="Right" Width="100" Click="HandleButtonCloseClick" Height ="20"  IsDefault="True" IsCancel="True">Close</Button>
+        </StackPanel>
+
+    </Grid>
+</Window>

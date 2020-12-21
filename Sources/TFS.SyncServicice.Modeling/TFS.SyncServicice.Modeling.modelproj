@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3882963c-55fc-409f-b256-47bc80a4705a}</ProjectGuid>
+    <ArchitectureToolsVersion>2.0.0.0</ArchitectureToolsVersion>
+    <Name>TFS.SyncServicice.Modeling</Name>
+    <RootNamespace>TFS.SyncServicice.Modeling</RootNamespace>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\ArchitectureTools\Microsoft.VisualStudio.TeamArchitect.ModelingProject.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ItemGroup>
+    <Folder Include="ModelDefinition\" />
+    <Content Include="ModelDefinition\TFS.SyncServicice.Modeling.uml">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Validate Include="ArchitectureOverview.layerdiagram">
+      <SubType>Content</SubType>
+    </Validate>
+    <Validate Include="ArchitectureOverview.layerdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>ArchitectureOverview.layerdiagram</DependentUpon>
+    </Validate>
+    <Validate Include="ArchitectureOverview.layerdiagram.suppressions">
+      <SubType>Content</SubType>
+      <DependentUpon>ArchitectureOverview.layerdiagram</DependentUpon>
+    </Validate>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TFS.SyncService.Adapter.TFS2010\TFS.SyncService.Adapter.TFS2012.csproj">
+      <Name>TFS.SyncService.Adapter.TFS2012</Name>
+      <Project>{40acca31-f82b-42d7-8e7a-b34c0aca5a9b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Common\TFS.SyncService.Common.csproj">
+      <Name>TFS.SyncService.Common</Name>
+      <Project>{c134b4f2-71c6-4f6b-8cbd-e833f959698d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Contracts\TFS.SyncService.Contracts.csproj">
+      <Name>TFS.SyncService.Contracts</Name>
+      <Project>{12cdd38a-1c4b-46c9-a7c6-a21219a68cc0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Factory\TFS.SyncService.Factory.csproj">
+      <Name>TFS.SyncService.Factory</Name>
+      <Project>{31458d3d-6d11-4d02-b91c-67e2285b48fe}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Model\TFS.SyncService.Model.csproj">
+      <Name>TFS.SyncService.Model</Name>
+      <Project>{f48666a9-dd77-426c-87cd-9950d0825c78}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Service\TFS.SyncService.Service.csproj">
+      <Name>TFS.SyncService.Service</Name>
+      <Project>{d3047baa-5c31-49a0-8f0f-02e611755b49}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.View.Controls\TFS.SyncService.View.Controls.csproj">
+      <Name>TFS.SyncService.View.Controls</Name>
+      <Project>{97e2fb72-1f14-498e-a534-bf3512306de3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.View.Word2007\TFS.SyncService.View.Word.csproj">
+      <Name>TFS.SyncService.View.Word</Name>
+      <Project>{28e3e2f3-f99d-47f2-992b-c9d87220c2ef}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

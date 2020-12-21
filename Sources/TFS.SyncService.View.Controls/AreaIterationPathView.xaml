@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="AIT.TFS.SyncService.View.Controls.AreaIterationPathView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Loaded="HandleUserControlLoadedEvent">
+    <UserControl.Resources>
+        <HierarchicalDataTemplate x:Key="AreaIterationTemplate" ItemsSource="{Binding Childs}">
+            <TextBlock Text="{Binding Name}" />
+        </HierarchicalDataTemplate>
+    </UserControl.Resources>
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TreeView x:Name="AreaIterationTree" Grid.Row="0" ItemsSource="{Binding AreaAndIterationHierarchy}" ItemTemplate="{StaticResource AreaIterationTemplate}" SelectedItemChanged="HandleTreeViewSelectedItemChangedEvent" />
+        <Button  Margin="10" HorizontalAlignment="Center" Grid.Row="1" 
+                 Click="HandleInsertClickEvent" IsEnabled="{Binding CanInsert}">Insert Area/Iteration</Button>
+    </Grid>
+</UserControl>

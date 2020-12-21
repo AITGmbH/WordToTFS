@@ -1,0 +1,87 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+    
+    <!-- TemplateManagerControl.xaml -->
+    <System:String x:Key="LocationNameLabel">Name</System:String>
+    <System:String x:Key="LocationPathLabel">Location</System:String>
+    <System:String x:Key="TemplatesLabel">Templates</System:String>
+    <System:String x:Key="SaveButtonText">_Save</System:String>
+    <System:String x:Key="RemoveButtonText">Remove source</System:String>
+    <System:String x:Key="ReloadButtonText">Reload source</System:String>
+
+    <System:String x:Key="AddSourceExpanderHeader">Add Source</System:String>
+    <System:String x:Key="ShownameLabel">Name</System:String>
+    <System:String x:Key="AddButtonText">_Add</System:String>
+    <System:String x:Key="LastUpdatedText">Last Update:</System:String>
+    <System:String x:Key="TemplateBundleStateConverterTooltip" xml:space="preserve">Green: All templates are mapped correctly.&#10;Blue: Using template cache (Original location n/a).&#10;Yellow: Not all templates are activated.&#10;Red: Location contains broken template(s).</System:String>
+
+    <!--GetWorkItemsPanelView.xaml-->
+    <System:String x:Key="CloseSavedQueryDialog" xml:space="preserve">Close &quot;Saved Query&quot;-Dialog.</System:String>
+    <System:String x:Key="ResultsOfComparingMessageFirstLine" xml:space="preserve">The selected WordToTFS template does not support all work item types.
+For this reason, WordToTFS does not show the following work items:</System:String>
+    <!-- Global used -->
+    <System:String x:Key="OkButtonText">OK</System:String>
+    <System:String x:Key="CancelButtonText">Cancel</System:String>
+    
+    <!-- PublishingStateControl -->
+    <System:String x:Key="PublishStateControlTopic">Publishing Workitems</System:String>
+    <System:String x:Key="SkippedFilderTextBlock">Include work items that were skipped because they were up to date</System:String>
+    <System:String x:Key="SuccessedFilterTextBlock">Include work items that were successfully published</System:String>
+    <System:String x:Key="FailedFilterTextBlock">Include work items that could not be published successfully</System:String>
+    <System:String x:Key="ConflictingFilterTextBlock">Include work items that could not be published because of a revision conflict</System:String>
+    <System:String x:Key="OpenInTFSToolTip">Open server item in browser</System:String>
+    
+    <!--Missing Fields Dialog-->
+    <System:String x:Key="MissingFieldsWindowHeader">Missing Fields</System:String>
+    <System:String x:Key="MissingFieldsWindowTitle">Missing Mapping Fields</System:String>
+    <System:String x:Key="MissingFieldsWindowInformation">There are one ore more mapping fields specified
+    that are not available on the server. This might result in problems while publishing work items.</System:String>
+    <System:String x:Key="ReferenceNameColumnHeader">Referenced Field Name</System:String>
+    <System:String x:Key="ValueTypeColumnHeader">Value Type</System:String>
+    
+    <!--Overwrite Content Dialog-->
+    <System:String x:Key="OverwriteHtmlContentWindowHeader">Overwrite HTML Content</System:String>
+    <System:String x:Key="OverwriteHtmlContentWindowTitle">Overwrite HTML Content</System:String>
+    <System:String x:Key="OverwriteHtmlContentInformation1">You have updated a work item field that is configured as HTML text in your local template but not on the server. Publishing this content to Team Foundation Server will lead to a loss of any existing formatting.</System:String>
+    <System:String x:Key="OverwriteHtmlContentInformation2">You can overwrite the content of the cell with plain text, or you can publish it as HTML.</System:String>
+    <System:String x:Key="OverwriteHtmlContentInformation3">Do you want to replace your formatting with plain text? This will lead to a loss of all formatting.</System:String>
+    <System:String x:Key="OverwriteHtmlContentYesButton">Yes, Replace</System:String>
+    <System:String x:Key="OverwriteHtmlContentNoButton">No, Publish as HTML</System:String>
+
+
+    <!--Wrong Mapped Fields Dialog-->
+    <System:String x:Key="WronglyMappedFieldsWindowHeader">Wrong Field Value Type</System:String>
+    <System:String x:Key="WronglyMappedFieldsWindowTitle">Wrong Field Value Type</System:String>
+    <System:String x:Key="WronglyMappedFieldsWindowInformation">The Field Value for a mapping in the local template contains a definition that is different from the definition of the server. This might result in formatting problems while publishing work items, especially when the HTML type is used. Please ensure to use the same type that is used in your process template definition</System:String>
+    <System:String x:Key="WronglyMappedReferenceNameColumnHeader">Referenced Field Name</System:String>
+    <System:String x:Key="WronglyMappedValueTypeColumnHeader">Value Type</System:String>
+
+    
+    <!-- Test Specification Report -->
+    <System:String x:Key="TestSpecificationReportSelectTestPlan">Select Test Plan</System:String>
+    <System:String x:Key="TestSpecificationReportSelectTestConfiguration">Select Test Configuration</System:String>
+    <System:String x:Key="TestSpecificationReportSelectTestSuite">Select Test Suite</System:String>
+    <System:String x:Key="TestSpecificationReportCreateDocumentStructure">Create document structure</System:String>
+    <System:String x:Key="TestSpecificationReportCreateDocumentStructureToolTip">Wird „Iteration Path“ oder „Area Path“ gewählt, so kann der Nutzer zusätzlich die Anzahl der zu ignorierenden Ebenen in diesen Hierarchien angeben.</System:String>
+    <System:String x:Key="TestSpecificationReportSkipLevels">Skip Levels</System:String>
+    <System:String x:Key="TestSpecificationReportIncludeTestConfigurations">Include Test Configurations</System:String>
+    <System:String x:Key="TestSpecificationReportIncludeTestConfigurationsToolTip">Der Nutzer wählt, ob die Details der Testkonfigurationen mit ausgegeben werden sollen.</System:String>
+    <System:String x:Key="TestSpecificationReportSortTestCasesBy">Sort Test Cases by</System:String>
+    <System:String x:Key="TestSpecificationReportCreateReport">Create Report</System:String>
+
+    <!-- Test Result Report -->
+    <System:String x:Key="TestResultReportSelectBuild">Select Build</System:String>
+    <System:String x:Key="TestResultReportSelectTestPlan">Select Test Plan</System:String>
+    <System:String x:Key="TestResultReportSelectTestConfiguration">Select Test Configuration</System:String>
+    <System:String x:Key="TestResultReportSelectTestSuite">Select Test Suite</System:String>
+    <System:String x:Key="TestResultReportCreateDocumentStructure">Create document structure</System:String>
+    <System:String x:Key="TestResultReportCreateDocumentStructureToolTip">Wird „Iteration Path“ oder „Area Path“ gewählt, so kann der Nutzer zusätzlich die Anzahl der zu ignorierenden Ebenen in diesen Hierarchien angeben.</System:String>
+    <System:String x:Key="TestResultReportSkipLevels">Skip Levels</System:String>
+    <System:String x:Key="TestResultReportIncludeTestConfigurations">Include Test Configurations</System:String>
+    <System:String x:Key="TestResultReportIncludeTestConfigurationsToolTip">Der Nutzer wählt, ob die Details der Testkonfigurationen mit ausgegeben werden sollen.</System:String>
+    <System:String x:Key="TestResultReportSortTestCasesBy">Sort Test Cases by</System:String>
+    <System:String x:Key="TestResultReportCreateReport">Create Report</System:String>
+    <System:String x:Key="TestResultReportIncludeOnlyMostRecentResults">Include only the most recent test result</System:String>
+    <System:String x:Key="TestResultReportIncludeOnlyMostRecentResultsForAllConfigurations">For all selected configurations</System:String>
+</ResourceDictionary>

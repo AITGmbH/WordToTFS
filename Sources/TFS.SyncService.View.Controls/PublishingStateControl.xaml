@@ -1,0 +1,81 @@
+﻿<UserControl x:Class="AIT.TFS.SyncService.View.Controls.PublishingStateControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="400" Width="300"
+        Background="{DynamicResource ResourceKey=DefaultTaskPaneBackgroundBrush}"
+        Unloaded="UserControlUnloaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Dictionaries/StringResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/Brushes.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <UserControl.CommandBindings>
+        <CommandBinding Command="Find" CanExecute="CanExecuteFind" Executed="ExecutedFind" />
+        <CommandBinding Command="BrowseHome" CanExecute="CanExecuteFind" Executed="ExecuteBrowseHome" />
+    </UserControl.CommandBindings>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="16" />
+            <RowDefinition Height="*"  />
+            <RowDefinition Height="Auto" MinHeight="20" />
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="6,6,6,6">
+            <Image Source="/TFS.SyncService.View.Controls;component/Resources/AITLogo_gross.gif" Stretch="Uniform" HorizontalAlignment="Center"/>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" ToolTip="{DynamicResource ResourceKey=SkippedFilderTextBlock}" />
+                <ColumnDefinition Width="auto" ToolTip="{DynamicResource ResourceKey=SkippedFilderTextBlock}" />
+                <ColumnDefinition Width="auto" ToolTip="{DynamicResource ResourceKey=SuccessedFilterTextBlock}" />
+                <ColumnDefinition Width="auto" ToolTip="{DynamicResource ResourceKey=SuccessedFilterTextBlock}" />
+                <ColumnDefinition Width="auto" ToolTip="{DynamicResource ResourceKey=FailedFilterTextBlock}" />
+                <ColumnDefinition Width="auto" ToolTip="{DynamicResource ResourceKey=FailedFilterTextBlock}" />
+                <ColumnDefinition Width="auto" ToolTip="{DynamicResource ResourceKey=ConflictingFilterTextBlock}" />
+                <ColumnDefinition Width="auto" ToolTip="{DynamicResource ResourceKey=ConflictingFilterTextBlock}" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto" />
+                <!--<RowDefinition Height="auto" />
+                    <RowDefinition Height="auto" />-->
+            </Grid.RowDefinitions>
+            <!-- Skipped -->
+            <CheckBox IsChecked="True" Unchecked="FilterListView" Checked="FilterListView" x:Name="FilterSkippedCheckBox" Grid.Column="0" 
+                          HorizontalAlignment="Right" Grid.Row="0" VerticalAlignment="Center"
+                          Margin="0,0,5,0" ToolTip="{DynamicResource ResourceKey=SkippedFilderTextBlock}"/>
+            <Image Source="Resources/Images/skiped.png" Width="16" Grid.Column="1" Grid.Row="0" ToolTip="{DynamicResource ResourceKey=SkippedFilderTextBlock}" />
+            <!-- Successed -->
+            <CheckBox IsChecked="True" Unchecked="FilterListView" Checked="FilterListView" x:Name="FilterSuccessCheckBox" Grid.Column="2" 
+                          HorizontalAlignment="Right" Grid.Row="0" VerticalAlignment="Center"
+                          Margin="0,0,5,0" ToolTip="{DynamicResource ResourceKey=SuccessedFilterTextBlock}"/>
+            <Image Source="Resources/Images/successed.png" Width="16"
+                       Grid.Column="3" Grid.Row="0" ToolTip="{DynamicResource ResourceKey=SuccessedFilterTextBlock}"/>
+            <!-- Error -->
+            <CheckBox IsChecked="True" Unchecked="FilterListView" Checked="FilterListView" x:Name="FilterFailedCheckBox" Grid.Column="4" 
+                          HorizontalAlignment="Right" Grid.Row="0" VerticalAlignment="Center"
+                          Margin="0,0,5,0" ToolTip="{DynamicResource ResourceKey=FailedFilterTextBlock}"/>
+            <Image Source="Resources/Images/failed.png" Width="16"
+                       Grid.Column="5" Grid.Row="0" ToolTip="{DynamicResource ResourceKey=FailedFilterTextBlock}"/>
+            <!-- Conflicting -->
+            <CheckBox IsChecked="True" Unchecked="FilterListView" Checked="FilterListView" x:Name="FilterConflictingCheckBox" Grid.Column="6" 
+                          HorizontalAlignment="Right" Grid.Row="0" VerticalAlignment="Center"
+                          Margin="0,0,5,0" ToolTip="{DynamicResource ResourceKey=ConflictingFilterTextBlock}"/>
+            <Image Source="Resources/Images/conflict.png" Width="16"
+                       Grid.Column="7" Grid.Row="0" ToolTip="{DynamicResource ResourceKey=ConflictingFilterTextBlock}"/>
+        </Grid>
+
+        <TextBlock Grid.Row="2" FontWeight="bold" Text="{DynamicResource ResourceKey=PublishStateControlTopic}"
+                   Margin="3,0,3,3"/>
+
+        <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Width="Auto" ItemsSource="{Binding Path=PublishInformation}" x:Name="PublishedWorkItemsListView" Grid.Row="4" 
+                 ItemContainerStyle="{DynamicResource ResourceKey=ErrorListViewItemStyle}">
+        </ListView>
+    </Grid>
+</UserControl>

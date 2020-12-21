@@ -1,0 +1,439 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LO_Publish_Title" xml:space="preserve">
+    <value>Publish...</value>
+  </data>
+  <data name="AreaIterationPathPanelCaption" xml:space="preserve">
+    <value>Area and Iteration Path</value>
+  </data>
+  <data name="PaneTemplateWidth" xml:space="preserve">
+    <value>400</value>
+  </data>
+  <data name="LogService_Startup" xml:space="preserve">
+    <value>Initializing add-in</value>
+  </data>
+  <data name="Error_PublishException" xml:space="preserve">
+    <value>Publish process error</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="IdDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\IdDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TFSBindTeamProjectDisconnectLabel" xml:space="preserve">
+    <value>Disconnect</value>
+  </data>
+  <data name="table_refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\table_refresh.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TFSBindTeamProjectSuperTip" xml:space="preserve">
+    <value>Bind the current document to a specific team project on the Team Foundation Server</value>
+    <comment>Used for 'SuperTip' property in buttonBindUnbind</comment>
+  </data>
+  <data name="GetWorkItemsPanelCaption" xml:space="preserve">
+    <value>Get Work Items</value>
+  </data>
+  <data name="LogService_StartupComplete" xml:space="preserve">
+    <value>Initialization complete</value>
+  </data>
+  <data name="TM_ToolTip" xml:space="preserve">
+    <value>Select template '{0}' from '{1}'.</value>
+  </data>
+  <data name="Error_BoundTemplateDoesNotExist" xml:space="preserve">
+    <value>The template "{0}" bound to this document does not exist!</value>
+  </data>
+  <data name="Error_AreaAndIterationPath" xml:space="preserve">
+    <value>Area and Iteration path error</value>
+  </data>
+  <data name="DefaultValuesPanelCaption" xml:space="preserve">
+    <value>Default Requirement Values</value>
+  </data>
+  <data name="ReqDefVals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReqDefVals.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TFSBindTeamProjectScreenTip" xml:space="preserve">
+    <value>Bind To Team Project</value>
+    <comment>Used for 'ScreenTip' property in buttonBindUnbind</comment>
+  </data>
+  <data name="PublishTitle" xml:space="preserve">
+    <value>Publish</value>
+    <comment>title for messages during publish</comment>
+  </data>
+  <data name="WordToTFS_Error_UnexpectedErrorTitle" xml:space="preserve">
+    <value>Unexpected error</value>
+  </data>
+  <data name="LO_Publish_MainStart" xml:space="preserve">
+    <value>Initialize next step ...</value>
+  </data>
+  <data name="Options" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Options.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_MessageBoxTitle" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="WordToTFS_Error_TableInsertInTable" xml:space="preserve">
+    <value>It is not possible to insert a table on this position - nested tables not allowed.</value>
+  </data>
+  <data name="RefreshWorkItemsCaption" xml:space="preserve">
+    <value>Refresh Work Items</value>
+  </data>
+  <data name="Error_Publish" xml:space="preserve">
+    <value>Publish error</value>
+  </data>
+  <data name="TFSProjectDisconnected" xml:space="preserve">
+    <value>&lt;disconnected&gt;</value>
+  </data>
+  <data name="aitIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\aitIcon.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_NoWorkItemSelected" xml:space="preserve">
+    <value>No items selected.</value>
+  </data>
+  <data name="TFSUnbindTeamProjectScreenTip" xml:space="preserve">
+    <value>Unbind Team Project</value>
+    <comment>Used for 'ScreenTip' property in buttonBindUnbind</comment>
+  </data>
+  <data name="Preserve" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Preserve.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Publish" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Publish.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WordToTFS_IdDeletionCation" xml:space="preserve">
+    <value>Delete all work item ids?</value>
+  </data>
+  <data name="TFSRefreshSelected_LocalChanges" xml:space="preserve">
+    <value>Any unpublished local changes to {0} will be lost after refresh. Do you want to proceed?</value>
+  </data>
+  <data name="branch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\branch.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GetWorkItems" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GetWorkItems.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="RefreshSelectedItemButtonLabel" xml:space="preserve">
+    <value>Refresh Selected</value>
+  </data>
+  <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Help.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WordToTFS_FeedbackWebPage" xml:space="preserve">
+    <value>http://www.aitgmbh.de/feedback_wordtotfs.0.html</value>
+  </data>
+  <data name="WordToTFS_Help" xml:space="preserve">
+    <value>https://__UrlHelp__</value>
+    <comment>Help file web location</comment>
+  </data>
+  <data name="StyleDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StyleDelete.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LIC_TrialExpired" xml:space="preserve">
+    <value>Trial premium period has expired. If you want to use premium edition functionality please register premium edition via '{0}' button in ribbon menu.</value>
+  </data>
+  <data name="Refresh_SomeNoIdentifiedWorkItems" xml:space="preserve">
+    <value>One or more work items could not be found on the server. Make sure you are connected to the correct team project.</value>
+  </data>
+  <data name="ReqEmpty" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReqEmpty.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_NoWorkItemsToPublish" xml:space="preserve">
+    <value>The document does not contain any work items to publish</value>
+    <comment>.</comment>
+  </data>
+  <data name="TFSServerDisconnected" xml:space="preserve">
+    <value>&lt;disconnected&gt;</value>
+  </data>
+  <data name="Refresh_DoYouReally" xml:space="preserve">
+    <value>Any unpublished local changes will be lost after refresh. Do you want to proceed?</value>
+  </data>
+  <data name="WordToTFS_IdDeletionDialog" xml:space="preserve">
+    <value>You are about to delete all work item ids from published requirements in this document. After saving the document, this operation is not recoverable and prevents you from synchronizing further changes to TFS.
+
+Do you want to delete all work item ids?</value>
+  </data>
+  <data name="LogService_InsertTableFromXmlFile" xml:space="preserve">
+    <value>Insert table template from '{0}'</value>
+  </data>
+  <data name="BindUnbind" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BindUnbind.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Refresh_NoIdentifiedWorkItems" xml:space="preserve">
+    <value>The document does not contain any identified work items. Make sure you've selected the correct Template and team project.</value>
+  </data>
+  <data name="Error_MissingFields" xml:space="preserve">
+    <value>The selected template contains work item mappings that do not map System.Id and System.Rev. Both of these fields are required for Word2Tfs to work correctly.</value>
+  </data>
+  <data name="ReqVals" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReqVals.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TFSBindTeamProjectLabel" xml:space="preserve">
+    <value>Connect</value>
+    <comment>Used for 'Label' property in buttonBindUnbind</comment>
+  </data>
+  <data name="About" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\About.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TemplateManagerPanelCaption" xml:space="preserve">
+    <value>Template Manager</value>
+  </data>
+  <data name="RefreshSelectedItemButtonScreenTip" xml:space="preserve">
+    <value>Refreshes all work items within the current selection of the document</value>
+  </data>
+  <data name="RibbonTab_WordToTFS" xml:space="preserve">
+    <value>WordToTFS</value>
+  </data>
+  <data name="InsertTemplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\InsertTemplate.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WordToTFS_Error_Title" xml:space="preserve">
+    <value>WordToTFS</value>
+  </data>
+  <data name="TFSUnbindTeamProjectLabel" xml:space="preserve">
+    <value>Connect</value>
+    <comment>Used for 'Label' property in buttonBindUnbind</comment>
+  </data>
+  <data name="Error_NoWorkItemsToRefresh" xml:space="preserve">
+    <value>The document does not contain any work items to refresh.</value>
+  </data>
+  <data name="StyleCustomize" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StyleCustomize.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nsertTableFromXmlFile_Failed" xml:space="preserve">
+    <value>Failed to insert table from '{0}' into document</value>
+  </data>
+  <data name="Error_GetWorkItems" xml:space="preserve">
+    <value>Get Work Items process error</value>
+  </data>
+  <data name="LogService_InsertTableFromXmlFile_FileDoesNotExist" xml:space="preserve">
+    <value>Xml file '{0}' does not exist. Cancel Insertion</value>
+  </data>
+  <data name="LogService_InsertTableFromXmlFile_Failed" xml:space="preserve">
+    <value>Failed to insert template table from '{0}'</value>
+  </data>
+  <data name="RibbonTab_WordToTFSTrial" xml:space="preserve">
+    <value>WordToTFS (Trial)</value>
+  </data>
+  <data name="TFSUnbindTeamProjectSuperTip" xml:space="preserve">
+    <value>Unbind the current document from a specific team project on the Team Foundation Server</value>
+    <comment>Used for 'SuperTip' property in buttonBindUnbind</comment>
+  </data>
+  <data name="LO_Publish_MainEnd" xml:space="preserve">
+    <value>Finishing ...</value>
+  </data>
+  <data name="key1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\key1.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TFSRefresh_LocalChanges" xml:space="preserve">
+    <value>Any unpublished local changes will be lost after refresh. Do you want to proceed?</value>
+  </data>
+  <data name="standard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\standard.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WordToTFS_Update" xml:space="preserve">
+    <value>https://__UrlUpdate__</value>
+    <comment>Update web location</comment>
+  </data>
+  <data name="TestResultReport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TestResultReport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestSpecificationReport" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TestSpecificationReport.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TestSpecificationReportPanelCaption" xml:space="preserve">
+    <value>Test Specification Report</value>
+  </data>
+  <data name="TestResultReportPanelCaption" xml:space="preserve">
+    <value>Test Result Report</value>
+  </data>
+  <data name="WorkItemPrefix_Empty" xml:space="preserve">
+    <value>Empty </value>
+  </data>
+  <data name="WorkItemPrefix_New" xml:space="preserve">
+    <value>New </value>
+  </data>
+  <data name="Error_DocumentTemplateNotExists" xml:space="preserve">
+    <value>The template '{0}' used by this document can't be found. Add the correct template in template manager.</value>
+  </data>
+  <data name="ErrorPanelCaption" xml:space="preserve">
+    <value>Error Report</value>
+  </data>
+  <data name="ErrorPanelText" xml:space="preserve">
+    <value>Open Issues</value>
+  </data>
+  <data name="SynchronizationStatePanelCaption" xml:space="preserve">
+    <value>Work Item Overview</value>
+  </data>
+  <data name="TestSpecificationReportByQueryPanelCaption" xml:space="preserve">
+    <value>Test Specification Report by Query</value>
+  </data>
+  <data name="ButtonAreaAndIterationPath" xml:space="preserve">
+    <value>Area und Iteration Path</value>
+  </data>
+  <data name="ButtonCompare" xml:space="preserve">
+    <value>Compare</value>
+  </data>
+  <data name="ButtonDefaultValues" xml:space="preserve">
+    <value>Edit Default Values</value>
+  </data>
+  <data name="ButtonDeleteIds" xml:space="preserve">
+    <value>Delete Ids</value>
+  </data>
+  <data name="ButtonEmpyWorkItem" xml:space="preserve">
+    <value>Empty Work Item</value>
+  </data>
+  <data name="ButtonGetWorkItems" xml:space="preserve">
+    <value>Get Work Items</value>
+  </data>
+  <data name="ButtonHeader" xml:space="preserve">
+    <value>Insert Header</value>
+  </data>
+  <data name="ButtonNewWorkItem" xml:space="preserve">
+    <value>New Work Item</value>
+  </data>
+  <data name="ButtonPublish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="ButtonRefresh" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="ButtonTestResultReport" xml:space="preserve">
+    <value>Test Result Report</value>
+  </data>
+  <data name="ButtonTestSpecReport" xml:space="preserve">
+    <value>Test Spec Report</value>
+  </data>
+  <data name="ButtonTestSpecReportByQuery" xml:space="preserve">
+    <value>Test Spec Report By Query</value>
+  </data>
+  <data name="RefreshWorkItemsCaptionAutomatic" xml:space="preserve">
+    <value>Auto Refresh Work Items</value>
+  </data>
+  <data name="RefreshWorkItemsAutomaticImpotPreparation" xml:space="preserve">
+    <value>Preparing import of Work Items"</value>
+  </data>
+  <data name="RefreshWorkItemsAutomaticPreparationText" xml:space="preserve">
+    <value>Establish connection to TFS and gathering information about work items</value>
+  </data>
+  <data name="ButtonSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>

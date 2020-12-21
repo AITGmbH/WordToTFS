@@ -1,0 +1,335 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LogService_LoadFile" xml:space="preserve">
+    <value>Reading file '{0}'</value>
+  </data>
+  <data name="LogService_LoadFile_FileDoesNotExist" xml:space="preserve">
+    <value>File '{0}' does not exist</value>
+  </data>
+  <data name="LogService_LoadFile_ResetToStandard" xml:space="preserve">
+    <value>Error while loading work item from '{0}'. Failed to load work item. Reset to default values.</value>
+  </data>
+  <data name="LogService_LoadWorkItem" xml:space="preserve">
+    <value>Initializing work item '{0}'</value>
+  </data>
+  <data name="LogService_LoadWorkItem_Converters" xml:space="preserve">
+    <value>Loading {0} converters for work item '{1}'</value>
+  </data>
+  <data name="LogService_LoadWorkItem_ImageFileNotFound" xml:space="preserve">
+    <value>Cannot find image file '{0}', loading standard image instead</value>
+  </data>
+  <data name="LO_Publish_01_OpenWord" xml:space="preserve">
+    <value>Open Word ...</value>
+  </data>
+  <data name="LO_Publish_02_OpenTFS" xml:space="preserve">
+    <value>Connecting to Team Project…</value>
+  </data>
+  <data name="LO_Publish_03_SyncToTFS" xml:space="preserve">
+    <value>Publishing Work Items ...</value>
+  </data>
+  <data name="LO_Publish_04_SaveToTFS" xml:space="preserve">
+    <value>Save to TFS ...</value>
+  </data>
+  <data name="LO_Publish_05_SyncToWord" xml:space="preserve">
+    <value>Updating Work Items ...</value>
+  </data>
+  <data name="LO_Publish_06_SaveToWord" xml:space="preserve">
+    <value>Save to Word ...</value>
+  </data>
+  <data name="TextFormating_NoRequiredValueInConverter" xml:space="preserve">
+    <value>The value '{0}' for field '{1}' cannot be converted because the value is not supported. Possible values: {2}.</value>
+  </data>
+  <data name="LogService_Sync_Finished" xml:space="preserve">
+    <value>TFS synchronization complete</value>
+  </data>
+  <data name="LogService_Sync_Init" xml:space="preserve">
+    <value>Initializing TFS synchronization</value>
+  </data>
+  <data name="LogService_Sync_InitForwardSync" xml:space="preserve">
+    <value>Initializing WordToTFS to TFS synchronization</value>
+  </data>
+  <data name="LogService_Sync_InitReverseSync" xml:space="preserve">
+    <value>Initializing TFS to WordToTFS synchronization</value>
+  </data>
+  <data name="LogService_Sync_SynchronizationFailed" xml:space="preserve">
+    <value>Synchronization of work item  [{0}] failed</value>
+  </data>
+  <data name="LogService_Sync_SynchronizationSuccessful" xml:space="preserve">
+    <value>Synchronization of work item  [{0}] successful</value>
+  </data>
+  <data name="GetWorkItems_Importing" xml:space="preserve">
+    <value>Importing Work Items ...</value>
+  </data>
+  <data name="GetWorkItems_ImportingOf" xml:space="preserve">
+    <value>Importing Work Items {0} of {1}</value>
+  </data>
+  <data name="Publish_OK" xml:space="preserve">
+    <value>Work item successfully published.</value>
+  </data>
+  <data name="TextFormating_FieldDetail" xml:space="preserve">
+    <value>Please review the '{0}' field to ensure that it can be properly saved into TFS field.</value>
+  </data>
+  <data name="LO_Publish_03_SyncToTFSOf" xml:space="preserve">
+    <value>Publishing Work Items {0} of {1}</value>
+  </data>
+  <data name="LO_Publish_05_SyncToWordOf" xml:space="preserve">
+    <value>Updating Work Items {0} of {1}</value>
+  </data>
+  <data name="Publish_Canceled" xml:space="preserve">
+    <value>Publishing cancelled</value>
+  </data>
+  <data name="Publish_Canceled_Desc" xml:space="preserve">
+    <value>Publish process cancelled by user.</value>
+  </data>
+  <data name="TFSError_TFS_save_failed" xml:space="preserve">
+    <value>TFS batch save operation failed</value>
+  </data>
+  <data name="LogService_Sync_InitLinkedItems" xml:space="preserve">
+    <value>Initializing of synchronization for linked work items</value>
+  </data>
+  <data name="TFSError_ConflictingChanges" xml:space="preserve">
+    <value>The work item could not be synchronized because of revision conflicts for:
+{0}</value>
+  </data>
+  <data name="SynchronizingLinks" xml:space="preserve">
+    <value>Updating links for work item {0}</value>
+  </data>
+  <data name="FieldStatusInvalidNotOldValue2" xml:space="preserve">
+    <value>Field '{0}' is read only. You may have to change the state of the work item.</value>
+    <comment>taken from Adapter.TFS2010. didnt want to add reference</comment>
+  </data>
+  <data name="PublishErrorInlineShapes" xml:space="preserve">
+    <value>The field '{0}' contains inline shapes but no text. A field with inline shapes must also contain text in order to export correctly. You can configure WordToTFS to automatically add a space in this situation. For further information please see the user manual.</value>
+  </data>
+  <data name="PublishWarningDownscaledImages" xml:space="preserve">
+    <value>The field '{0}' contains an image that is downscaled from its original size. Image quality might deteriorate when publishing.</value>
+  </data>
+  <data name="PublishWarningPlaintextInlineShapes" xml:space="preserve">
+    <value>The field '{0}' contains an inline shape but the field is configured to publish only text. The inline shape will not be synchronized with tfs. Please see the user manual on how to configure fields to publish as HTML or as attached documents.</value>
+  </data>
+  <data name="PublishWarningUnclosedLists" xml:space="preserve">
+    <value>The end of the cell '{0}' is a list item. This list item would not be exported correctly. Add an empty line below the list to solve this issue.</value>
+  </data>
+  <data name="UserInformation_Header" xml:space="preserve">
+    <value>{0} [{1}]</value>
+  </data>
+  <data name="UserInformation_HeaderShort" xml:space="preserve">
+    <value>{0}... [{1}]</value>
+  </data>
+  <data name="WorkItemSyncService_FailedToCreateNewWorkItem" xml:space="preserve">
+    <value>Failed to create new work item of type '{0}'</value>
+  </data>
+  <data name="PublishWarningMissingSubtypeField" xml:space="preserve">
+    <value>Cannot create automatic link because the found work item of type '{0}' has no field '{1}'.</value>
+  </data>
+  <data name="PublishWarningNewAutoLinkTarget" xml:space="preserve">
+    <value>Cannot create automatic link because the found link target '{0}' is new and not published. Please publish the work item '{0}' first or publish the whole document.</value>
+  </data>
+  <data name="PublishWarningNoTarget" xml:space="preserve">
+    <value>Cannot create automatic link because no matching work item was found.</value>
+  </data>
+  <data name="Publish_Skipped" xml:space="preserve">
+    <value>Work item skipped because it has no pending changes.</value>
+  </data>
+  <data name="CommandArgumentsError" xml:space="preserve">
+    <value>If a configuration file is specified, it is not allowed to specify basic settings by command line parameters. You can use either the command line parameters or the configuration file for the specification of basic settings.</value>
+  </data>
+  <data name="ConfigurationFileMisconfigured" xml:space="preserve">
+    <value>The item {0} is missing in your configuration file.</value>
+  </data>
+  <data name="ConfigurationFileNotExistsError" xml:space="preserve">
+    <value>The specified configuration file does not exist.</value>
+  </data>
+  <data name="ConfigurationFileNotExistsError1" xml:space="preserve">
+    <value>The specified configuration file does not exist.</value>
+  </data>
+  <data name="FilenameNotSpecifiedError" xml:space="preserve">
+    <value>The file path where to store the document was not specified.</value>
+  </data>
+  <data name="ProjectNotSpecifiedError" xml:space="preserve">
+    <value>The project was not specified.</value>
+  </data>
+  <data name="ServerNotSpecifiedError" xml:space="preserve">
+    <value>The server was not specified.</value>
+  </data>
+  <data name="TemplateNotSpecifiedError" xml:space="preserve">
+    <value>The WordToTFS-template which should be used was not specified.</value>
+  </data>
+  <data name="PublishUnknownSystemVariableName" xml:space="preserve">
+    <value>The value '{0}' of the variable name of field '{1}' contains an unknown system variable name.</value>
+  </data>
+  <data name="CompareValues" xml:space="preserve">
+    <value>WI{0}T - Comparing current value {1} with new value {2} (IgnoreFormatting={3})</value>
+  </data>
+  <data name="CreateWorkItem" xml:space="preserve">
+    <value>WI{0}W - Creating new work item</value>
+  </data>
+  <data name="CreateWorkItemInTFS" xml:space="preserve">
+    <value>Creating new work item in tfs"</value>
+  </data>
+  <data name="CreatingLinksForItemsOnTFS" xml:space="preserve">
+    <value>WI{0} - Creating links to other work items on tfs</value>
+  </data>
+  <data name="CreatingLinksForWordWorkItem" xml:space="preserve">
+    <value>WI{0} - Creating links for word work item</value>
+  </data>
+  <data name="CreatingLinksOfType" xml:space="preserve">
+    <value>WI{0} - Creating links of type {1}. New ID's={2}</value>
+  </data>
+  <data name="DeletingLinksOfType" xml:space="preserve">
+    <value>WI{0}W - Deleting links of type {1}</value>
+  </data>
+  <data name="Overwrite" xml:space="preserve">
+    <value>Overwrite={0} </value>
+  </data>
+  <data name="OverwritingInvalidConverter" xml:space="preserve">
+    <value>WI{0}W - Overwriting invalid converter value with new value {1}</value>
+  </data>
+  <data name="OverwritingOldwithNewValue" xml:space="preserve">
+    <value>WI{0}W - Overwriting old value {1} with new value {2}</value>
+  </data>
+  <data name="OverwritingWithNewValue" xml:space="preserve">
+    <value>WI{0}T - Overwriting current value with new value</value>
+  </data>
+  <data name="PublishWorkItems" xml:space="preserve">
+    <value>Publish {0} work items: {1}</value>
+  </data>
+  <data name="RefreshInfo" xml:space="preserve">
+    <value>Refresh {0} work items: {1}</value>
+  </data>
+  <data name="SynchronizationOfField" xml:space="preserve">
+    <value>WI{0} - Synchronizing field {1}: FieldDirection={2}, ValueType={3}, HandleAsDocument={4}, DocumentMode={5}</value>
+  </data>
+  <data name="SynchronizationOfWorkItem" xml:space="preserve">
+    <value>WI{0} - Synchronizing work item. Direction:{1}</value>
+  </data>
+  <data name="SynchronizationOfWorkItemToTFS" xml:space="preserve">
+    <value>Synchronizing work item {0} to TFS</value>
+  </data>
+  <data name="SynchronizationOfWorkItemToWord" xml:space="preserve">
+    <value>Synchronizing work item {0} to word</value>
+  </data>
+  <data name="SynchronizationStaticSkipped" xml:space="preserve">
+    <value>Synchronization of field with static content was skipped</value>
+  </data>
+  <data name="UpdateDropdownFailed" xml:space="preserve">
+    <value>Could not update dropdown list entries because the field is PublishOnly and the current value is not contained in the updated list.</value>
+  </data>
+</root>

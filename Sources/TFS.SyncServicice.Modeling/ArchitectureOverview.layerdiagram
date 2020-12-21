@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<layerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="1bb8d7fe-56ca-4c5f-b0ed-3c57bf41c4aa" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/LayerDesigner">
+  <layers>
+    <layer Id="ef6a8603-89ba-4120-867f-eb64cedd97db" name="TFS.SyncService.Contracts">
+      <references>
+        <reference Id="f9bd0e9e-06ca-439f-b17e-848c748d8011" name="TFS.SyncService.Contracts">
+          <ArtifactNode Label="TFS.SyncService.Contracts" Category="CodeSchema_Project" Id="(Assembly=../TFS.SyncService.Contracts/TFS.SyncService.Contracts.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=TFS.SyncService.Contracts)" Label="TFS.SyncService.Contracts.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="25f9fe56-b425-4e46-895c-75c7464e8806" name="TFS.SyncService.Service">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="fcbf1424-50f5-4504-9f5a-53d5650c4411" direction="Forward">
+          <layerMoniker Id="ef6a8603-89ba-4120-867f-eb64cedd97db" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="db8b5b39-a0c2-494c-92f1-0b2d2bc9d86b" direction="Forward">
+          <layerMoniker Id="19b79347-4c49-48db-9dc3-028ae1320d90" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="c1310ba7-e8d1-4cbc-b5a0-653c1ffa9406" name="TFS.SyncService.Service">
+          <ArtifactNode Label="TFS.SyncService.Service" Category="CodeSchema_Project" Id="(Assembly=../TFS.SyncService.Service/TFS.SyncService.Service.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=TFS.SyncService.Service)" Label="TFS.SyncService.Service.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="63433d7e-6bfe-495c-b7bc-d6ad7d5290c3" name="TFS.SyncService.Model">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="97fd30db-b4d7-4803-8a83-1d8fe3dbd0ed" direction="Forward">
+          <layerMoniker Id="ef6a8603-89ba-4120-867f-eb64cedd97db" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d4f19bb3-ee06-4806-b953-663c4dc327f0" direction="Forward">
+          <layerMoniker Id="25f9fe56-b425-4e46-895c-75c7464e8806" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="88cfffcf-3149-4aab-a1a6-9328fa1be389" direction="Forward">
+          <layerMoniker Id="c13056ea-0bd7-4a57-a496-7f7f4776a58d" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="71cbe512-7869-43e3-9e19-ea094b376c1c" direction="Forward">
+          <layerMoniker Id="19b79347-4c49-48db-9dc3-028ae1320d90" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="74226522-375f-4c36-b561-7e89a2e0399c" name="TFS.SyncService.Model">
+          <ArtifactNode Label="TFS.SyncService.Model" Category="CodeSchema_Project" Id="(Assembly=../TFS.SyncService.Model/TFS.SyncService.Model.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=TFS.SyncService.Model)" Label="TFS.SyncService.Model.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="2cb2e5a4-1688-4ad1-a3b2-c60d1c9fc87e" name="TFS.SyncService.View.Controls">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="f99a929b-1d69-4c38-b100-666098492f1e" direction="Forward">
+          <layerMoniker Id="ef6a8603-89ba-4120-867f-eb64cedd97db" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="7415a890-e2c3-47cf-a98a-3f469b88903b" direction="Forward">
+          <layerMoniker Id="63433d7e-6bfe-495c-b7bc-d6ad7d5290c3" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="52490d74-662c-4463-b623-2bbc5f65423d" name="TFS.SyncService.View.Controls">
+          <ArtifactNode Label="TFS.SyncService.View.Controls" Category="CodeSchema_Project" Id="(Assembly=../TFS.SyncService.View.Controls/TFS.SyncService.View.Controls.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=TFS.SyncService.View.Controls)" Label="TFS.SyncService.View.Controls.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="35fd7319-f84e-40c8-b28a-03d9a1c8f34f" name="TFS.SyncService.View.Word">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="a140ff3b-7688-4a1e-9ca1-f8c3a172912b" direction="Forward">
+          <layerMoniker Id="ef6a8603-89ba-4120-867f-eb64cedd97db" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="84cbe486-132d-43b9-8ac0-70a628aac90b" direction="Forward">
+          <layerMoniker Id="63433d7e-6bfe-495c-b7bc-d6ad7d5290c3" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="d9a74887-4a6d-4539-b7c3-f25e2ac76075" direction="Forward">
+          <layerMoniker Id="2cb2e5a4-1688-4ad1-a3b2-c60d1c9fc87e" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="524f8261-eeea-4258-8616-2137183eea10" direction="Forward">
+          <layerMoniker Id="25f9fe56-b425-4e46-895c-75c7464e8806" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="e08d3cee-413c-4167-8517-1ceadb5679b4" direction="Forward">
+          <layerMoniker Id="c13056ea-0bd7-4a57-a496-7f7f4776a58d" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="4cbe1c0d-e248-47af-a320-b979015fb75d" direction="Forward">
+          <layerMoniker Id="19b79347-4c49-48db-9dc3-028ae1320d90" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="4cc15504-05c6-4918-8665-2377519218f4" name="TFS.SyncService.View.Word">
+          <ArtifactNode Label="TFS.SyncService.View.Word" Category="CodeSchema_Project" Id="(Assembly=../TFS.SyncService.View.Word2007/TFS.SyncService.View.Word.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=AIT.WordToTFS)" Label="AIT.WordToTFS.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="c13056ea-0bd7-4a57-a496-7f7f4776a58d" name="TFS.SyncService.Adapter.TFS2012">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="22366b48-6551-4c90-b57a-d49b7c76c8ef" direction="Forward">
+          <layerMoniker Id="ef6a8603-89ba-4120-867f-eb64cedd97db" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="9b4c5556-9165-4e73-a635-d8915d6059cf" direction="Forward">
+          <layerMoniker Id="19b79347-4c49-48db-9dc3-028ae1320d90" />
+        </dependencyFromLayerToLayer>
+        <dependencyFromLayerToLayer Id="49365706-de2f-42e1-9e32-32aeea65586a" direction="Forward">
+          <layerMoniker Id="25f9fe56-b425-4e46-895c-75c7464e8806" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="97869989-8f06-446e-a943-801cea795fdf" name="TFS.SyncService.Adapter.TFS2012">
+          <ArtifactNode Label="TFS.SyncService.Adapter.TFS2012" Category="CodeSchema_Project" Id="(Assembly=../TFS.SyncService.Adapter.TFS2010/TFS.SyncService.Adapter.TFS2012.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=TFS.SyncService.Adapter.TFS2012)" Label="TFS.SyncService.Adapter.TFS2012.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+    <layer Id="19b79347-4c49-48db-9dc3-028ae1320d90" name="TFS.SyncService.Common">
+      <dependencyToLayers>
+        <dependencyFromLayerToLayer Id="0c9fc636-fa5f-4d99-b149-e6edf6d68d9c" direction="Forward">
+          <layerMoniker Id="ef6a8603-89ba-4120-867f-eb64cedd97db" />
+        </dependencyFromLayerToLayer>
+      </dependencyToLayers>
+      <references>
+        <reference Id="e9bc5811-7945-4076-a103-d99a4f764b0c" name="TFS.SyncService.Common">
+          <ArtifactNode Label="TFS.SyncService.Common" Category="CodeSchema_Project" Id="(Assembly=../TFS.SyncService.Common/TFS.SyncService.Common.csproj)">
+            <Category Ref="File" />
+          </ArtifactNode>
+          <ExpandedNode Id="(Assembly=AIT.TFS.SyncService.Common)" Label="AIT.TFS.SyncService.Common.dll" Category="CodeSchema_Assembly">
+            <Category Ref="FileSystem.Category.FileOfType.dll" />
+            <LinkCategory Ref="Produces" />
+            <LinkCategory Ref="Represents" />
+          </ExpandedNode>
+        </reference>
+      </references>
+    </layer>
+  </layers>
+</layerModel>

@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="GetWorkItems_Error_WrongIDs" xml:space="preserve">
+    <value>Some of the characters you entered into 'IDs' text field are in wrong format. Please type an ID containing only numbers (0-9), spaces, and list separators (';' or ','). </value>
+  </data>
+  <data name="GetWorkItems_Title" xml:space="preserve">
+    <value>Get Work Items</value>
+  </data>
+  <data name="TestResult_AllConfigurations" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="TFSExport_ExistingWorkItems" xml:space="preserve">
+    <value>The document contains already some of the Work Items to import. Your changes on these Work Items will get lost. Do you want to proceed?"</value>
+  </data>
+  <data name="WordToTFS_Error_LinkTypesNotSelected" xml:space="preserve">
+    <value>You must select the check box for at least one type of link or click 'Return links of any types'.</value>
+  </data>
+  <data name="WordToTFS_Error_TableInsertInTable" xml:space="preserve">
+    <value>It is not possible to start import process because the cursor position is located inside of table. Nested tables are not allowed. 
+Please move the cursor position outside of the table.</value>
+  </data>
+  <data name="MessageBox_Title" xml:space="preserve">
+    <value>WordToTFS Plugin</value>
+  </data>
+  <data name="TestResult_Error" xml:space="preserve">
+    <value>Test result error</value>
+  </data>
+  <data name="TestSpecification_Error" xml:space="preserve">
+    <value>Test specification error</value>
+  </data>
+  <data name="TestResult_AllServerBuilds" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="DefaultTemplateBundleName" xml:space="preserve">
+    <value>AIT GmbH &amp; Co. KG</value>
+  </data>
+  <data name="BrowserDialogDescription" xml:space="preserve">
+    <value>Pick the folder containing custom templates.</value>
+  </data>
+  <data name="TM_ConfirmDeleteHeader" xml:space="preserve">
+    <value>Delete template</value>
+  </data>
+  <data name="TM_ConfirmDeleteText" xml:space="preserve">
+    <value>Do you really want to delete the template '{0}'?</value>
+  </data>
+  <data name="Error_LoadOfTemplateComponentFailed" xml:space="preserve">
+    <value>File '{0}' is not found in source folder.</value>
+  </data>
+  <data name="Attachment_AdjustHyperlinkBase" xml:space="preserve">
+    <value>The hyperlink base of this document is different from the document attachment folder. In order for relative attachment links to work, the hyperlink base needs to point to the document attachment location.
+
+If you continue, the hyperlink base will be adjusted automatically. Do you want to continue?</value>
+  </data>
+  <data name="Attachment_SaveAsWarning" xml:space="preserve">
+    <value>The document contains links to downloaded attachments. These links only work if the attachment folder is in the same folder as the document. Please make sure to copy or move the attachment folder to the new document location.</value>
+  </data>
+  <data name="Attachment_SaveDocumentNowText" xml:space="preserve">
+    <value>In order to download attachments, the document location must be known. Do you want to save the document now?</value>
+  </data>
+  <data name="TestResult_OperationCancelled" xml:space="preserve">
+    <value>Operation cancelled by user.</value>
+  </data>
+  <data name="TM_AddTemplateBundleAsProjectMappedHierarchy" xml:space="preserve">
+    <value>The selected folder contains subfolders. Do you want to set this folder as project mapped template source? 
+
+Templates in a project mapped template source will only be available if the user is connected to a project as defined by the subfolder structure.</value>
+  </data>
+  <data name="TestReportHelper_AttachmentFilename" xml:space="preserve">
+    <value>{0}_{1}</value>
+  </data>
+  <data name="TestReportHelper_WorkItemViewLink_AutoText" xml:space="preserve">
+    <value>{0} - {1}</value>
+  </data>
+  <data name="QueryWorkItems_Title" xml:space="preserve">
+    <value>Query Work Items</value>
+  </data>
+  <data name="CommandArgumentsError" xml:space="preserve">
+    <value>If a configuration file is specified, it is not allowed to specify basic settings by command line parameters. You can use either the command line parameters or the configuration file for the specification of basic settings.</value>
+  </data>
+  <data name="ConfigurationFileMisconfigured" xml:space="preserve">
+    <value>The item {0} is missing in your configuration file.</value>
+  </data>
+  <data name="ConfigurationFileNotExistsError" xml:space="preserve">
+    <value>The specified configuration file does not exist.</value>
+  </data>
+  <data name="ExitInformation" xml:space="preserve">
+    <value>Press any key to exit the console.</value>
+  </data>
+  <data name="FileExistsError" xml:space="preserve">
+    <value>The specified file where to store the report already exists. Either set the overwrite option to true or specify another file name.</value>
+  </data>
+  <data name="FilenameNotSpecifiedError" xml:space="preserve">
+    <value>The file path where to store the document was not specified.</value>
+  </data>
+  <data name="FileSavedInformation" xml:space="preserve">
+    <value>The document has been saved to {0}</value>
+  </data>
+  <data name="NoWorkItemsFoundInformation" xml:space="preserve">
+    <value>There were no work items found for your arguments.</value>
+  </data>
+  <data name="OptionsNullError" xml:space="preserve">
+    <value>There was no option specified how to get work items.</value>
+  </data>
+  <data name="OptionsNullErrorInstruction" xml:space="preserve">
+    <value>Please specify either the option "WorkItemIDs" or the option WorkItemQuery.</value>
+  </data>
+  <data name="OptionsOverloadedError" xml:space="preserve">
+    <value>It was specified to get work items by id and by query. Only one of these two options can be chosen.</value>
+  </data>
+  <data name="ProjectNotSpecifiedError" xml:space="preserve">
+    <value>The project was not specified.</value>
+  </data>
+  <data name="ReadConfigurationInformation" xml:space="preserve">
+    <value>Configuration file is about being read in.</value>
+  </data>
+  <data name="ReportCreationFailed" xml:space="preserve">
+    <value>The creation of the report failed.</value>
+  </data>
+  <data name="ReportCreationSuccessfull" xml:space="preserve">
+    <value>The report was created.</value>
+  </data>
+  <data name="ServerNotSpecifiedError" xml:space="preserve">
+    <value>The server was not specified.</value>
+  </data>
+  <data name="TemplateNotSpecifiedError" xml:space="preserve">
+    <value>The WordToTFS-template which should be used was not specified.</value>
+  </data>
+  <data name="TestSettingsConfigurationPositionError" xml:space="preserve">
+    <value>There was no option specified where to place the test configuration information. The available options are "AboveTestPlan", "BeneathTestPlan", "BeneathTestSuites" or "BeneathFirstTestSuite".</value>
+  </data>
+  <data name="TestSettingsDocumentStructureError" xml:space="preserve">
+    <value>There was no option specified how to create the document structure. The available options are "IterationPath", "AreaPath" or "TestPlanHierarchy".</value>
+  </data>
+  <data name="TestSettingsErrorInstruction" xml:space="preserve">
+    <value>Please adapt the configuration file properly.</value>
+  </data>
+  <data name="TestSettingsInvalidConfigurationPositionError" xml:space="preserve">
+    <value>The option specified where to place the test configuration information is not valid. The available options are "AboveTestPlan", "BeneathTestPlan", "BeneathTestSuites" or "BeneathFirstTestSuite".</value>
+  </data>
+  <data name="TestSettingsInvalidDocumentStructureError" xml:space="preserve">
+    <value>The option specified how to create the document structure is not valid. The available options are "IterationPath", "AreaPath" or "TestPlanHierarchy".</value>
+  </data>
+  <data name="TestSettingsInvalidTestCasesSortError" xml:space="preserve">
+    <value>The option specified how to sort the cases is not valid. cases. The available options are "IterationPath", "AreaPath" or "WorkItemId".</value>
+  </data>
+  <data name="TestSettingsInvalidTestPlan" xml:space="preserve">
+    <value>The specified test plan does not exist.</value>
+  </data>
+  <data name="TestSettingsInvalidTestSuite" xml:space="preserve">
+    <value>The specified test suite does not exist.</value>
+  </data>
+  <data name="TestSettingsTestCasesSortError" xml:space="preserve">
+    <value>There was no option specified how to sort the test cases. The available options are "IterationPath", "AreaPath" or "WorkItemId".</value>
+  </data>
+  <data name="TestSettingsTestPlanError" xml:space="preserve">
+    <value>There was no test plan specified in the configuration file.</value>
+  </data>
+  <data name="WordClosed" xml:space="preserve">
+    <value>The document and Word have been closed</value>
+  </data>
+  <data name="WorkItemsCountInformation" xml:space="preserve">
+    <value>Number of found work items:</value>
+  </data>
+  <data name="WorkItemsImportedInformation" xml:space="preserve">
+    <value>All work items were imported to the document.</value>
+  </data>
+  <data name="Error_Wrong_Connection_Long" xml:space="preserve">
+    <value>The default connection settings from your template configuration are wrong or your TFS cannot be reached.</value>
+  </data>
+  <data name="Error_Wrong_Connection_Short" xml:space="preserve">
+    <value>Wrong connection settings</value>
+  </data>
+  <data name="Error_TeamPickerFailed_Long" xml:space="preserve">
+    <value>Error while loading the TFS Team Explorer plugin. Please check the system requirements and make sure that you have the matching version of it installed.</value>
+  </data>
+  <data name="Error_TeamPickerFailed_Short" xml:space="preserve">
+    <value>Error during connection to TFS</value>
+  </data>
+  <data name="Error_TemplateDoesNotExist" xml:space="preserve">
+    <value>The Word template: {0} does not exist.</value>
+  </data>
+  <data name="TestSettingsInvalidTestSuitePath" xml:space="preserve">
+    <value>The test suite for the specified suite path could not be determined.</value>
+  </data>
+  <data name="ReplaceFieldValueTypeNotSupported" xml:space="preserve">
+    <value>The value '{0}' is an unsupported FieldValueType in the current context.</value>
+  </data>
+  <data name="ReplaceUnknownSystemVariableName" xml:space="preserve">
+    <value>The value '{0}' of the variable name of replacment '{1}' contains an unknown system variable name.</value>
+  </data>
+  <data name="ReplaceUnknownVariableName" xml:space="preserve">
+    <value>The value '{0}' of the variable name of replacment '{1}' contains an unknown variable name. Variable must be defined in your template.</value>
+  </data>
+  <data name="NoneResolutionState" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="AmountOfWorkItemsNotShown" xml:space="preserve">
+    <value>{0} Work Item(s) not shown.</value>
+  </data>
+  <data name="CreateModelInfo" xml:space="preserve">
+    <value>Creating model ...</value>
+  </data>
+  <data name="CreateTestResultDoc" xml:space="preserve">
+    <value>Creating test result document...</value>
+  </data>
+  <data name="CreateTestSpecificationDoc" xml:space="preserve">
+    <value>Creating test sprecification document...</value>
+  </data>
+  <data name="DoImportError" xml:space="preserve">
+    <value>Skipped creation of summary page and processing post operations because of error or cancellation.</value>
+  </data>
+  <data name="FileIsOverwrittenOrNotExists" xml:space="preserve">
+    <value>File does not exist or can be overwritten.</value>
+  </data>
+  <data name="FinalizationOfDoc" xml:space="preserve">
+    <value>Finalization of document...</value>
+  </data>
+  <data name="FindWorkItems" xml:space="preserve">
+    <value>Finding work items ...</value>
+  </data>
+  <data name="GetWorkItemById" xml:space="preserve">
+    <value>Getting work items by ids.</value>
+  </data>
+  <data name="GetWorkItemsByQueryName" xml:space="preserve">
+    <value>Getting work items by query name.</value>
+  </data>
+  <data name="ImportWorkItems" xml:space="preserve">
+    <value>Importing work items...</value>
+  </data>
+  <data name="InitializationOfDocument" xml:space="preserve">
+    <value>Initialization of document...</value>
+  </data>
+  <data name="InitializationOfFileName" xml:space="preserve">
+    <value>Initialization of file name with time stamp...</value>
+  </data>
+  <data name="NumberOfFoundWorkItems" xml:space="preserve">
+    <value>Number of found work items during importing:</value>
+  </data>
+  <data name="RegisterServices" xml:space="preserve">
+    <value>Register services...</value>
+  </data>
+  <data name="ServicesNotExists" xml:space="preserve">
+    <value>Services are null.</value>
+  </data>
+  <data name="WordDocSaveMessage" xml:space="preserve">
+    <value>Word document is saved.</value>
+  </data>
+  <data name="WorkItemsAreFound" xml:space="preserve">
+    <value>Finding work items finished.</value>
+  </data>
+  <data name="WorkItemsAreImported" xml:space="preserve">
+    <value>Importing work items finished.</value>
+  </data>
+  <data name="FilterTestResults" xml:space="preserve">
+    <value>Test results filtered: Original Size {0}. New Size {1}</value>
+  </data>
+  <data name="FilterWorkItems" xml:space="preserve">
+    <value>WorkItems filtered: Original Size {0}. New Size {1}</value>
+  </data>
+  <data name="GetBuildsForTestManagmentObject" xml:space="preserve">
+    <value>Getting all linked builds for a test management object....</value>
+  </data>
+  <data name="GetLinkedConfigurationForTestManagementObject" xml:space="preserve">
+    <value>Getting Linked Configurations for a test management object...</value>
+  </data>
+  <data name="GetLinkedTestCasesForTestManagmentObject" xml:space="preserve">
+    <value>Getting all linked TestCases for a test management object...</value>
+  </data>
+  <data name="GetLinkedTestResultsForTestManagmentObject" xml:space="preserve">
+    <value>Getting all Linked Test Results for a test management object...</value>
+  </data>
+  <data name="GetLinkedWorkItemsForTestManagementObject" xml:space="preserve">
+    <value>Getting all linked work items for a test management object...</value>
+  </data>
+  <data name="LoadTemplateBundles" xml:space="preserve">
+    <value>Loaded {0} template bundles.</value>
+  </data>
+  <data name="LoadTemplateInfo" xml:space="preserve">
+    <value>Loading template information from {0}</value>
+  </data>
+  <data name="TemplateBundleNotAvailable" xml:space="preserve">
+    <value>Template bundle {0} at {1} not available. Loading cached version.</value>
+  </data>
+  <data name="TemplatesChanged" xml:space="preserve">
+    <value>TemplateBundles or Templates have changed.</value>
+  </data>
+  <data name="CreateHyperlinks" xml:space="preserve">
+    <value>Creating hyperlinks...</value>
+  </data>
+  <data name="CreateReportByAreaPath" xml:space="preserve">
+    <value>Creating report by area path ...</value>
+  </data>
+  <data name="CreateReportByIterationPath" xml:space="preserve">
+    <value>Creating report by iteration path ...</value>
+  </data>
+  <data name="CreateReportByTestPlanHierarchy" xml:space="preserve">
+    <value>Creating report by test plan hierarchy ...</value>
+  </data>
+  <data name="CreateReportInfo" xml:space="preserve">
+    <value>Creating test result report ...</value>
+  </data>
+  <data name="ExceptionMessage" xml:space="preserve">
+    <value>Exception message: {0}. StackTrace: {1}.</value>
+  </data>
+  <data name="FindFinished" xml:space="preserve">
+    <value>Finding work items finished.</value>
+  </data>
+  <data name="ImportFinished" xml:space="preserve">
+    <value>Importing work items finished.</value>
+  </data>
+  <data name="NumberOfAllTestCases" xml:space="preserve">
+    <value>Number of all test cases:</value>
+  </data>
+  <data name="NumberOfTestCasesBasedOnSuite" xml:space="preserve">
+    <value>Number of test cases of test suite:</value>
+  </data>
+  <data name="PrintTestResults" xml:space="preserve">
+    <value>Print out all test results...</value>
+  </data>
+  <data name="SuiteNotFound" xml:space="preserve">
+    <value>Suite {0} cannot be found. Fallback to root suite of current plan {1}.</value>
+  </data>
+  <data name="TestPlanOrSuiteNotExist" xml:space="preserve">
+    <value>Test plan or test suite not exists.</value>
+  </data>
+  <data name="CheckIfConsoleIsActivated" xml:space="preserve">
+    <value>Checking if WordToTFSConsole is activated...</value>
+  </data>
+  <data name="ConsoleIsActivated" xml:space="preserve">
+    <value>ConsoleExtension is activated.</value>
+  </data>
+  <data name="ConsoleIsNotActivated" xml:space="preserve">
+    <value>ConsoleExtension is not activated.</value>
+  </data>
+  <data name="DoFindProccessMessage" xml:space="preserve">
+    <value>Running work item query...</value>
+  </data>
+  <data name="ExtendedPath" xml:space="preserve">
+    <value>Extended the PATH with %{0}%</value>
+  </data>
+  <data name="GetPath" xml:space="preserve">
+    <value>Getting the PATH variable and the ClickOnce Location...</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>ClickOnceLocation: {0}</value>
+  </data>
+  <data name="NewPath" xml:space="preserve">
+    <value>New PATH is %{0}%</value>
+  </data>
+  <data name="Path" xml:space="preserve">
+    <value>Path is: {0}</value>
+  </data>
+  <data name="PathCanNotBeDetermined" xml:space="preserve">
+    <value>Installation path of the WordToTFS Add-in cannot be determined.</value>
+  </data>
+  <data name="SetEnvironmentVariable" xml:space="preserve">
+    <value>Set the environment variable %{0}% to: {1}</value>
+  </data>
+  <data name="VariableName" xml:space="preserve">
+    <value>WordToTFSVaribaleNameIs: {0}</value>
+  </data>
+  <data name="WordToTFSNotFound" xml:space="preserve">
+    <value>WordToTFS.exe cannot be found under {0}, skipping the adjustment of the path variables.</value>
+  </data>
+</root>

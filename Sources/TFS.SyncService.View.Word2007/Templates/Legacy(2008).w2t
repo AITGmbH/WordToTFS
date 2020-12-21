@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MappingConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="W2T.xsd" ShowName="Legacy(2008)" RelatedSchema="AITLegacy.Schema.xsd" DefaultMapping="true">
+  <Mappings ExcludeRegularExpression="^((_EXCLUDE_)|(_exclude_))">
+    <Mapping WorkItemType="Requirement" MappingWorkItemType="Requirement" RelatedTemplate="ALegacy(2008).Template.xml" AssignRegularExpression="^((SRS_)|(PRS_))" AssignCellRow="1" AssignCellCol="1">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. These values correspond to 'FieldValueType' enum. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. These values correspond to 'Direction' enum. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" MappingName="Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" MappingName="State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" MappingName="Revision" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" MappingName="Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="AIT.Common.Description" MappingName="Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Description</DefaultValue>
+        </Field>
+        <Field Name="AIT.Requirement.SRSReferenceNumber" MappingName="Reference" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="1">
+          <DefaultValue ShowName="Reference number">SRS_</DefaultValue>
+        </Field>
+        <Field Name="AIT.Common.SimplePriority" MappingName="Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">3</DefaultValue>
+        </Field>
+        <Field Name="AIT.Common.OwnedBy" MappingName="Owner" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Owner"></DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.SubjectMatterExpert1" MappingName="Experts" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Expert"></DefaultValue>
+        </Field>
+      </Fields>
+      <Converters>
+        <Converter FieldName="AIT.Common.SimplePriority">
+          <Values>
+            <Value Text="1 - High" MappingText="1" />
+            <Value Text="2 - Medium" MappingText="2" />
+            <!-- Explanation for next two rows: -->
+            <!--~ "3 - Low" converted to "3" (first occurence) -->
+            <!-- "3" and "" converted to "3 - Low" -->
+            <Value Text="3 - Low" MappingText="3" />
+            <Value Text="3 - Low" MappingText="" />
+          </Values>
+        </Converter>
+      </Converters>
+    </Mapping>
+  </Mappings>
+</MappingConfiguration>

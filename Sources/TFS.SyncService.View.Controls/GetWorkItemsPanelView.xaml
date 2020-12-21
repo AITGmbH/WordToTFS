@@ -1,0 +1,171 @@
+﻿<UserControl x:Class="AIT.TFS.SyncService.View.Controls.GetWorkItemsPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:config="clr-namespace:AIT.TFS.SyncService.Contracts.Configuration;assembly=TFS.SyncService.Contracts"
+             xmlns:converter="clr-namespace:AIT.TFS.SyncService.View.Controls.Converter"
+             mc:Ignorable="d" 
+             d:DesignHeight="491" d:DesignWidth="355">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Dictionaries/StringResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/Brushes.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/DataTemplates.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <BooleanToVisibilityConverter x:Key="VisibilityConverter" />
+            <converter:EnumToOptionButtonIsCheckedConverter x:Key="EnumToBooleanConv"/>
+            <converter:WorkItemTypeToComboBoxItemConverter x:Key="EmptyItemConv"/>
+            <converter:SynchronizationStateToImageConverter x:Key="SynchronizationStateToImageConverter" />
+
+            <DataTemplate x:Key="WorkItemTypeTemplate">
+                <TextBlock Text="{Binding Name}" />
+            </DataTemplate>
+            <CollectionViewSource x:Key="workItemTypes" Source="{Binding AllWorkItemTypes}"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="MainRowTop" Height="Auto" MinHeight="100"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="20"/>
+        </Grid.RowDefinitions>
+
+        <!-- QuerySelection Popup -->
+        <Popup Placement="Bottom" Grid.Row="0" Name="TreeViewPopup" AllowsTransparency="True" IsOpen="False" StaysOpen="True" PlacementTarget="{x:Reference QueryBox}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <!--<ColumnDefinition Width="Auto"></ColumnDefinition>-->
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Name="ClosePopupButton" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" IsEnabled="{Binding TreeViewPopup.IsOpen}" Visibility="{Binding TreeViewPopup.IsOpen}" Click="ClosePopupButton_OnClick">
+                    <StackPanel>
+                        <Image Source="Resources/Images/delete.png" Width="10" ToolTip="Close &quot;Saved Query&quot;-Dialog"/>
+                    </StackPanel>
+                </Button>
+                <!--<Button Name="RefreshPopupButton" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" IsEnabled="{Binding TreeViewPopup.IsOpen}" Visibility="{Binding TreeViewPopup.IsOpen}" Click="ClosePopupButton_OnClick">
+                    <Image Source="Resources/Images/refresh.png" Width="10" ToolTip="Refresh &quot;Saved Query&quot;-Dialog"/>
+                </Button>-->
+                <TreeView x:Name="QueryTree" Loaded="QueryTree_Loaded" ItemsSource="{Binding QueryHierarchy}" TreeViewItem.Selected="QueryTree_OnSelected" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <TreeView.ItemContainerStyle>
+                        <Style TargetType="{x:Type TreeViewItem}">
+                            <Setter Property="IsExpanded" Value="True" />
+                        </Style>
+                    </TreeView.ItemContainerStyle>
+                </TreeView> 
+            </Grid>
+        </Popup>
+
+        <Grid Grid.Row="0" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Margin="0, 5" Grid.Row="0" Text="Find Work Items by" />
+            <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,5">
+                <RadioButton x:Name="RadioSavedQuery" GroupName="opt1"
+                             IsChecked="{Binding ImportOption, Converter={StaticResource EnumToBooleanConv}, ConverterParameter={x:Static config:QueryImportOption.SavedQuery}, Mode=TwoWay}">Saved Query</RadioButton>
+                <Border Margin="17,5,0,10" Visibility="{Binding ElementName=RadioSavedQuery, Path=IsChecked, Converter={StaticResource VisibilityConverter}}">
+                    <ComboBox x:Name="QueryBox" Grid.Row="0" HorizontalAlignment="Stretch" Width="auto" PreviewMouseDown="QueryBox_PreviewMouseDown" />
+                </Border>
+            </StackPanel>
+            <StackPanel Grid.Row="2" Margin="0,5">
+                <RadioButton x:Name="RadioIDs" GroupName="opt1" 
+                             IsChecked="{Binding ImportOption, Converter={StaticResource EnumToBooleanConv}, ConverterParameter={x:Static config:QueryImportOption.IDs}, Mode=TwoWay}">IDs</RadioButton>
+                <Border Margin="17,5,0,10" Visibility="{Binding ElementName=RadioIDs, Path=IsChecked, Converter={StaticResource VisibilityConverter}}">
+                    <TextBox Text="{Binding ImportIDs, UpdateSourceTrigger=PropertyChanged}" KeyDown="OnKeyDownHandler" Name="IdsTextBox" />
+                </Border>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Margin="0,5">
+                <RadioButton x:Name="RadioTitleContains" GroupName="opt1" 
+                             IsChecked="{Binding ImportOption, Converter={StaticResource EnumToBooleanConv}, ConverterParameter={x:Static config:QueryImportOption.TitleContains}, Mode=TwoWay}">Title</RadioButton>
+                <StackPanel Margin="17,5,0,10" Visibility="{Binding ElementName=RadioTitleContains, Path=IsChecked, Converter={StaticResource VisibilityConverter}}">
+                    <TextBox Margin="0,0,0,5" Text="{Binding ImportTitleContains, UpdateSourceTrigger=PropertyChanged}" KeyDown="FindByTitle_KeyDown" Name="TitleTextBox"/>
+                    <ComboBox ItemTemplate="{StaticResource WorkItemTypeTemplate}">
+                        <ComboBox.ItemsSource>
+                            <CompositeCollection>
+                                <ComboBoxItem>
+                                    <TextBlock Text="All Work Item Types" />
+                                </ComboBoxItem>
+                                <CollectionContainer Collection="{Binding Source={StaticResource workItemTypes}}" />
+                            </CompositeCollection>
+                        </ComboBox.ItemsSource>
+                        <ComboBox.SelectedItem>
+                            <MultiBinding Converter="{StaticResource EmptyItemConv}">
+                                <Binding Path="SelectedWorkItemType" />
+                                <Binding RelativeSource="{RelativeSource Self}" Path="ItemsSource"/>
+                            </MultiBinding>
+                        </ComboBox.SelectedItem>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+            <Expander Grid.Row="4" Margin="0,5" Header="Hierarchy" >
+                <Border BorderThickness="1" BorderBrush="Gray">
+                    <DockPanel LastChildFill="True" Margin="5">
+                        <CheckBox VerticalContentAlignment="Center" DockPanel.Dock="Top" IsChecked="{Binding UseLinkedWorkItems, Mode=TwoWay}">Include linked Work Items</CheckBox>                       
+                        <StackPanel DockPanel.Dock="Top" Orientation="Vertical" IsEnabled="{Binding UseLinkedWorkItems, Mode=OneWay}">
+                            <CheckBox Margin="25,2,0,0"  IsChecked="{Binding IsDirectLinkOnlyMode}">Get direct links only</CheckBox>
+                            <RadioButton Margin="25,2,0,0" IsChecked="{Binding IsAnyLinkType}" >All linked Work Items</RadioButton>
+                            <RadioButton Margin="25,2,0,0" IsChecked="{Binding IsCustomLinkType, Mode=OneWay}" >Work Items of relation:</RadioButton>
+                        </StackPanel>
+                        <ListBox x:Name="CustomLinkTypesList" Height="Auto" MaxHeight="150" Margin="42,2,0,2" ItemTemplate="{StaticResource CheckableTfsWorkItemLink}" ItemsSource="{Binding LinkTypes}" IsEnabled="{Binding IsCustomLinksListEnabled}" />
+                    </DockPanel>
+                </Border>
+            </Expander>
+        </Grid>
+        <GridSplitter Background="LightGray" Grid.Row="1" HorizontalAlignment="Stretch" Height="3"/>
+        <Grid Grid.Row="2" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" MinWidth="70" Margin="5, 5, 0, 15" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding CanFindWorkItems}" Click="Find_Click">Find</Button>
+            <StackPanel Grid.Row="1" Margin="0 0 0 5"  Orientation="Horizontal" Visibility="{Binding IsExistNotShownWorkItems, Converter={StaticResource VisibilityConverter}}" >
+                <Label Content="{Binding AmountOfWorkItems}"></Label>
+                <Image Height="24" Source="{Binding SynchronizationState, Converter={StaticResource SynchronizationStateToImageConverter}}">
+                    <Image.ToolTip>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                                <Label Grid.Row="0" Content="{StaticResource ResultsOfComparingMessageFirstLine}"></Label>
+                                <Label Grid.Row="1" Content="{Binding ResultOfComparing}"></Label>
+                        </Grid>
+                    </Image.ToolTip>
+                </Image>
+            
+            </StackPanel>
+            <Border Grid.Row="2">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <ListBox Grid.IsSharedSizeScope="true" x:Name="FoundList" Grid.Row="0" ItemsSource="{Binding FoundWorkItems}" CheckBox.Checked="FoundWorkItemCheckBox_CheckChanged" ItemTemplate="{StaticResource FoundWorkItemsTemplateCheckable}"/>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                        <Button Margin="5, 2" MinWidth="70" Click="SelectAll_Click" IsEnabled="{Binding CanSelectFoundWorkItems}">Select All</Button>
+                        <Button Margin="0, 2" MinWidth="70" Click="UnselecteAll_Click" IsEnabled="{Binding CanUnselectFoundWorkItems}">Unselect All</Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+        </Grid>
+        <StackPanel Grid.Row="3" Orientation="Horizontal">
+            <Button MinWidth="70" Margin="10, 5, 0, 5" IsEnabled="{Binding CanImport}" Click="Import_Click" >Import</Button>
+            <Button MinWidth="70" Padding="5, 0, 5, 0"  Margin="5" IsEnabled="{Binding CanImport}" Click="CreateHyperlink_Click">Create Hyperlink</Button>
+        </StackPanel>
+    </Grid>
+    </ScrollViewer>
+</UserControl>

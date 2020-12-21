@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+For testing please provide valid values for TfsServerName, TfsServerFQDN, TfsTeamProjectCollectionUrl, TfsTeamProjectCollectionName and TeamProjectName. 
+The parameters TeamProjectCollectionUrlPlaceholder and TeamProjectNamePlaceholder are used in test configs replacements within the test logic.
+-->
+<RunSettings>
+  <!-- https://msdn.microsoft.com/en-us/library/jj635153.aspx -->
+  <TestRunParameters>
+    <Parameter name="TfsServerName" value="__TfsServerName__" />
+    <Parameter name="TfsServerFQDN" value="__TfsServerName__" />
+    <Parameter name="TfsTeamProjectCollectionUrl" value="__TfsTeamProjectCollectionUrl__" />
+    <Parameter name="TfsTeamProjectCollectionName" value="__TfsTeamProjectCollectionName__" />
+    <Parameter name="TeamProjectName" value="__TeamProjectName__" />
+
+    <Parameter name="TeamProjectCollectionUrlPlaceholder" value="___TeamProjectCollectionUrl___" />
+    <Parameter name="TeamProjectNamePlaceholder" value="___TeamProjectName___" />
+  </TestRunParameters>
+</RunSettings>

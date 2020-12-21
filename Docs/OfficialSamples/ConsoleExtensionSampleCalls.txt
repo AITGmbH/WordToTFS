@@ -1,0 +1,15 @@
+---------------------------------------------------------------------------------------------------------------------------
+The query below uses the settings from the provided configuration file and will get work items based on a given query
+WordToTFS.exe GetWorkItems -q="YOURPROJECTNAME/Shared Queries/My Work Items" -co="PATHTOYOURCONFIGURATIONFILE\ConfigurationSample.xml"
+
+---------------------------------------------------------------------------------------------------------------------------
+The query below uses the settings from the provided configuration file and will get the work items with the ids 100 and 101
+WordToTFS.exe GetWorkItems -w="100,101" -co="PATHTOYOURCONFIGURATIONFILE\ConfigurationSample.xml"
+
+---------------------------------------------------------------------------------------------------------------------------
+The query below uses the settings from the provided configuration file and will create a test result report that shows the latest results
+WordToTFS.exe TestResultReport -co="PATHTOYOURCONFIGURATIONFILE\ConfigurationSample.xml"
+
+---------------------------------------------------------------------------------------------------------------------------
+The query below uses the settings from the provided configuration file and will create a test result report that shows the latest results
+WordToTFS.exe TestSpecReport-co="PATHTOYOURCONFIGURATIONFILE\ConfigurationSample.xml"

@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MappingConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="W2T.xsd" ShowName="MSF For CMMI (2013)-Version 4.3" DefaultMapping="true" EnableRefresh="true" UseStackRank="false" AttachmentFolderMode="WithoutGuid">
+  <Mappings>
+  
+      <Mapping WorkItemType="Feature" MappingWorkItemType="Feature" RelatedTemplate="TFSFeature(2013).xml" AssignRegularExpression="Feature" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. These values correspond to 'FieldValueType' enum. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. These values correspond to 'Direction' enum. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+		<Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Feature Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Requirement Description</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters />
+    </Mapping>
+	
+    <Mapping WorkItemType="Requirement" MappingWorkItemType="Requirement" RelatedTemplate="MSFForCMMI(2010).Requirement.xml" AssignRegularExpression="Requirement" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. These values correspond to 'FieldValueType' enum. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. These values correspond to 'Direction' enum. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Requirement Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Requirement Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.RequirementType" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Requirement Type">Functional</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+
+      </Fields>
+      <Converters />
+    </Mapping>
+
+    <Mapping WorkItemType="Risk" MappingWorkItemType="Risk" RelatedTemplate="MSFForCMMI(2010).Risk.xml" AssignRegularExpression="Risk" AssignCellRow="1" AssignCellCol="1"  ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'.-->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="5" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Risk Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Risk Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.Probability" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Probability">Probability</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Severity" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="3">
+          <DefaultValue ShowName="Severity">Severity</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters>
+        <Converter FieldName="Microsoft.VSTS.Common.Severity">
+          <Values>
+            <Value Text="1 - Critical" MappingText="1" />
+            <Value Text="2 - High" MappingText="2" />
+            <Value Text="3 - Medium" MappingText="3" />
+            <Value Text="4 - Low" MappingText="4" />
+            <Value Text="4 - Low" MappingText="" />
+          </Values>
+        </Converter>
+      </Converters>
+    </Mapping>
+
+    <Mapping WorkItemType="Task" MappingWorkItemType="Task" RelatedTemplate="MSFForCMMI(2010).Task.xml" AssignRegularExpression="Task" AssignCellRow="1" AssignCellCol="1"  ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Task Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Task Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Discipline" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Discipline">Discipline</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters>
+        <Converter FieldName="Microsoft.VSTS.Common.Discipline">
+          <Values>
+            <Value Text="Analysis" MappingText="Analysis" />
+            <Value Text="Development" MappingText="Development" />
+            <Value Text="Test" MappingText="Test" />
+            <Value Text="User Education" MappingText="User Education" />
+            <Value Text="User Experience" MappingText="User Experience" />
+          </Values>
+        </Converter>
+      </Converters>
+    </Mapping>
+  </Mappings>
+
+  <TestConfiguration>
+    <!-- Configuration for test specification report -->
+    <!-- If 'Available="false" - button is not shown in gui -->
+    <TestSpecificationConfiguration
+      Available="true"
+      TestPlanTemplate="TestPlan"
+      TestSuiteTemplate="TestSuite"
+      TestCaseElementTemplate="SpecificationReportTestCaseRow"
+	  SummaryPageTemplate = "OwnSummaryPage"/>
+
+    <!-- Configuration for test result report -->
+    <!-- If 'Available="false" - button is not shown in gui -->
+    <TestResultConfiguration
+      Available="true"
+      TestPlanTemplate="TestPlan"
+      TestSuiteTemplate="TestSuite"
+      TestCaseElementTemplate="ResultReportTestCaseRow"
+      TestResultElementTemplate="ResultReportTestResultRow"
+      TestConfigurationElementTemplate="ResultReportTestConfigurationRow"
+	  SummaryPageTemplate = "OwnSummaryPage" >
+	  <PreOperations>
+         <Operation Type="InsertNewPage"/>
+	  </PreOperations>
+      <PostOperations>
+         <Operation Type="RefreshAllFieldsInDocument"/>
+      </PostOperations>
+      <BuildQualities>
+        <!-- EN: "Initial Test Passed"     / "Lab Test Passed"       / "Ready for Deployment"              / "Ready for Initial Test"
+               "Rejected"                / "Released"              / "UAT Passed"                        / "Under Investigation" -->
+        <!-- DE: "Erster Test erfolgreich" / "Labortest erfolgreich" / "Bereit für Bereitstellung"         / "Bereit für ersten Test"
+               "Abgelehnt"               / "Freigegeben"           / "Benutzerfunktionstest erfolgreich" / "Wird untersucht" -->
+        <!-- Build qualities with '1' -->
+        <!--<BuildQuality>.*1.*</BuildQuality>-->
+        <!-- Any build quality with at leas one character -->
+        <!--<BuildQuality>.+</BuildQuality>-->
+        <!-- Any build quality containing word 'Released' -->
+        <!--<BuildQuality>Released</BuildQuality>-->
+        <BuildQuality>Released</BuildQuality>
+        <BuildQuality>Passed</BuildQuality>
+        <BuildQuality>Ready</BuildQuality>
+      </BuildQualities>
+     <PostOperations>
+          <Operation Type="InsertNewPage"/>
+     </PostOperations>
+
+    </TestResultConfiguration>
+    <!-- Definition of all templates with replacement -->
+    <Templates>
+	  <Template Name="OwnSummaryPage" FileName="MSFForCMMISummary.xml">
+		<Replacements>
+		</Replacements>
+      </Template>
+      <Template Name="TestPlan" FileName="MSFForCMMI.Test.Common.TestPlan.xml">
+        <Replacements>
+          <Replacement Bookmark="Name" Property="Name"/>
+          <Replacement Bookmark="AreaPath" Property="AreaPath"/>
+          <Replacement Bookmark="Iteration" Property="Iteration"/>
+          <Replacement Bookmark="Description" Property="Description"/>
+          <Replacement Bookmark="StartDateDate" Property="StartDate.Date"/>
+          <Replacement Bookmark="EndDateDate" Property="EndDate.Date"/>
+          <Replacement Bookmark="BuildDirectory" Property="BuildDirectory"/>
+          <Replacement Bookmark="RootSuiteTitle" Property="RootSuite.Title"/>
+          <Replacement Bookmark="OwnerDisplayName" Property="Owner.DisplayName"/>
+        </Replacements>
+      </Template>
+      <Template Name="TestSuite" FileName="MSFForCMMI.Test.Common.TestSuite.xml">
+        <Replacements>
+          <Replacement Bookmark="Title" Property="Title"/>
+          <Replacement Bookmark="Description" Property="Description"/>
+          <Replacement Bookmark="AllTestCasesCount" Property="AllTestCases.Count"/>
+          <Replacement Bookmark="TestCasesCount" Property="TestCases.Count"/>
+        </Replacements>
+      </Template>
+      <Template Name="SpecificationReportTestCaseRow"
+                HeaderTemplate="SpecificationReportTestCaseHeader"
+                FileName="MSFForCMMI.Test.Specification.TestCaseRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="Title" Property="WorkItem.Title"/>
+          <Replacement Bookmark="IdRev" Property="WorkItem.Id">
+            <WorkItemViewerLink Id="WorkItem.Id" Revision="WorkItem.Rev"/>
+          </Replacement>
+          <Replacement Bookmark="LinkListAffectedBy" Property="Links" LinkedTemplate="LinkSimpleListAffectedBy"/>
+          <Replacement Bookmark="LinkListAffects" Property="Links" LinkedTemplate="LinkSimpleListAffects"/>
+          <Replacement Bookmark="ActionList" Property="Actions" LinkedTemplate="ActionSimpleList"/>
+        </Replacements>
+      </Template>
+      <Template Name="ResultReportTestCaseRow"
+                HeaderTemplate=""
+                FileName="MSFForCMMI.Test.Result.TestCase.xml">
+        <Replacements>
+          <Replacement Bookmark="WorkItemId" Property="WorkItem.Id">
+            <WorkItemViewerLink Id="WorkItem.Id" Revision="WorkItem.Rev"/>
+          </Replacement>
+          <Replacement Bookmark="IterationPath" Property="WorkItem.IterationPath"/>
+          <Replacement Bookmark="AreaPath" Property="WorkItem.AreaPath"/>
+          <Replacement Bookmark="WorkItemTitle" Property="WorkItem.Title"/>
+          <Replacement Bookmark="ActionList" Property="Actions" LinkedTemplate="ActionSimpleList"/>
+        </Replacements>
+      </Template>
+      <Template Name="ResultReportTestResultRow"
+                HeaderTemplate="ResultReportTestResultHeader"
+                FileName="MSFForCMMI.Test.Result.TestResultRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="RunId" Property="TestRunId"/>
+          <Replacement Bookmark="ResultId" Property="TestResultId"/>
+          <Replacement Bookmark="Outcome" Property="Outcome"/>
+          <Replacement Bookmark="Duration" Property="Duration"/>
+          <Replacement Bookmark="State" Property="State"/>
+          <Replacement Bookmark="ConfigName" Property="TestConfigurationName"/>
+          <Replacement Bookmark="BuildNumber" Property="BuildNumber">
+            <BuildViewerLink BuildNumber="BuildNumber"/>
+          </Replacement>
+        </Replacements>
+      </Template>
+      <Template Name="ResultReportTestConfigurationRow"
+                HeaderTemplate="ResultReportTestConfigurationHeader"
+                FileName="MSFForCMMI.Test.Result.TestConfigurationRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="MainName" Property="Name"/>
+          <Replacement Bookmark="Name" Property="Name"/>
+          <Replacement Bookmark="State" Property="State"/>
+          <Replacement Bookmark="Revision" Property="Revision"/>
+          <Replacement Bookmark="ValuesKeys" Property="Values" LinkedTemplate="ConfigurationVariableList"/>
+        </Replacements>
+      </Template>
+
+      <!-- ================ -->
+      <!-- Header templates -->
+      <!-- ================ -->
+      <Template Name="SpecificationReportTestCaseHeader" FileName="MSFForCMMI.Test.Specification.TestCaseHeader.xml"/>
+      <Template Name="ResultReportTestResultHeader" FileName="MSFForCMMI.Test.Result.TestResultHeader.xml"/>
+      <Template Name="ResultReportTestConfigurationHeader" FileName="MSFForCMMI.Test.Result.TestConfigurationHeader.xml"/>
+      <Template Name="ConfigurationVariableListHeader" FileName="MSFForCMMI.Test.Link.TestConfigurationHeader.xml"/>
+      <Template Name="LinkListAffectedBy" FileName="MSFForCMMI.Test.Link.AffectedByHeader.xml"/>
+      <Template Name="LinkListAffects" FileName="MSFForCMMI.Test.Link.AffectsHeader.xml"/>
+
+      <!-- ================ -->
+      <!-- Linked templates -->
+      <!-- ================ -->
+      <!-- Link template for 'RelatedLink' / 'Affected By' -->
+      <Template Name="LinkSimpleListAffectedBy"
+                HeaderTemplate="LinkListAffectedBy"
+                FileName="MSFForCMMI.Test.Link.LinkSimpleList.xml">
+        <Conditions>
+          <!-- Use only link of type 'RelatedLink'-->
+          <Condition Property="BaseType">
+            <Values>
+              <Value>RelatedLink</Value>
+            </Values>
+          </Condition>
+          <!-- Use only link type end of type 'Affectded By'-->
+          <Condition Property="LinkTypeEnd.Name">
+            <Values>
+              <Value>Affected By</Value>
+            </Values>
+          </Condition>
+        </Conditions>
+        <Replacements>
+          <Replacement Bookmark="LinkedWorkItem" Property="RelatedWorkItemId">
+            <WorkItemViewerLink Id="RelatedWorkItemId" AutoText="true"/>
+          </Replacement>
+        </Replacements>
+      </Template>
+      <!-- Link template for 'RelatedLink' / 'Affects' -->
+      <Template Name="LinkSimpleListAffects"
+                HeaderTemplate="LinkListAffects"
+                FileName="MSFForCMMI.Test.Link.LinkSimpleList.xml">
+        <Conditions>
+          <!-- Use only link of type 'RelatedLink'-->
+          <Condition Property="BaseType">
+            <Values>
+              <Value>RelatedLink</Value>
+            </Values>
+          </Condition>
+          <!-- Use only link type end of type 'Affectded By'-->
+          <Condition Property="LinkTypeEnd.Name">
+            <Values>
+              <Value>Affects</Value>
+            </Values>
+          </Condition>
+        </Conditions>
+        <Replacements>
+          <Replacement Bookmark="LinkedWorkItem" Property="RelatedWorkItemId">
+            <WorkItemViewerLink Id="RelatedWorkItemId" AutoText="true"/>
+          </Replacement>
+        </Replacements>
+      </Template>
+      <Template Name="ActionSimpleList" FileName="MSFForCMMI.Test.Link.ActionSimpleList.xml">
+        <PostOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PostOperations>
+        <Replacements>
+          <Replacement Bookmark="Title" Property="Title.ToPlainText()"/>
+          <Replacement Bookmark="ExpectedResult" Property="ExpectedResult.ToPlainText()"/>
+          <Replacement Bookmark="Attachments" Property="Attachments" LinkedTemplate="AttachmentSimpleList"/>
+        </Replacements>
+      </Template>
+      <Template Name="AttachmentSimpleList" FileName="MSFForCMMI.Test.Link.AttachmentSimpleList.xml">
+        <Replacements>
+          <Replacement Bookmark="Name" Property="LocalPath">
+			<AttachmentLink Mode="DownloadAndLinkToLocalFile"/>
+		  </Replacement>
+          <Replacement Bookmark="Comment" Property="Comment"/>
+        </Replacements>
+      </Template>
+      <Template Name="ConfigurationVariableList"
+                HeaderTemplate="ConfigurationVariableListHeader"
+                FileName="MSFForCMMI.Test.Link.TestConfigurationRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="Key" Property="Key"/>
+          <Replacement Bookmark="Value" Property="Value"/>
+        </Replacements>
+      </Template>
+    </Templates>
+  </TestConfiguration>
+</MappingConfiguration>

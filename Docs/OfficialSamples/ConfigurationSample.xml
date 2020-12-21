@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!-- This sample configuration can be used to create documents that contain work items or reports that contain data from the test reporting functionality of WordToTFS -->
+
+<!-- General Settings
+Server: Your server
+Project: Your default project
+FileName: Your target file name. In addition can use %TIMESTAMP% to insert the current timestamp into the target path or filename
+Template: The WordToTFS template that should be used for the creation of the document
+Overwrite: Determine if the target file should be overwritten
+Close: Close word after importing
+WordHidden: true to start word hidden 
+-->
+ <Settings 
+ 
+		Server="your.tfs.server/CollectionName" 
+		Project="TheNameOfYourSampleProject" 
+		Filename="C:/YourTargetPath/YourTargetFile.docx" 
+		Template="MSFForAgile(2013)" 
+		Overwrite="true" 
+		Close="false"
+		WordHidden ="false"		/>
+
+		
+<!-- Test Report Settings -->	
+  <TestConfiguration>
+  	<!-- Test Specification Report Settings 
+		TestPlan: The name of your test plan
+		TestSuite: The name of the test suite
+		CreateDocumentStructure: Determines if the document structure should be created
+		DocumentStructure: Possible Values: "IterationPath", "AreaPath", "TestPlanHierarchy"
+		IncludeTestConfigurations: Set to true if the test configuration should be printed
+		TestConfigurationsPosition: Specifies the position of the test configuration
+		SortTestCasesBy: Determines the sorting of the test cases. Possible Values: "No sorting","Iteration Path", "Area Path", "Work Item Id" 
+	-->
+    <TestSpecificationConfiguration  
+		TestPlan = "YOURTESTPLAN"
+		TestSuite = "YOURESTSUITE"
+		CreateDocumentStructure = "true"
+		DocumentStructure = "TestPlanHierarchy"
+		SkipLevels = "2"
+		IncludeTestConfigurations = "true"
+		TestConfigurationsPosition = "AboveTestPlan"
+		SortTestCasesBy = "No sorting" /> 
+		
+	<!-- Test Result Report Settings 
+		TestPlan: The name of your test plan
+		TestSuite: The name of the test suite
+		CreateDocumentStructure: Determines if the document structure should be created
+		DocumentStructure: Possible Values: "IterationPath", "AreaPath", "TestPlanHierarchy"
+		IncludeTestConfigurations: Set to true if the test configuration should be printed
+		TestConfigurationsPosition: Specifies the position of the test configuration
+		SortTestCasesBy: Determines the sorting of the test cases. Possible Values: "No sorting","Iteration Path", "Area Path", "Work Item Id" 
+		Build: Determines which build should be used for the report
+		TestConfiguration: Determines which configurations should be used for the report
+		IncludeOnlyMostRecentResults: Determines if only the last reports should be included in the report
+		MostRecentForAllConfigurations: Determines if only the last results for the selected configurations should be included in the report
+	-->
+	<TestResultConfiguration
+		Build = "All"
+		TestConfiguration = "All"
+		TestPlan = "YOURTESTPLAN"
+		TestSuite = "YOURTESTSUITE"
+		CreateDocumentStructure = "true"
+		DocumentStructure = "TestPlanHierarchy"
+		SkipLevels = "2"
+		IncludeTestConfigurations = "true"
+		TestConfigurationsPosition = "BeneathTestSuites"
+		SortTestCasesBy = "No sorting" 
+		IncludeOnlyMostRecentResults = "true"
+		MostRecentForAllConfigurations = "true"	/> 
+  </TestConfiguration>
+</Configuration>

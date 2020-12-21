@@ -1,0 +1,201 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:Controls="clr-namespace:AIT.TFS.SyncService.View.Controls.Controls"
+    xmlns:TestReport="clr-namespace:AIT.TFS.SyncService.View.Controls.TestReport"
+    xmlns:TestCenter="clr-namespace:AIT.TFS.SyncService.Contracts.TestCenter;assembly=TFS.SyncService.Contracts" xmlns:Helper="clr-namespace:AIT.TFS.SyncService.View.Controls.Helper"
+    x:Class="AIT.TFS.SyncService.View.Controls.TestReport.TestResultReport"
+    x:Uid="TestResultReport"
+    mc:Ignorable="d" d:DesignWidth="300"
+    Background="{DynamicResource FormBackgroundBrush}" Height="587">
+
+        <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Resources/Dictionaries/Brushes.xaml" />
+                <ResourceDictionary Source="../Resources/Dictionaries/StringResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="VisibilityConverter" />
+            <TestReport:DocumentStructureToTextConverter x:Key="DstToTextConverter"/>
+            <TestReport:TestCaseSortToTextConverter x:Key="TcstToTextConverter"/>
+            <HierarchicalDataTemplate x:Key="TestPlanDataTemplate"
+        		DataType="{x:Type TestCenter:ITfsTestSuite}"
+        		ItemsSource="{Binding TestSuites}">
+                <TextBlock VerticalAlignment="Center" Padding="5,1" Text="{Binding Title}"/>
+            </HierarchicalDataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Team System Pro Team -->
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3">
+                <Image Source="/TFS.SyncService.View.Controls;component/Resources/AITLogo_gross.gif" Stretch="Uniform" HorizontalAlignment="Right"/>
+            </Border>
+            <!-- Select Build -->
+            <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource ResourceKey=TestResultReportSelectBuild}"/>
+            <ComboBox Grid.Row="2" Grid.Column="2"
+			ItemsSource="{Binding ServerBuilds}" SelectedItem="{Binding SelectedServerBuild}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding BuildNumber}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <!-- Select Test Plan -->
+            <TextBlock Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource ResourceKey=TestResultReportSelectTestPlan}"/>
+            <ComboBox Grid.Row="4" Grid.Column="2"
+			ItemsSource="{Binding TestPlans}" SelectedItem="{Binding SelectedTestPlan}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <!-- Select Test Configuration -->
+            <TextBlock Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource ResourceKey=TestResultReportSelectTestConfiguration}"/>
+            <ComboBox Grid.Row="6" Grid.Column="2"
+			ItemsSource="{Binding TestConfigurations}" SelectedItem="{Binding SelectedTestConfiguration}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            <!-- Select test suite -->
+            <TextBlock Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" Text="{DynamicResource ResourceKey=TestResultReportSelectTestSuite}"/>
+            <TreeView Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="3" Height="200"
+			x:Name="_treeView"
+			ItemsSource="{Binding TreeViewTestSuites}"
+			ItemTemplate="{StaticResource ResourceKey=TestPlanDataTemplate}"
+			Helper:TreeViewHelper.SelectedItem="{Binding SelectedTreeViewItem, Mode=TwoWay}" Margin="0,0,0,1">
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="IsExpanded" Value="True"/>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+            </TreeView>
+
+
+
+
+            <Grid Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- Create document structure -->
+                <CheckBox Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" IsChecked="{Binding CreateDocumentStructure}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="{DynamicResource ResourceKey=TestResultReportCreateDocumentStructure}"/>
+                        <Image VerticalAlignment="Center" Height="16" Margin="5,0,0,0"
+						Source="/TFS.SyncService.View.Controls;component/Resources/Images/help2.png">
+                            <Image.ToolTip>
+                                <ToolTip MaxWidth="250">
+                                    <TextBlock TextWrapping="Wrap" Text="{DynamicResource ResourceKey=TestResultReportCreateDocumentStructureToolTip}"/>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                    </StackPanel>
+                </CheckBox>
+                <ComboBox Grid.Row="0" Grid.Column="2" x:Name="_createDocumentStructureComboBox"
+				ItemsSource="{Binding DocumentStructureTypes}" SelectedItem="{Binding SelectedDocumentStructureType}"
+				IsEnabled="{Binding CreateDocumentStructure}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource ResourceKey=DstToTextConverter}}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <!-- Skip levels -->
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{DynamicResource ResourceKey=TestResultReportSkipLevels}"/>
+                <Controls:NumberTextBox Grid.Row="2" Grid.Column="2" Text="{Binding SkipLevels}"
+				IsEnabled="{Binding IsSkipLevelsEnabled}"/>
+                <!-- Include Test Configurations -->
+                <CheckBox Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" IsChecked="{Binding IncludeTestConfigurations}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock VerticalAlignment="Center" Text="{DynamicResource ResourceKey=TestResultReportIncludeTestConfigurations}"/>
+                        <Image VerticalAlignment="Center" Height="16" Margin="5,0,0,0"
+						Source="/TFS.SyncService.View.Controls;component/Resources/Images/help2.png">
+                            <Image.ToolTip>
+                                <ToolTip MaxWidth="250">
+                                    <TextBlock TextWrapping="Wrap" Text="{DynamicResource ResourceKey=TestResultReportIncludeTestConfigurationsToolTip}"/>
+                                </ToolTip>
+                            </Image.ToolTip>
+                        </Image>
+                    </StackPanel>
+                </CheckBox>
+                <ComboBox Grid.Row="4" Grid.Column="2" x:Name="_createConfigurationPosition"
+				ItemsSource="{Binding ConfigurationPositionType}" SelectedItem="{Binding SelectedConfigurationPositionType}"
+				IsEnabled="{Binding IncludeTestConfigurations}">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource ResourceKey=DstToTextConverter}}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+            </Grid>
+            <TextBlock Grid.Row="14" Grid.Column="0" Text="{DynamicResource ResourceKey=TestResultReportSortTestCasesBy}"/>
+            <ComboBox Grid.Row="14" Grid.Column="2"
+			ItemsSource="{Binding TestCaseSorts}" SelectedItem="{Binding SelectedTestCaseSortType}">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={StaticResource ResourceKey=TcstToTextConverter}}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <CheckBox Grid.Row="16" Grid.Column="0" VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Content="{DynamicResource ResourceKey=TestResultReportIncludeOnlyMostRecentResults}" IsChecked="{Binding IncludeOnlyMostRecentTestResult}"/>
+
+            <CheckBox Grid.Row="18" Grid.Column="0" VerticalContentAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Content="{DynamicResource ResourceKey=TestResultReportIncludeOnlyMostRecentResultsForAllConfigurations}" IsChecked="{Binding IncludeOnlyMostRecentTestResultForAllConfigurations}" Margin="30,0,0,4"  IsEnabled="{Binding IsMostRecentAllconfigurationsEnabled}" Height="23" Grid.RowSpan="2"/>
+
+
+            <Button Grid.Row="20" Grid.Column="0" Grid.ColumnSpan="1" HorizontalAlignment="Left" Command="{Binding CreateReportCommand}"
+			Content="{DynamicResource ResourceKey=TestResultReportCreateReport}" Padding="5"/>
+            <!-- Operation active progress bar -->
+            <Border Grid.RowSpan="21" Grid.ColumnSpan="3" Background="White" Opacity="0.75"
+			Visibility="{Binding OperationActive, Converter={StaticResource ResourceKey=VisibilityConverter}}"/>
+        </Grid>
+
+    </ScrollViewer>
+</UserControl>

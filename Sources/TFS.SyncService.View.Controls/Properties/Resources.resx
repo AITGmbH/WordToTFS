@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="DocumentStructureType_AreaPath" xml:space="preserve">
+    <value>Area Path</value>
+  </data>
+  <data name="DocumentStructureType_IterationPath" xml:space="preserve">
+    <value>Iteration Path</value>
+  </data>
+  <data name="DocumentStructureType_TestPlanHierarchy" xml:space="preserve">
+    <value>Test Plan Hierarchy</value>
+  </data>
+  <data name="Info_PublishInit" xml:space="preserve">
+    <value>Publishing initialized</value>
+  </data>
+  <data name="Info_PublishInitDetail" xml:space="preserve">
+    <value>The publishing process was started.</value>
+  </data>
+  <data name="TestCasesSortType_AreaPath" xml:space="preserve">
+    <value>Area Path</value>
+  </data>
+  <data name="TestCasesSortType_IterationPath" xml:space="preserve">
+    <value>Iteration Path</value>
+  </data>
+  <data name="TestCasesSortType_WorkItemId" xml:space="preserve">
+    <value>Work Item Id</value>
+  </data>
+  <data name="TM_AddError" xml:space="preserve">
+    <value>Could not add location '{0}', on '{1}'</value>
+  </data>
+  <data name="TM_ConfirmDeleteHeader" xml:space="preserve">
+    <value>Delete template location '{0}'</value>
+  </data>
+  <data name="TM_ConfirmDeleteText" xml:space="preserve">
+    <value>Do you really want to delete the template location '{0}' ('{1}')?</value>
+  </data>
+  <data name="TM_MsgErrorOnAdd" xml:space="preserve">
+    <value>Error on add</value>
+  </data>
+  <data name="TM_MsgErrorOnRemove" xml:space="preserve">
+    <value>Error on remove</value>
+  </data>
+  <data name="TM_MsgErrorOnUpdate" xml:space="preserve">
+    <value>Error on update</value>
+  </data>
+  <data name="TM_RemoveError" xml:space="preserve">
+    <value>Could not complete remove mapping location '{0}'</value>
+  </data>
+  <data name="TM_UpdateError" xml:space="preserve">
+    <value>Could not save updates to location '{0}', on '{1}'</value>
+  </data>
+  <data name="SyncStateToolTip_Differing" xml:space="preserve">
+    <value>The work item differs from the server version in fields that are not synchronized</value>
+  </data>
+  <data name="SyncStateToolTip_Dirty" xml:space="preserve">
+    <value>The work item has unpublished changes</value>
+  </data>
+  <data name="SyncStateToolTip_DivergedWithConflicts" xml:space="preserve">
+    <value>The work item has been changed in both Word and TFS and the changes cannot be merged automatically</value>
+  </data>
+  <data name="SyncStateToolTip_DivergedWithoutConflict" xml:space="preserve">
+    <value>The work item has been changed in both Word and TFS but the changes can be merged automatically</value>
+  </data>
+  <data name="SyncStateToolTip_Loading" xml:space="preserve">
+    <value>The work item state is unknown</value>
+  </data>
+  <data name="SyncStateToolTip_New" xml:space="preserve">
+    <value>The work item is new and does not exist on the server</value>
+  </data>
+  <data name="SyncStateToolTip_NotImported" xml:space="preserve">
+    <value>The work item does not exist in the document</value>
+  </data>
+  <data name="SyncStateToolTip_Outdated" xml:space="preserve">
+    <value>The work item is outdated and needs to be refreshed</value>
+  </data>
+  <data name="SyncStateToolTip_UpToDate" xml:space="preserve">
+    <value>The work item is up to date and does not need to be synchronized</value>
+  </data>
+  <data name="SyncStateToolTip_Aborted" xml:space="preserve">
+    <value>Query was aborted</value>
+  </data>
+  <data name="DebugLogInfo" xml:space="preserve">
+    <value>You are about to activate the Debug Log for WordToTFS. These LogFiles will contain the description of your Work Items. If these Work Items contain confidential data, make sure to delete the Log Files afterwards.</value>
+  </data>
+  <data name="TestCasesSortType_None" xml:space="preserve">
+    <value>No sorting</value>
+  </data>
+  <data name="ConsoleExtensionInstallationInfo" xml:space="preserve">
+    <value>The current installation folder of WordToTFS will be added to your PATH environment variable. Do you want to continue?</value>
+  </data>
+</root>

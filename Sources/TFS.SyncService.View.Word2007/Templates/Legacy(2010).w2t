@@ -1,0 +1,223 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MappingConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="W2T.xsd" ShowName="Legacy(2010)" RelatedSchema="MSFForCMMI.Schema.xsd" DefaultMapping="false" EnableRefresh="true" UseStackRank="false" IgnoreFormatting="true">
+  <Mappings ExcludeRegularExpression="^((_EXCLUDE_)|(_exclude_))">
+    <Mapping WorkItemType="Task" MappingWorkItemType="Task" RelatedTemplate="Legacy(2010).Task.xml" AssignRegularExpression="Task" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Description</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+    <Mapping WorkItemType="Requirement" MappingWorkItemType="Requirement" RelatedTemplate="Legacy(2010).Requirement.xml" AssignRegularExpression="Requirement" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="AIT.Common.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Specification">Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.SubjectMatterExpert1" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Subject Matter Expert">Expert</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.RequirementType" Direction="SetInNewTfsWorkItem">
+          <DefaultValue ShowName="Requirement Type">Functional</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+    <Mapping WorkItemType="Change Request" MappingWorkItemType="Change Request" RelatedTemplate="Legacy(2010).ChangeRequest.xml" AssignRegularExpression="Change Request" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Description</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+    <Mapping WorkItemType="Risk" MappingWorkItemType="Risk" RelatedTemplate="Legacy(2010).Risk.xml" AssignRegularExpression="Risk" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="4" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.Probability" Direction="SetInNewTfsWorkItem">
+          <DefaultValue ShowName="Probability">50</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+    <Mapping WorkItemType="Test Case" MappingWorkItemType="Test Case" RelatedTemplate="Legacy(2010).TestCase.xml" AssignRegularExpression="Test Case" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.TCM.Steps" FieldValueType="BasedOnFieldType" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1" TestCaseStepDelimiter="->"/>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+    <Mapping WorkItemType="Bug" MappingWorkItemType="Bug" RelatedTemplate="Legacy(2010).Bug.xml" AssignRegularExpression="Bug" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.Symptom" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Symptom">Symptom</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+    <Mapping WorkItemType="Review" MappingWorkItemType="Review" RelatedTemplate="Legacy(2010).Review.xml" AssignRegularExpression="Review" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.Purpose" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Purpose">Purpose</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+    <!--
+    <Mapping WorkItemType="Shared Step" MappingWorkItemType="Shared Step" RelatedTemplate="Legacy(2010).SharedStep.xml" AssignRegularExpression="Shared Step" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>     
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="6" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="6" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="7" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Title">Shared Step Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Shared Step Description</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="4">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="5" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+    -->
+    <Mapping WorkItemType="Issue" MappingWorkItemType="Issue" RelatedTemplate="Legacy(2010).Issue.xml" AssignRegularExpression="Issue" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Description</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+  </Mappings>
+</MappingConfiguration>

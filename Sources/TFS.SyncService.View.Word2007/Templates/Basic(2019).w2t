@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MappingConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="W2T.xsd" 
+                      ShowName="Basic (2019)" 
+                      DefaultMapping="false" 
+                      EnableRefresh="true" 
+                      IgnoreFormatting="true"
+                      UseStackRank="false">
+  <Mappings>
+    <Mapping WorkItemType="Epic" MappingWorkItemType="Epic" RelatedTemplate="Epic(2019).xml" AssignRegularExpression="Epic" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. These values correspond to 'FieldValueType' enum. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. These values correspond to 'Direction' enum. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Title">Epic Title</DefaultValue>
+        </Field>
+        <Field Name="System.Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.AssignedTo" FieldValueType="DropDownList" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1"
+               ShapeOnlyWorkaroundMode="AddSpace">
+          <DefaultValue ShowName="Description">Epic Description</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters />
+    </Mapping>
+
+    <Mapping WorkItemType="Issue" MappingWorkItemType="Issue" RelatedTemplate="Basic.Issue(2019).xml" AssignRegularExpression="Issue" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. These values correspond to 'FieldValueType' enum. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. These values correspond to 'Direction' enum. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Title">Issue Title</DefaultValue>
+        </Field>
+        <Field Name="System.Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="Microsoft.VSTS.Scheduling.Effort" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Effort">Effort</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="DropDownList" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1"
+               ShapeOnlyWorkaroundMode="AddSpace">
+          <DefaultValue ShowName="Description">Issue Description</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters />
+    </Mapping>
+  </Mappings>
+  <Headers>
+    <Header Identifier="HEADER" Level="1" Row="1" Column="1" RelatedTemplate="Header.AreaIteration.xml" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.AreaPath" Direction="OtherToTfs" FieldValueType="PlainText" MappingTableRow="3" MappingTableCol="1" />
+        <Field Name="System.IterationPath" Direction="OtherToTfs" FieldValueType="PlainText" MappingTableRow="5" MappingTableCol="1" />
+      </Fields>
+    </Header>
+  </Headers>
+  
+  <TestConfiguration
+    ExpandSharedSteps="true">
+    <!-- Configuration for Test Specification Report -->
+    <!-- If 'Available="false" - button is not shown in GUI -->
+    <TestSpecificationConfiguration
+      Available="true"
+      TestPlanTemplate="TestPlan"
+      TestSuiteTemplate="TestSuite"
+      TestCaseElementTemplate="SpecificationReportTestCaseRow"/>
+    <!-- Configuration for Test Result Report -->
+    <!-- If 'Available="false" - button is not shown in GUI -->
+    <TestResultConfiguration
+      Available="true"
+      TestPlanTemplate="TestPlan"
+      TestSuiteTemplate="TestSuite"
+      TestCaseElementTemplate="ResultReportTestCaseRow"
+      TestResultElementTemplate="ResultReportTestResultRow"
+      TestConfigurationElementTemplate="ResultReportTestConfigurationRow">
+      <!-- ============================== -->
+      <!-- Build qualities to show in GUI -->
+      <!-- ============================== -->
+      <BuildQualities>
+        <!-- EN: "Initial Test Passed"     / "Lab Test Passed"       / "Ready for Deployment"              / "Ready for Initial Test"
+               "Rejected"                / "Released"              / "UAT Passed"                        / "Under Investigation" -->
+        <!-- DE: "Erster Test erfolgreich" / "Labortest erfolgreich" / "Bereit für Bereitstellung"         / "Bereit für ersten Test"
+               "Abgelehnt"               / "Freigegeben"           / "Benutzerfunktionstest erfolgreich" / "Wird untersucht" -->
+        <!-- Build qualities with '1': <BuildQuality>.*1.*</BuildQuality>-->
+        <!-- Any build quality with at least one character: <BuildQuality>.+</BuildQuality>-->
+        <!-- Any build quality containing word 'Released': <BuildQuality>Released</BuildQuality>-->
+        <BuildQuality>Released</BuildQuality>
+        <BuildQuality>Passed</BuildQuality>
+        <BuildQuality>Ready</BuildQuality>
+      </BuildQualities>
+    </TestResultConfiguration>
+    <!-- Definition of all templates with replacement -->
+    <Templates>
+      <Template Name="TestPlan" FileName="Test.Common.TestPlan.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="Name" Property="Name"/>
+          <Replacement Bookmark="AreaPath" Property="AreaPath"/>
+          <Replacement Bookmark="Iteration" Property="Iteration"/>
+          <Replacement Bookmark="Description" Property="Description" ValueType="HTML"/>
+          <Replacement Bookmark="StartDateDate" Property="StartDate.Date"/>
+          <Replacement Bookmark="EndDateDate" Property="EndDate.Date"/>
+          <Replacement Bookmark="OwnerDisplayName" Property="Owner.DisplayName"/>
+        </Replacements>
+      </Template>
+      <Template Name="TestSuite" FileName="Test.Common.TestSuite.xml">
+        <Replacements>
+          <Replacement Bookmark="Title" Property="Title"/>
+          <Replacement Bookmark="Description" Property="Description" ValueType="HTML"/>
+          <Replacement Bookmark="AllTestCasesCount" Property="AllTestCases.Count"/>
+          <Replacement Bookmark="TestCasesCount" Property="TestCases.Count"/>
+        </Replacements>
+      </Template>
+      <Template Name="SpecificationReportTestCaseRow"
+                FileName="Test.Specification.TestCaseRow.xml">
+        <Replacements>
+          <Replacement Bookmark="Title" Property="WorkItem.Title"/>
+          <Replacement Bookmark="Id" Property="WorkItem.Id">
+            <WorkItemEditorLink Uri="WorkItem.Uri"/>
+          </Replacement>
+          <Replacement Bookmark="Rev" Property="WorkItem.Rev">
+            <WorkItemViewerLink Id="WorkItem.Id" Revision="WorkItem.Rev"/>
+          </Replacement>
+          <!--<Replacement Bookmark="LinkListAffectedBy" Property="Links" LinkedTemplate="LinkSimpleListAffectedBy"/>-->
+          <Replacement Bookmark="Description" Property="Description" ValueType="HTML"/>
+          <Replacement Bookmark="ActionList" Property="Actions" LinkedTemplate="ActionList"/>
+          <Replacement Bookmark="Iterations" Property="TestParametersWithAllValues.Iterations" LinkedTemplate="IterationParamterList"/>
+          <Replacement Bookmark="State" Property="State"/>
+          <Replacement Bookmark="AutomationStatus" Property="WorkItem.Fields[&quot;Microsoft.VSTS.TCM.AutomationStatus&quot;].Value"/>
+          <Replacement Bookmark="Requirements" Property="Links" LinkedTemplate="LinkSimpleList"/>
+          <Replacement Bookmark="Attachments" Property="Attachments" LinkedTemplate="AttachmentSimpleList"/>
+        </Replacements>
+      </Template>
+      <Template Name="ResultReportTestCaseRow"
+                FileName="Test.Result.TestCase.xml">
+        <Replacements>
+          <Replacement Bookmark="Title" Property="WorkItem.Title"/>
+          <Replacement Bookmark="Id" Property="WorkItem.Id">
+            <WorkItemEditorLink Uri="WorkItem.Uri"/>
+          </Replacement>
+          <Replacement Bookmark="Rev" Property="WorkItem.Rev">
+            <WorkItemViewerLink Id="WorkItem.Id" Revision="WorkItem.Rev"/>
+          </Replacement>
+          <Replacement Bookmark="Description" Property="Description" ValueType="HTML"/>
+          <Replacement Bookmark="ActionList" Property="Actions" LinkedTemplate="ActionList"/>
+          <Replacement Bookmark="Iterations" Property="TestParametersWithAllValues.Iterations" LinkedTemplate="IterationParamterList"/>
+          <Replacement Bookmark="State" Property="State"/>
+          <Replacement Bookmark="AutomationStatus" Property="WorkItem.Fields[&quot;Microsoft.VSTS.TCM.AutomationStatus&quot;].Value"/>
+          <Replacement Bookmark="Requirements" Property="Links" LinkedTemplate="LinkSimpleList"/>
+          <Replacement Bookmark="Attachments" Property="Attachments" LinkedTemplate="AttachmentSimpleList"/>
+        </Replacements>
+      </Template>
+      <Template Name="ResultReportTestResultRow"
+                HeaderTemplate="ResultReportTestResultHeader"
+                FileName="Test.Result.TestResultRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="RunId" Property="TestRunId"/>
+          <!--<Replacement Bookmark="ResultId" Property="TestResultId"/>-->
+          <Replacement Bookmark="Outcome" Property="Outcome"/>
+          <Replacement Bookmark="Duration" Property="Duration"/>
+          <Replacement Bookmark="State" Property="State"/>
+          <Replacement Bookmark="ConfigName" Property="TestConfigurationName"/>
+          <!--<Replacement Bookmark="BuildNumber" Property="BuildNumber">
+            <BuildViewerLink BuildNumber="BuildNumber"/>
+          </Replacement>-->
+        </Replacements>
+      </Template>
+      <Template Name="ResultReportTestConfigurationRow"
+                HeaderTemplate="ResultReportTestConfigurationHeader"
+                FileName="Test.Result.TestConfigurationRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="MainName" Property="Name"/>
+          <Replacement Bookmark="Name" Property="Name"/>
+          <Replacement Bookmark="State" Property="State"/>
+          <Replacement Bookmark="Revision" Property="Revision"/>
+          <Replacement Bookmark="ValuesKeys" Property="Values" LinkedTemplate="ConfigurationVariableList"/>
+        </Replacements>
+      </Template>
+
+      <!-- ================ -->
+      <!-- Header templates -->
+      <!-- ================ -->
+      <Template Name="SpecificationReportTestCaseHeader" FileName="Test.Specification.TestCaseHeader.xml"/>
+      <Template Name="ResultReportTestResultHeader" FileName="Test.Result.TestResultHeader.xml"/>
+      <Template Name="ResultReportTestConfigurationHeader" FileName="Test.Result.TestConfigurationHeader.xml"/>
+      <Template Name="ConfigurationVariableListHeader" FileName="Test.Link.TestConfigurationHeader.xml"/>
+      <Template Name="LinkListAffectedBy" FileName="Test.Link.AffectedByHeader.xml"/>
+      <Template Name="LinkListAffects" FileName="Test.Link.AffectsHeader.xml"/>
+
+      <!-- ================ -->
+      <!-- Linked templates -->
+      <!-- ================ -->
+      <!-- Link template for 'RelatedLink' / 'Affected By' -->
+      <Template Name="LinkSimpleListAffectedBy"
+                HeaderTemplate="LinkListAffectedBy"
+                FileName="Test.Link.LinkSimpleList.xml">
+        <Conditions>
+          <!-- Use only link of type 'RelatedLink'-->
+          <Condition Property="BaseType">
+            <Values>
+              <Value>RelatedLink</Value>
+            </Values>
+          </Condition>
+          <!-- Use only link type end of type 'Affected By'-->
+          <Condition Property="LinkTypeEnd.Name">
+            <Values>
+              <Value>Affected By</Value>
+            </Values>
+          </Condition>
+        </Conditions>
+        <Replacements>
+          <Replacement Bookmark="LinkedWorkItem" Property="RelatedWorkItemId">
+            <WorkItemViewerLink Id="RelatedWorkItemId" AutoText="true"/>
+          </Replacement>
+        </Replacements>
+      </Template>
+      <!-- Link template for 'RelatedLink' / 'Affects' -->
+      <Template Name="LinkSimpleListAffects"
+                HeaderTemplate="LinkListAffects"
+                FileName="Test.Link.LinkSimpleList.xml">
+        <Conditions>
+          <!-- Use only link of type 'RelatedLink'-->
+          <Condition Property="BaseType">
+            <Values>
+              <Value>RelatedLink</Value>
+            </Values>
+          </Condition>
+          <!-- Use only link type end of type 'Affectded By'-->
+          <Condition Property="LinkTypeEnd.Name">
+            <Values>
+              <Value>Affects</Value>
+            </Values>
+          </Condition>
+        </Conditions>
+        <Replacements>
+          <Replacement Bookmark="LinkedWorkItem" Property="RelatedWorkItemId">
+            <WorkItemViewerLink Id="RelatedWorkItemId" AutoText="true"/>
+          </Replacement>
+        </Replacements>
+      </Template>
+      <Template Name="ActionList" FileName="Test.Link.ActionList.xml">
+        <PostOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PostOperations>
+        <Replacements>
+          <Replacement Bookmark="StepNb" Property="StepNumber"/>
+          <Replacement Bookmark="Title" Property="Title" ValueType="HTML"/>
+          <Replacement Bookmark="ExpectedResult" Property="ExpectedResult" ValueType="HTML"/>
+          <Replacement Bookmark="Attachments" Property="Attachments" LinkedTemplate="AttachmentSimpleList"/>
+        </Replacements>
+      </Template>
+      <Template Name="AttachmentSimpleList" FileName="Test.Link.AttachmentSimpleList.xml">
+        <Replacements>
+          <Replacement Bookmark="Name" Property="Name"/>
+          <Replacement Bookmark="Comment" Property="Comment"/>
+        </Replacements>
+      </Template>
+      <!-- List of Iterations with Parameter Values -->
+      <Template Name="IterationParamterList" FileName="Test.Link.IterationParameterList.xml">
+        <PostOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PostOperations>
+        <Replacements>
+          <Replacement Bookmark="IterationId" Property="IterationNumber"/>
+          <Replacement Bookmark="Parameters" Property="Parameters" LinkedTemplate="SimpleIterationParametersList"/>
+        </Replacements>
+      </Template>
+      <!-- List of Parameter Values -->
+      <Template Name="SimpleIterationParametersList" FileName="UnorderedList.xml">
+        <Replacements>
+          <Replacement Bookmark="ListItem" Property="ParameterValue"/>
+        </Replacements>
+      </Template>
+      <!-- Simple Bullet List of Links -->
+      <Template Name="LinkSimpleList" HeaderTemplate="" FileName="UnorderedList.xml">
+        <Conditions>
+          <!-- Use only link of type 'RelatedLink'-->
+          <Condition Property="BaseType">
+            <Values>
+              <Value>RelatedLink</Value>
+            </Values>
+          </Condition>
+          <!-- Use only link type end of type 'Tests'-->
+          <Condition Property="LinkTypeEnd.Name">
+            <Values>
+              <Value>Tests</Value>
+            </Values>
+          </Condition>
+        </Conditions>
+        <Replacements>
+          <Replacement Bookmark="ListItem" Property="RelatedWorkItemId">
+            <WorkItemViewerLink Id="RelatedWorkItemId" AutoText="true"/>
+          </Replacement>
+        </Replacements>
+      </Template>
+      <Template Name="ConfigurationVariableList"
+                HeaderTemplate="ConfigurationVariableListHeader"
+                FileName="Test.Link.TestConfigurationRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="Key" Property="Key"/>
+          <Replacement Bookmark="Value" Property="Value"/>
+        </Replacements>
+      </Template>
+    </Templates>
+  </TestConfiguration>
+</MappingConfiguration>

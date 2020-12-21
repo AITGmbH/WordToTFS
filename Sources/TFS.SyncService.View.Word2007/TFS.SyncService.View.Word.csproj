@@ -1,0 +1,798 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--
+    This section defines project-level properties.
+
+    AssemblyName
+      Name of the output assembly.
+    Configuration
+      Specifies a default value for debug.
+    OutputType
+      Must be "Library" for VSTO.
+    Platform
+      Specifies what CPU the output of this project can run on.
+    NoStandardLibraries
+      Set to "false" for VSTO.
+    RootNamespace
+      In C#, this specifies the namespace given to new files. In VB, all objects are
+      wrapped in this namespace at runtime.
+  -->
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <ProjectTypeGuids>{BAA0C2D2-18E2-41B9-852F-F413020CAA33};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ScriptLocation Condition=" '$(ScriptLocation)' == '' ">$(MSBuildProjectDirectory)\..\..\Scripts</ScriptLocation>
+    <ProjectGuid>{28E3E2F3-F99D-47F2-992B-C9D87220C2EF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <NoStandardLibraries>false</NoStandardLibraries>
+    <RootNamespace>TFS.SyncService.View.Word2007</RootNamespace>
+    <AssemblyName>AIT.WordToTFS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignManifests>true</SignManifests>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\Replace\Dummy.snk</AssemblyOriginatorKeyFile>
+    <IsWebBootstrapper>True</IsWebBootstrapper>
+    <ManifestTimestampUrl>
+    </ManifestTimestampUrl>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <VSTO_TrustAssembliesLocation>true</VSTO_TrustAssembliesLocation>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <PublishUrl>publish\</PublishUrl>
+    <TargetCulture>en</TargetCulture>
+    <ApplicationVersion>6.1.0.0</ApplicationVersion>
+    <AutoIncrementApplicationRevision>false</AutoIncrementApplicationRevision>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateInterval>1</UpdateInterval>
+    <UpdateIntervalUnits>weeks</UpdateIntervalUnits>
+    <ProductName>AIT WordToTFS</ProductName>
+    <PublisherName>AIT GmbH &amp; Co. KG</PublisherName>
+    <SupportUrl>http://www.aitgmbh.de/wordtotfs-support</SupportUrl>
+    <FriendlyName>AIT WordToTFS</FriendlyName>
+    <OfficeApplicationDescription>AIT WordToTFS is a Microsoft Word plug-in that enables business analysts to seamlessly integrate Microsoft Word with Visual Studio Team Foundation Server.</OfficeApplicationDescription>
+    <LoadBehavior>3</LoadBehavior>
+  </PropertyGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Office.PIARedist.2010">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Office 2010 Primary Interop Assemblies</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.VSTORuntime.4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft Visual Studio 2010 Tools for Office Runtime %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <PropertyGroup>
+    <!--
+      OfficeApplication
+        Add-in host application
+    -->
+    <OfficeApplication>Word</OfficeApplication>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Debug" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\AIT.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <!--
+    This section defines properties that are set when the "Release" configuration is selected.
+
+    DebugSymbols
+      If "true", create symbols (.pdb). If "false", do not create symbols.
+    DefineConstants
+      Constants defined for the preprocessor.
+    EnableUnmanagedDebugging
+      If "true", starting the debugger will attach both managed and unmanaged debuggers.
+    Optimize
+      If "true", optimize the build output. If "false", do not optimize.
+    OutputPath
+      Output path of project relative to the project file.
+    WarningLevel
+      Warning level for the compiler.
+  -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release</OutputPath>
+    <DocumentationFile>bin\Debug\TFS.SyncService.View.Word2007.xml</DocumentationFile>
+    <CodeAnalysisRules>
+    </CodeAnalysisRules>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\AIT.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>87C0C965D6C3BD2D6E28C9E5637F5DABCE56FAAC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <!--
+    This section enables pre- and post-build steps. However, in VSTO use
+    MSBuild tasks instead of these properties.       
+  -->
+  <!--
+    This section specifies references for the project.
+  -->
+  <ItemGroup>
+    <Reference Include="Ben.Demystifier, Version=0.1.0.0, Culture=neutral, PublicKeyToken=a6d206e05440431a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ben.Demystifier.0.1.6\lib\net45\Ben.Demystifier.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.Services.AppAuthentication, Version=1.4.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Azure.Services.AppAuthentication.1.4.0\lib\net452\Microsoft.Azure.Services.AppAuthentication.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Clients.ActiveDirectory, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Clients.ActiveDirectory.5.2.7\lib\net45\Microsoft.IdentityModel.Clients.ActiveDirectory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.5.0\lib\net45\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.5.0\lib\net45\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.5.0\lib\net45\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\MS Office\Office16\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Common.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Tools.Word, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Tools.Word.v4.0.Utilities, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Rest.ClientRuntime, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Rest.ClientRuntime.2.3.21\lib\net452\Microsoft.Rest.ClientRuntime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Build.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Build.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Build.Common, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Build.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Build2.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.Build2.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Common, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Core.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.Core.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Dashboards.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.Dashboards.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.DeleteTeamProject, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.DeleteTeamProject.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Diff, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Diff.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Discussion.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Discussion.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.DistributedTask.Common.Contracts, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundation.DistributedTask.Common.Contracts.16.153.0\lib\net45\Microsoft.TeamFoundation.DistributedTask.Common.Contracts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Git.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Git.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Lab.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Lab.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Lab.Common, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Lab.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Lab.TestIntegration.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Lab.TestIntegration.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Lab.WorkflowIntegration.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.Lab.WorkflowIntegration.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Policy.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.Policy.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.ProjectManagement, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.ProjectManagement.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.SharePointReporting.Integration, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.SharePointReporting.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.SourceControl.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.SourceControl.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Test.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.Test.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestImpact.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.TestImpact.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.TestManagement.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.Common, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.TestManagement.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.TestManagement.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.TestManagement.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.VersionControl.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Common, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.VersionControl.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.VersionControl.Common.Integration, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.VersionControl.Common.Integration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Wiki.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.Wiki.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.Work.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.Work.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.WorkItemTracking.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.WorkItemTracking.Client.DataStoreLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.WorkItemTracking.Client.QueryLanguage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Common, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.WorkItemTracking.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Process.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.WorkItemTracking.Process.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.Proxy, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\net45\Microsoft.TeamFoundation.WorkItemTracking.Proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.TeamFoundation.WorkItemTracking.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.TeamFoundation.WorkItemTracking.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.Client.Interactive, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.InteractiveClient.16.153.0\lib\net45\Microsoft.VisualStudio.Services.Client.Interactive.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.Common, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Client.16.153.0\lib\net45\Microsoft.VisualStudio.Services.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.TestManagement.TestPlanning.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.VisualStudio.Services.TestManagement.TestPlanning.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.TestResults.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.TeamFoundationServer.Client.16.153.0\lib\net45\Microsoft.VisualStudio.Services.TestResults.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Services.WebApi, Version=16.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.VisualStudio.Services.Client.16.153.0\lib\net45\Microsoft.VisualStudio.Services.WebApi.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.Tools.Applications.Runtime, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.3\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="office, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.5.0\lib\net45\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Reflection.Metadata, Version=1.4.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.1.8.0\lib\portable-net45+win8\System.Reflection.Metadata.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <!--
+    This section defines the user source files that are part of the project.
+     
+    A "Compile" element specifies a source file to compile.
+    An "EmbeddedResource" element specifies an .resx file for embedded resources.
+    A "None" element specifies a file that is not to be passed to the compiler (for instance, 
+    a text file or XML file).
+    The "AppDesigner" element specifies the directory where the application properties files
+    can be found.
+  -->
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Controls\HostPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\HostPane.Designer.cs">
+      <DependentUpon>HostPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmbeddedResources.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="WordRibbon.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WordRibbon.Designer.cs">
+      <DependentUpon>WordRibbon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Controls\HostPane.resx">
+      <DependentUpon>HostPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WordRibbon.resx">
+      <DependentUpon>WordRibbon.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <AdditionalFiles Include="..\TFS.SyncServicice.Modeling\ArchitectureOverview.layerdiagram">
+      <Link>ArchitectureOverview.layerdiagram</Link>
+      <Visible>False</Visible>
+    </AdditionalFiles>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ThisAddIn.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="Templates\Basic%282019%29.w2t" />
+    <EmbeddedResource Include="Templates\CMMI%282019%29.w2t" />
+    <None Include="Templates\MSFForCMMI%282012%29_Hierarchie.w2t" />
+    <None Include="Templates\MSFForCMMI%282013%294.3.w2t" />
+    <None Include="Templates\Legacy%282008%29.w2t" />
+    <None Include="TFS.SyncService.View.Word_TemporaryKey.pfx" />
+    <None Include="ThisAddIn.Designer.xml">
+      <DependentUpon>ThisAddIn.cs</DependentUpon>
+    </None>
+    <Compile Include="ThisAddIn.Designer.cs">
+      <DependentUpon>ThisAddIn.Designer.xml</DependentUpon>
+    </Compile>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StyleDelete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InsertTemplate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Preserve.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Publish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReqEmpty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReqVals.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StyleCustomize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ReqDefVals.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(SolutionDir)\TFS.SyncService.W2TConsole\bin\Release\WordToTFS.exe.config" Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="$(SolutionDir)\TFS.SyncService.W2TConsole\bin\Debug\WordToTFS.exe.config" Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Templates\CMMI.ChangeRequest%282019%29.xml" />
+    <Content Include="Templates\Header.AreaIteration.xml" />
+    <Content Include="Templates\MSFForCMMI%282008%29.Requirement.xml" />
+    <Content Include="Templates\MSFForCMMI%282010%29.Feature.xml" />
+    <Content Include="Templates\MSFForCMMISummary.xml" />
+    <Content Include="Templates\ParametersList.xml" />
+    <Content Include="Templates\Legacy%282008%29.Template.xml" />
+    <EmbeddedResource Include="Templates\Epic%282019%29.xml" />
+    <EmbeddedResource Include="Templates\Basic.Issue%282019%29.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\BindUnbind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CodeAnalysisDictionary.xml">
+      <Link>CodeAnalysisDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\PublishGroup.png" />
+    <EmbeddedResource Include="Resources\Template.png" />
+    <EmbeddedResource Include="Resources\TestManagement.png" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29DE.w2t" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.w2t" />
+    <EmbeddedResource Include="Templates\MSFForAgile%282010%29.w2t" />
+    <EmbeddedResource Include="Templates\MSFForAgile%282010%29DE.w2t" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum%282012%29.w2t" />
+    <EmbeddedResource Include="Templates\MSFForAgile%282012%29.w2t" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282012%29.w2t" />
+    <EmbeddedResource Include="Templates\MSFForAgile%282013%29.w2t" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282013%29.w2t" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum%282013%29.w2t" />
+    <EmbeddedResource Include="Templates\MSFForCMMIHierarchyExample%282013%29.w2t" />
+    <EmbeddedResource Include="Templates\Agile%282015%29.w2t" />
+    <EmbeddedResource Include="Templates\CMMI%282015%29.w2t" />
+    <EmbeddedResource Include="Templates\Scrum%282015%29.w2t" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Requirement.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.w2t" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.w2t" />
+    <EmbeddedResource Include="Resources\standard.png" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Risk.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Task.xml" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.Requirement.xml" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.Task.xml" />
+    <EmbeddedResource Include="Templates\Agile.UserStory%282015%29.xml" />
+    <EmbeddedResource Include="Templates\Bug%282015%29.xml" />
+    <EmbeddedResource Include="Templates\CMMI.Requirement%282015%29.xml" />
+    <EmbeddedResource Include="Templates\Epic%282015%29.xml" />
+    <EmbeddedResource Include="Templates\Feature%282015%29.xml" />
+    <EmbeddedResource Include="Templates\Scrum.PBI%282015%29.xml" />
+    <EmbeddedResource Include="Templates\Test.Common.TestPlan.xml" />
+    <EmbeddedResource Include="Templates\Test.Common.TestSuite.xml" />
+    <EmbeddedResource Include="Templates\Test.Link.ActionList.xml" />
+    <EmbeddedResource Include="Templates\Test.Link.AffectedByHeader.xml" />
+    <EmbeddedResource Include="Templates\Test.Link.AffectsHeader.xml" />
+    <EmbeddedResource Include="Templates\Test.Link.AttachmentSimpleList.xml" />
+    <EmbeddedResource Include="Templates\Test.Link.IterationParameterList.xml" />
+    <EmbeddedResource Include="Templates\Test.Link.LinkSimpleList.xml" />
+    <EmbeddedResource Include="Templates\Test.Link.TestConfigurationHeader.xml" />
+    <EmbeddedResource Include="Templates\Test.Link.TestConfigurationRow.xml" />
+    <EmbeddedResource Include="Templates\Test.Result.TestCase.xml" />
+    <EmbeddedResource Include="Templates\Test.Result.TestConfigurationHeader.xml" />
+    <EmbeddedResource Include="Templates\Test.Result.TestConfigurationRow.xml" />
+    <EmbeddedResource Include="Templates\Test.Result.TestResultHeader.xml" />
+    <EmbeddedResource Include="Templates\Test.Result.TestResultRow.xml" />
+    <EmbeddedResource Include="Templates\Test.Specification.TestCaseHeader.xml" />
+    <EmbeddedResource Include="Templates\Test.Specification.TestCaseRow.xml" />
+    <EmbeddedResource Include="Templates\UnorderedList.xml" />
+    <EmbeddedResource Include="Resources\Settings.png" />
+    <EmbeddedResource Include="Templates\TFSFeature%282013%29.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Specification.TestCaseHeader.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Result.TestResultRow.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Result.TestResultHeader.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Result.TestConfigurationRow.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Result.TestConfigurationHeader.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Result.TestCase.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Link.TestConfigurationRow.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Link.TestConfigurationHeader.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Link.LinkSimpleList.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Link.AttachmentSimpleList.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Link.AffectsHeader.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Link.AffectedByHeader.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Link.ActionSimpleList.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Common.TestSuite.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Common.TestPlan.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI.Test.Specification.TestCaseRow.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Link.AffectedByHeader.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Link.AffectsHeader.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Link.LinkSimpleList.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Link.TestConfigurationHeader.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Link.TestConfigurationRow.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Link.AttachmentSimpleList.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Link.ActionSimpleList.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Common.TestPlan.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Common.TestSuite.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Result.TestCase.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Result.TestConfigurationHeader.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Result.TestConfigurationRow.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Result.TestResultHeader.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Result.TestResultRow.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Specification.TestCaseHeader.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Test.Specification.TestCaseRow.xml" />
+    <EmbeddedResource Include="Resources\TestSpecificationReport.png" />
+    <EmbeddedResource Include="Resources\TestResultReport.png" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Bug.xml" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.Header.xml" />
+    <EmbeddedResource Include="Resources\favicon.ico" />
+    <EmbeddedResource Include="Resources\aitIcon.png" />
+    <EmbeddedResource Include="Resources\GetWorkItems.png" />
+    <EmbeddedResource Include="Resources\branch.png" />
+    <Resource Include="Resources\IdDelete.png" />
+    <EmbeddedResource Include="Resources\view.ico" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.ChangeRequest.xml" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.Bug.xml" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.Issue.xml" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.Review.xml" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.Risk.xml" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.SharedStep.xml" />
+    <EmbeddedResource Include="Templates\Legacy%282010%29.TestCase.xml" />
+    <None Include="Resources\key1.png" />
+    <EmbeddedResource Include="Templates\MicrosoftVisualStudioScrum.ProductBacklogItem.xml" />
+    <None Include="Resources\table_refresh.png" />
+    <EmbeddedResource Include="Templates\MSFForAgile%282010%29.Issue.xml" />
+    <EmbeddedResource Include="Templates\MSFForAgile%282010%29.Task.xml" />
+    <EmbeddedResource Include="Templates\MSFForAgile%282010%29.UserStory.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Feature_Level0.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Feature_Level1.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Feature_Level2.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Feature_Level3.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Feature_Level4.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Feature_Level5.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Requirement_Level0.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Requirement_Level1.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Requirement_Level2.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Requirement_Level3.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Requirement_Level4.xml" />
+    <EmbeddedResource Include="Templates\MSFForCMMI%282010%29.Requirement_Level5.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TFS.SyncService.Adapter.TFS2010\TFS.SyncService.Adapter.TFS2012.csproj">
+      <Project>{40ACCA31-F82B-42D7-8E7A-B34C0ACA5A9B}</Project>
+      <Name>TFS.SyncService.Adapter.TFS2012</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Adapter.Word2007\TFS.SyncService.Adapter.Word2007.csproj">
+      <Project>{9592E3A7-963D-4607-9DB1-568BF4B250CE}</Project>
+      <Name>TFS.SyncService.Adapter.Word2007</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Common\TFS.SyncService.Common.csproj">
+      <Project>{C134B4F2-71C6-4F6B-8CBD-E833F959698D}</Project>
+      <Name>TFS.SyncService.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.W2TConsole\TFS.SyncService.W2TConsole.csproj">
+      <Project>{4d4d120c-00c1-492d-a776-fe49fd9903eb}</Project>
+      <Name>TFS.SyncService.W2TConsole</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Contracts\TFS.SyncService.Contracts.csproj">
+      <Project>{12CDD38A-1C4B-46C9-A7C6-A21219A68CC0}</Project>
+      <Name>TFS.SyncService.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Factory\TFS.SyncService.Factory.csproj">
+      <Project>{31458D3D-6D11-4D02-B91C-67E2285B48FE}</Project>
+      <Name>TFS.SyncService.Factory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Model\TFS.SyncService.Model.csproj">
+      <Project>{F48666A9-DD77-426C-87CD-9950D0825C78}</Project>
+      <Name>TFS.SyncService.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.Service\TFS.SyncService.Service.csproj">
+      <Project>{D3047BAA-5C31-49A0-8F0F-02E611755B49}</Project>
+      <Name>TFS.SyncService.Service</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TFS.SyncService.View.Controls\TFS.SyncService.View.Controls.csproj">
+      <Project>{97E2FB72-1F14-498E-A534-BF3512306DE3}</Project>
+      <Name>TFS.SyncService.View.Controls</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\native\amd64\Microsoft.WITDataStore64.dll">
+      <Link>Microsoft.WITDataStore64.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\native\x86\Microsoft.WITDataStore32.dll">
+      <Link>Microsoft.WITDataStore32.dll</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
+    <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
+  </ItemGroup>
+  <!-- Include the build rules for a C# project. -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RunConsole|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\RunConsole\</OutputPath>
+    <DefineConstants>CODE_ANALYSIS;DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\AIT.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RunConsoleWithConfigFile|AnyCPU'">
+    <OutputPath>bin\RunConsoleWithConfigFile\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>TFS.SyncService.View.Word_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- Include additional build rules for an Office application add-in. -->
+  <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
+  <!-- This section defines VSTO properties that describe the host-changeable project properties. -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{BAA0C2D2-18E2-41B9-852F-F413020CAA33}">
+        <ProjectProperties HostName="Word" HostPackage="{29A7B9D7-A7F1-4328-8EF0-6B2D1A56B2C1}" OfficeVersion="15.0" VstxVersion="4.0" ApplicationType="Word" Language="cs" TemplatesPath="VSTOTemplates" DebugInfoExeName="#Software\Microsoft\Office\16.0\Word\InstallRoot\Path#WINWORD.EXE" DebugInfoCommandLine="/w" AddItemTemplatesGuid="{51063C3A-E220-4D12-8922-BDA915ACD783}" />
+        <Host Name="Word" GeneratedCodeNamespace="TFS.SyncService.View.Word2007" PublishedHash="69C324AB27932AA2FBF2B7EA72250886FF164DE6" IconIndex="0">
+          <HostItem Name="ThisAddIn" Code="ThisAddIn.cs" CanonicalName="AddIn" PublishedHash="B6DD36A53C4B8C521B977A5C4B6C8CE272C1CA0F" CanActivate="false" IconIndex="1" Blueprint="ThisAddIn.Designer.xml" GeneratedCode="ThisAddIn.Designer.cs" />
+        </Host>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="DeployResolveReferencesBatch" Condition="'$(OutDir)' != 'bin\'">
+    <CreateItem Include="$(OutDir)*.*">
+      <Output ItemName="FilesToCopy" TaskParameter="Include" />
+    </CreateItem>
+    <Message Text="#### OutDir" />
+    <Message Text="$(OutDir)" />
+    <Message Text="#### Flavour" />
+    <Message Text="$(Flavour)" />
+    <Copy SourceFiles="@(FilesToCopy)" DestinationFiles="@(FilesToCopy->'$(MSBuildProjectDirectory)\Bin\$(Flavour)\%(Filename)%(Extension)')" ContinueOnError="true" />
+    <ResolveAssemblyReference Assemblies="$(AssemblyName)" SearchPaths="$(OutDir);{TargetFrameworkDirectory};{GAC}" TargetFrameworkDirectories="$(TargetFrameworkDirectory)" FindDependencies="true" FindSatellites="true" FindSerializationAssemblies="true" FindRelatedFiles="true">
+      <Output TaskParameter="CopyLocalFiles" ItemName="RefToCopy" />
+    </ResolveAssemblyReference>
+    <Message Text="#### RefToCopy" />
+    <Copy SourceFiles="@(RefToCopy)" DestinationFiles="@(RefToCopy->'$(MSBuildProjectDirectory)\Bin\$(Flavour)\%(Filename)%(Extension)')" ContinueOnError="true" />
+  </Target>
+  <Target Name="AfterBuild" DependsOnTargets="DeployResolveReferencesBatch">
+  </Target>
+  <Import Project="$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.Targets" Condition="Exists('$(ProgramFiles)\MSBuild\StyleCop\v4.7\StyleCop.Targets')" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\build\Microsoft.TeamFoundationServer.ExtendedClient.targets" Condition="Exists('..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\build\Microsoft.TeamFoundationServer.ExtendedClient.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\build\Microsoft.TeamFoundationServer.ExtendedClient.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\build\Microsoft.TeamFoundationServer.ExtendedClient.targets'))" />
+  </Target>
+</Project>

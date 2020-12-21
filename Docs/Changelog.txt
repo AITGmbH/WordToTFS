@@ -1,0 +1,392 @@
+**** Version 7.0
+Bugfixes
+	21507: DateTimeFormat fails on Publish Work Items
+Internal Technical Improvements
+	21314: Upgrade Test-DB to TFS 2019
+	21498: Migration to GIT and build migration
+Other
+	21481: Updated to latest TFS/AzDO API
+
+**** Version 6.2
+Bugfixes
+	21295: Unsupported work item types information contains "\n"
+	21296: Error message when opening Test Result Report-pane (VSTS-only)
+
+**** Version 5.4 / 6.1
+UI improvements
+	21247: Wrong position of list of queries on TestSpecReportByQuery panel
+	21260: Wrong position of list of queries
+	21246: Fields title and id on TestSpecReportByQuery panel do not accept Return Key to start search
+	21248: Work Item Query Dialog Size - TestSpecReportByQuery panel
+	21044: Work Item Query Dialog Size
+	21120: Get Work Items by Title does not accept Return Key to start search
+	20100: Provide information to the user when importing WI-types not supported by the selected template
+	20536: Show WorkItemType in all GetWorkItems Find Dialogue
+
+HTML processing
+	20904: Image-only support for HTML-fields
+
+Test Reportings
+	21067: Attachments should support GUID-less generation
+
+Build vNext Support for Test Reports
+	21039: Test Result Report - Build Filter on Build vNext
+
+Minor improvements
+	20932: Office 2016 support
+
+Documentation
+	21097: User Guide - long term of TFS is used incorrect many times (only fixed in v6.1)
+	21098: User Guide - Quick Start shows wrong buttons in Ribbon
+	21099: Hyperlink to License Agreement points to http-location
+	21286: New EULA
+	21004: License information more precise
+
+Setup
+	21065: WordToTFS 6.0 wrong download location with OnlineSetup.exe
+	21000: OnlineSetup.exe tries to load VSTO from http-location
+
+Internal Technical Improvements
+	21117: Upgrade Test-DB to TFS 2017
+	20989: Update of Prerequisites
+
+Bugfixes
+	20941: Work Item Comparison fails if field ends with space
+	20293: Spell checker is disabled but not enabled anymore
+	20947: Decription field contains additional url after publishing
+	20804: Test result report by iteration path crashes
+	20039: Compare does not work correctly with Area Path
+	21056: TestResultReport command doesn't work in cmd for WordToTFS
+	21265: GetWorkItems fails if <hr />-tag is part of an HTML-field [Marketplace Q&A]
+	21272: Failure of publishing work item caused by the <hr> tag
+	20331: Bug Finding WorkItems by Title
+	21119: Seach Work Item by Title does not work if Team Project has more than 2000 work items
+	21109: Enable logging is not persisted
+	21256: GetWorkItem functionality cuts last row of description content
+	21259: Get Work Items cut off last line of description
+	21084: TestSpecReportByQuery cuts off some text
+	21102: Test Report Warning while reading build number
+	21054: Table in Html-Field is not resized properly
+	21285: Word shows Slovak missing proofing language
+	21294: Test Report connects Test Suite and Test Case table unintended
+
+**** Version 5.3 / 6.0
+Find work item reacts on enter
+	Using the find work item by id did not support reaction on pressing the enter key. Now it does.
+
+Documentation
+	Added information about the build filter combobox on the test reporting pane.
+	Extended section of link mapping and addes examples for better understanding.
+
+Bugfixes
+	In certain scenarios text was lost when generating Test Specification Reports.
+	Selection of a another test plan leads to UI Exception if a sub suite was selected in the previous plan. 	
+	The hyperlink to the licence agreement was broken and has been updated.
+
+**** Version 5.2
+	RefreshAllFieldsInDocument
+		The post operation "RefreshAllFieldsInDocument" now includes the functionality to update all 				Tables of Figures and Tables of Content. 
+
+	Console Extension User Notifications
+		A lot of user noticications and error messages in command line mode did not provide as much information as needed to enable the user to find the root cause. This is due to the fact that in interactive mode the user can click a message and WordToTFS navigates to the affected work item, which is not possible in command line mode.
+		In addition in some cases, the WordToTFS did provide different messages in command line mode than in interactive mode.
+		To improve usability of user notifications and error messages in command line mode, these messages are now written in three different coloes (red, yellow, green).
+
+	Variables functionality for test reporting
+		The usage of variables in WordToTFS templates has been extended to all test reporting features.
+
+	System Variables functionality introduced
+		In addition to the variables that can be defined in WordToTFS templates and can be assigned with values in that templates a new mechanism has been introduced to provide compile time information in a similar way. The first system variable that is the only one, yet, provides the WordToTFS version number. This enables the user to store the version information of WordToTFS used for document generation in the document, which is a requirement especially in regulated environments.
+
+	Enahnced field updates in post operations
+		Whenever table of contents or table of figures has been updated by a post operation, only the page numbers were refreshed. Now the complete tables are updated which also adds new items if necessary.
+
+	Saved Query Selector
+		The display behavior of the selector for work item queries is now configurable. By default, the tree view showing work item queries is expanded. If you have a lot of queries you might not find it easy to navigate through the complete tree structure. Therefore, it is possible to add the attribute CollapsQueryTree=”true” to show a collapsed tree view initially. This configuration affects both occurrences: “Get Work Items” and “Test Specification Report By Query”.
+
+	No post operations in case of an error
+		In case of an error during document generation the post operations are not executed anymore. This makes it easier to identify a document as incomplete especialla after a unattended creation e.g. in command line mode.
+
+	Builds in alphabetical order
+		When creating a test result report the user now sees the available builds in alphabetical order which makes manual search easier.
+
+	Requirements Based Suites
+		Test Reports now fully support Requirements Based Test Suites.
+
+	Bugfixes
+		WordToTFS templates got minor updates, e.g. to correct misspellings.
+		Work Item Link Viewer Fixed.
+		In some cases a test result report threw a null reference exception when a linked build was selected.
+		Fixed bug that finding latest test result threw an exception for the root test suite.
+		OLE Handling for Office files (e.g. excel, visio) didnt work image scaling issues.
+
+
+**** Version 5.1
+	Other Features
+		New TFS 2015 standard templates exits which supports also feature and epic. These templates have a harmonized layout that uses the color scheme of TFS work items, e.g. purple for Features.
+	
+	Get Work Items
+		Link formatting function can now be used with field that use HTML content and replaces it by a standardized string.
+
+	Test Spec by Query supports Shared Steps
+	
+	WorkItemViewerLink supports now formatting of links.
+
+	Test Spec and Test Result Report
+		The list of test plans in Test Plan and Test Result Reports is now ordered by name, which makes the list much more usable.
+
+	Console Extension
+		Multiple naming within test plans. Test Suites can now be selected via a path to identify a certain test suite.
+		Auto update for WordToTFS templates is now also being used by Console Extension.
+
+	Bugfixes
+		Fixed bug that shrinks images when getting and publishing work items.
+		Fixed bug that throws a COMException when the addon activated and started from command line in some cases.
+		Fixed bug that the command line uses the wrong server connection on loading of an existing document.
+		Fixed bug that the command line ignores the specified dotx-template.
+		Fixed bug with formatting lines in description field. Depending on the formatting of the content an exception was thrown on publish.
+		Fixed bug with reading the latest test results. In some cases when several test runs started parallel and ended in another order than they have been started, WordToTFS interpreted another test result as "latest" than MTM does.
+		Fixed bug that throws an OutOfRangeException when getting work items. Error when importing all work items.
+		Fixed bug in Test Result Report that created an exception while reading Shared Steps results of automated tests.
+		Fixed bug that Test Reports raised FileNotFound Exception when template location contains subdirectories.
+		Fixed minor error descriptions.
+		Fixed minor bugs in documentation.
+
+**** Version 4.6 / 5.0
+	Cross-Team-Project Support
+		Linked Work Items (Links-Tag) are now supported even if they are located in another Team Project (in the same Team Project Collection)
+
+	Test Report
+		Now it can be configured whether Shared Steps shall be expanded or not.
+		Shared Steps can be formated bold to raise the visibility of a shared step in a test step list.
+		Active but not executed Test are reported.
+		Support for requirements-based and query-based Test Suites.
+		The default values for the test reporting can now be configured in the w2t-template.
+		The formatting for mapped fields containing a date time can now be configured via template. 
+
+	Test Spec by Query supports Shared Steps
+		The query result in case of a Test Spec by Query now can also contain Shared Steps work items directly. As long as Shared Steps are configured in the w2t-file, they are written into the document similar to test cases.
+		Title page can be generated with access to attributes from Document Root Cluster.
+
+	Test Plan
+		Title page can be generated with access to attributes from Document Root Cluster.
+
+	Extended Links-Filter
+		Besider filtering by link type, links now can be filtered by work item type as well.
+
+	Bugfixes
+		Fixed test run attachment bug.
+		Fixed bug that variables were not loaded for the selected template.
+		Fixed bug that specification reporting showed too many configurations.
+		Fixed bug that new lines are exported in description fields for test reporting.
+		Fixed bug that new lines are added to test steps for test reporting.
+		Fixed bug that shows a wrong error message when publishing a work item when WorkItemSubtypeField and WorkItemSubtypeValue is missing in configuration.
+		Fixed error that occured when using FieldValueType="DropDownList" for Shared Steps within fields "Assigned To" and "State".
+		Fixed corrupt local help file.
+		Fixed bug that SummaryPageTemplate were not shown on new page for TestSpecReportByQuery
+		Fixed bug that images were not shown when width- or height-attribute is missing in HTML image-tag.
+		Fixed bug that GetWorkItemsById returned too many work items when option was enabled to get linked work items (due to recursive get).
+
+**** Version 4.5	
+
+	Integration of Console Extension
+		Console extension is now shipped out with the VSTO. Exe can be found under the official install path of the VSTO
+
+
+	Console Extension
+		Supports generation of documents that contain work items
+		Supports generation of documents that contain a TestSpec report
+		Supports generation of documents that contain a TestResult report
+		Added support for microsoft word templates
+		Added possibility to define timestamp in output folder or filename
+		Supports specification of all settings with config file
+
+
+	Changes in UI
+		Added new Settings window
+		Moved the activation of the the debug log and the activation of the console extension to the new settings window
+		Added close button for saved query dialog in "Get Work Items"-Pane
+		Added tooltips for template bundle and template location
+
+
+	Other Features
+		Added HTML agility pack to ease parsing of HTML
+		Added error message when no TeamExplorer is installed
+
+	BugFixes
+		
+		Fixed bug that leads to font changes when lists where used
+		Fixed bug leads to quality loss of pictures
+		Fixed bug that leads to missing images
+		Fixed bug that leads to loss of OLE objects
+		Fixed bug that lead to ghost revisions when a field contained multiple blansk
+		Fixed bug that created incomplete work items in tfs
+		Fixed bug that prevented publish with hierarchyrelationships
+
+		Fixed bug that occured when test results had incomplete attachments with the size 0
+		Fixed the mappging between testresults and testplans
+		Fixed bug that showed wrong build during generation of a report
+		Fixed bug that showed too many defects when an object query was used
+		Fixed bug that rescaled pictures (bigger than table) have been upscaled again to original size
+		
+**** Version 4.4
+	
+	Additional Options in the MappingConfig
+		Attribute : "EnableTemplateManager" Will hide show the template Manager Button 
+		Attribute : "EnableTemplateSelection" Will enable/ disable the template Selection Box 
+	New Feature Autoconnect
+		Attribute: "AutoConnect" Enables the autoconnect on Startup
+	Default Servers and Projects
+		Attribute: "DefaultServerUrl" 
+		Attribute: "DefaultProjectName"
+		If specificed, the user is not prompted anymore for connection information
+	AutoRefreshquery:
+		Attribute: "AutoRefreshQuery" If specified a Query with the specified name will be executed after connection to tfs
+
+	Changed Behaviors
+		Changed Behavior of Stack Rank for "Publish Selected": Stack rank is not changed
+		Disabeled TrackChanges during publish / refresh
+
+	TestResultReport
+		Possibility to assign different templates for LeafSuite and RootSuite
+		Object Queries for the TestReporting and TestSpecReporting
+			Object queries help to query additional information connected to test management objects
+				- Builds
+				- Configuration
+				- TestCases
+				- TestResults
+				- TestPoints
+	PreandPost operations are now also possible for document containing work items
+	BugFixes
+	
+
+
+
+**** Version 4.3
+	Pre and Post Operations for TestSpecification and TestResult Report
+	New Operatoin "RefreshAllFieldsInDocument" that refreshes all Fields (Bookmarks) in the document
+	New "AttachmentFolderMode" that allows to specficy if attachments should be downloaded to folders that contain Guids or not (Mode: WithGuid or WithoutGuid)
+	Sharedsteps are numbered differently. Starting with x.1, x.2 etc.
+	New possibility to include variables in the config 
+	New Attribute for field "WordBookmark" that enables the automatic insertion of a WordBookmark in the corresponding tableCell
+	New FieldValueType that allows a reference to the created variables 
+	Possibility to show all parameter values of a Testcase grouped by iteration
+	Possibility to show all parameters of a Testcase
+	Bugfixes
+		FixedBug where pictures could get lost during publish (this was a temporary bug of the 4.3 preview version)
+		Fixed Bug where TestResult have not been linked to the right testSuite
+		Fixed Bug that downsized the quality of pictures
+
+*** Version 4.2
+    Added Test Specification Report by Query
+	Added Additional Options for TestResultReport
+		Show only last TestResults for all selected configurations
+		Option to show the configuration at different positions
+		Additional Pre and Postoperation "InsertNewPage"
+		Additional Property "LinkedWorkItemsForTestResult" that allows the display of WorkItems related to TestResults
+	Performance of "Publish Seleceted" has been increased
+    
+    Bugfixes
+        Fixed bug that caused ghost revisions using the Ignore Formatting option
+        Fixed bug that caused ghost revisions by continuously increasing images
+        Fixed bug that prevented correct display of HTML formatting in test steps
+
+
+
+*** Version 4.1.14.07.1604
+	Added new Certificate and the correct timestamp to the signing process
+	
+
+
+*** Version 4.1.14.03.26
+	Fixed Templates
+	Excluded Stackrank from Synchronization
+	Fixed Bug that caused errors when headers where used in combination with subtype
+	Added a FieldVerifier, that checks the types of the fields before publish
+	Added functionality to let the user decide what to do if field in the template differ from fields on the TFS
+	Added Warning during loading of template, if fields are defined as HTML 
+
+
+*** Version 4.0.1403.10
+	Fixed Bug that prevents a sync from OLE Descriptions
+	Added Support to display and format hierarchies of Work Items
+	Added Property "HideElementFromWord" to exclude a mapping form Word
+
+
+
+
+	Improved performance of publishing all work items and publishing selected work items.
+	Added option to automatically create tree-like link hierarchies between work items when publishing.
+	Added work item overview that shows the synchronization state of all work items defined within the document or returned by a stored query
+	Added merging of work items that have different fields changed in word and tfs
+	Added synchronization state information to the GetWorkItem-pane.
+	Added button to insert work item hyperlink into document from GetWorkItem-pane.
+	Added FieldValueType DropDownList that creates a dropdown list in Word if the field is configured with AllowedValues.
+	Added check that compares found tables in the document with tables defined in the related template and stops synchronizing in case their structure don't match.
+
+	Bugfixes
+		Fixed a bug causing a Word crash on closing the application
+
+*** Version 3.0.1309.2401
+
+	Bugfixes
+		Fixed a bug where an assertion hits when publishing a work item that uses test steps fails.
+		Fixed a bug where HTML field causes the work item revision to increase every time the work item is published, no matter the "ignore formatting" setting.
+		Fixed a bug causing "file not found" error when generating test result reports or test specification reports.
+
+
+*** Version 3.0.1309.0401
+
+	Bugfixes
+		Fixed a bug causing a publish error when using headers.
+		
+
+*** Version 3.0.1308.2902
+
+	Added test reporting for CMMI(2012).
+	Added warning when publishing a list that is likely to have a broken formatting after the publish operation.
+		
+	Bugfixes
+		Fixed a bug causing revisions to always increment for work items with fields that only have an inline shape and the option to automatically add spaces activated.
+		Fixed a bug causing pictures to not be refreshed if nothing else has changed.
+
+		
+*** Version 3.0.1308.2401
+
+	Links now support directions other than "OtherToTfs".
+	Template locations can now be refreshed without restarting word.
+	Work Item IDs in the find work items dialog can now be separated by comma, semicolon or space.
+	Added option to automatically add a space to a field with inline shape and no other text. Without it, the inline shape would not be exported correctly.
+	Office 2013 is now supported.
+	Added warning when publishing downscaled images that are likely to deteriorate in quality.
+	Added warning when publishing a field with inline shape (pictures, drawing canvas) but no text.
+
+	Bugfixes
+		Fixed a bug where the selected template was not activated when loading a document.
+		Fixed a bug where the template manager would not save deactivation of templates.
+
+		
+*** Version 3.0.1308.2002
+
+	Bugfixes
+		Fixed a bug causing a "Object Reference Not Set" Exception during publish when a revision conflict happened and the field on the tfs was numeric but had no value.
+		Fixed a bug where converters where not applied when importing work items.
+
+		
+*** Version 3.0.1308.0201
+
+	Templates can be organized in subfolders to be only available if the name of the connected project matches the subfolder.
+	Templates are cached.
+	Warnings are now shown in a separate pane.
+	Added validation schema for w2t.
+	Added option to number test steps when generating test reports
+	Added option to download and/or link to attachments when generating test reports.
+	Added option to invoke methods from templates when generating test reports.
+	Added option to show outcome of test step when generating test reports.
+	Added option to only include the most recent test result when generating test reports.
+
+	Bugfixes
+		Fixed a bug causing headers to be completly ignored.
+		Fixed a bug causing the stack rank option to not work correctly.
+		Fixed a bug causing comments to disappear when refreshing (comments in HTML fields are still not supported).
+

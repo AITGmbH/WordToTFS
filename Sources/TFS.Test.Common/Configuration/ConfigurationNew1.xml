@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!-- General Settings --> 
+ <Settings 
+		Server = "___TeamProjectCollectionUrl___" 
+		Project = "___TeamProjectName___" 
+		Filename = "C:\temp\W2T\Doc2.docx" 
+		Template="MSF For CMMI (2013)" 
+		Overwrite="false" 
+		Close="false" />
+		
+<!-- Test Report Settings -->	
+  <TestConfiguration>
+  
+	<!-- Test Specification Report Settings -->
+    <TestSpecificationConfiguration  
+		TestPlan = "MyPlan"
+		TestSuite = "MyPlan"
+		CreateDocumentStructure = "true"
+		DocumentStructure = "TestPlanHierarchy"
+		SkipLevels = "2"
+		IncludeTestConfigurations = "true"
+		TestConfigurationsPosition = "AboveTestPlan"
+		SortTestCasesBy = "IterationPath" /> 
+		
+	<!-- Test Result Report Settings -->
+	<TestResultConfiguration
+		Build = "All"
+		TestConfiguration = "All"
+		TestPlan = "MyPlan"
+		TestSuite = "No Run"
+		CreateDocumentStructure = "false"
+		DocumentStructure = "AreaPath"
+		SkipLevels = "2"
+		IncludeTestConfigurations = "true"
+		TestConfigurationsPosition = "BeneathTestSuites"
+		SortTestCasesBy = "IterationPath" 
+		IncludeOnlyMostRecentResults = "false"
+		MostRecentForAllConfigurations = "false"	/> 
+  </TestConfiguration>
+</Configuration>

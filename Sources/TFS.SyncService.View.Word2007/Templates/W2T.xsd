@@ -1,0 +1,550 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MappingConfiguration" type="MappingConfiguration" />
+  <xs:complexType name="MappingConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Variables" type="ArrayOfVariable" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ObjectQueries" type="ArrayOfObjectQuery" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ButtonsCustomization" type="ArrayOfButtonCustomization" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Mappings" type="MappingList" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Headers" type="ArrayOfMappingHeader" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PreOperations" type="ArrayOfOperationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PostOperations" type="ArrayOfOperationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TestConfiguration" type="TestConfiguration" />
+    </xs:sequence>
+    <xs:attribute name="ShowName" type="xs:string" />
+    <xs:attribute name="RelatedSchema" type="xs:string" />
+    <xs:attribute name="DefaultMapping" type="xs:boolean" use="required" />
+    <xs:attribute default="true" name="ShowMappedCellNotExistsMessage" type="xs:boolean" />
+    <xs:attribute default="true" name="ShowMappedFieldNotExistsMessage" type="xs:boolean" />
+    <xs:attribute default="false" name="UseStackRank" type="xs:boolean" />
+    <xs:attribute default="false" name="EnableRefresh" type="xs:boolean" />
+    <xs:attribute default="true" name="EnablePublish" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableIgnoreFormattingSwitch" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableConflictOverwriteSwitch" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableGetWorkItems" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableOverview" type="xs:boolean" />
+    <xs:attribute default="false" name="EnableHistoryComment" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableEmpty" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableNew" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableDeleteIds" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableEditDefaultValues" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableAreaIterationPath" type="xs:boolean" />
+    <xs:attribute default="true" name="IgnoreFormatting" type="xs:boolean" />
+    <xs:attribute default="false" name="ConflictOverwrite" type="xs:boolean" />
+    <xs:attribute default="false" name="HideElementInWord" type="xs:boolean" />
+    <xs:attribute default="" name="TypeOfHierarchyRelationships" type="xs:string" />
+    <xs:attribute default="" name="TypeOfHierachyRelationships" type="xs:string" />
+    <xs:attribute default="WithGuid" name="AttachmentFolderMode" type="AttachmentFolderMode" />
+    <xs:attribute default="false" name="CollapsQueryTree" type="xs:boolean" />
+    <xs:attribute name="DefaultServerUrl" type="xs:string" />
+    <xs:attribute name="DefaultProjectName" type="xs:string" />
+    <xs:attribute default="false" name="AutoConnect" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableTemplateManager" type="xs:boolean" />
+    <xs:attribute default="true" name="EnableTemplateSelection" type="xs:boolean" />
+    <xs:attribute default="true" name="GetDirectLinksOnly" type="xs:boolean" />
+    <xs:attribute name="AutoRefreshQuery" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfVariable">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Variable" nillable="true" type="Variable" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Variable">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Value" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfObjectQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ObjectQuery" nillable="true" type="ObjectQuery" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObjectQuery">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="WorkItemLinkFilters" type="WorkItemLinkFilter" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Options" type="FilterOption" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DestinationElements" type="ArrayOfElement" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="WorkItemLinkFilter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Filter" type="Filter" />
+    </xs:sequence>
+    <xs:attribute name="FilterType" type="FilterType" use="required" />
+  </xs:complexType>
+  <xs:complexType name="Filter">
+    <xs:attribute name="LinkType" type="xs:string" />
+    <xs:attribute name="FilterOn" type="xs:string" />
+  </xs:complexType>
+  <xs:simpleType name="FilterType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Include" />
+      <xs:enumeration value="Exclude" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="FilterOption">
+    <xs:attribute default="false" name="Distinct" type="xs:boolean" />
+    <xs:attribute default="false" name="Latest" type="xs:boolean" />
+    <xs:attribute name="FilterProperty" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DestinationElement" nillable="true" type="Element" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Element">
+    <xs:attribute name="WorkItemType" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfButtonCustomization">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Button" nillable="true" type="ButtonCustomization" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ButtonCustomization">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="Text" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="MappingList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Mapping" type="MappingElement" />
+    </xs:sequence>
+    <xs:attribute name="ExcludeRegularExpression" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="MappingElement">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="RelatedSchema" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Fields" type="ArrayOfMappingField" />
+      <xs:element minOccurs="0" maxOccurs="1" name="FieldsToLinkedItems" type="ArrayOfMappingFieldToLinkedItem" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Links" type="ArrayOfMappingLink" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Converters" type="ArrayOfMappingConverter" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Transitions" type="MappingStateTransition" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PreOperations" type="ArrayOfOperationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PostOperations" type="ArrayOfOperationConfiguration" />
+    </xs:sequence>
+    <xs:attribute name="RelatedTemplate" type="xs:string" />
+    <xs:attribute name="WorkItemType" type="xs:string" />
+    <xs:attribute name="WorkItemSubtypeField" type="xs:string" />
+    <xs:attribute name="WorkItemSubtypeValue" type="xs:string" />
+    <xs:attribute name="MappingWorkItemType" type="xs:string" />
+    <xs:attribute name="AssignRegularExpression" type="xs:string" />
+    <xs:attribute name="AssignCellRow" type="xs:int" use="required" />
+    <xs:attribute name="AssignCellCol" type="xs:int" use="required" />
+    <xs:attribute default="false" name="HideElementInWord" type="xs:boolean" />
+    <xs:attribute name="ImageFile" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMappingField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Field" nillable="true" type="MappingField" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MappingField">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="DefaultValue" type="MappingFieldDefaultValue" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="MappingName" type="xs:string" />
+    <xs:attribute default="PlainText" name="FieldValueType" type="FieldValueType" />
+    <xs:attribute name="DateTimeFormat" type="xs:string" />
+    <xs:attribute name="Direction" type="Direction" use="required" />
+    <xs:attribute name="MappingTableRow" type="xs:int" use="required" />
+    <xs:attribute name="MappingTableCol" type="xs:int" use="required" />
+    <xs:attribute name="TestCaseStepDelimiter" type="xs:string" />
+    <xs:attribute default="false" name="HandleAsDocument" type="xs:boolean" />
+    <xs:attribute default="OleOnDemand" name="HandleAsDocumentMode" type="HandleAsDocumentType" />
+    <xs:attribute name="OLEMarkerField" type="xs:string" />
+    <xs:attribute name="OLEMarkerValue" type="xs:string" />
+    <xs:attribute default="AddSpace" name="ShapeOnlyWorkaroundMode" type="ShapeOnlyWorkaroundMode" />
+    <xs:attribute name="WordBookmark" type="xs:string" />
+    <xs:attribute name="VariableName" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="MappingFieldDefaultValue">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="ShowName" type="xs:string" />
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:simpleType name="FieldValueType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PlainText" />
+      <xs:enumeration value="HTML" />
+      <xs:enumeration value="BasedOnFieldType" />
+      <xs:enumeration value="DropDownList" />
+      <xs:enumeration value="BasedOnVariable" />
+      <xs:enumeration value="BasedOnSystemVariable" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Direction">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OtherToTfs" />
+      <xs:enumeration value="TfsToOther" />
+      <xs:enumeration value="SetInNewTfsWorkItem" />
+      <xs:enumeration value="GetOnly" />
+      <xs:enumeration value="PublishOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="HandleAsDocumentType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="OleOnDemand" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ShapeOnlyWorkaroundMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AddSpace" />
+      <xs:enumeration value="ShowAsError" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfMappingFieldToLinkedItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldToLinkedItem" nillable="true" type="MappingFieldToLinkedItem" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MappingFieldToLinkedItem">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="FieldAssignments" type="ArrayOfMappingFieldAssignment" />
+    </xs:sequence>
+    <xs:attribute name="LinkedWorkItemType" type="xs:string" />
+    <xs:attribute name="LinkType" type="LinkedItemLinkType" use="required" />
+    <xs:attribute name="WorkItemBindType" type="WorkItemBindType" use="required" />
+    <xs:attribute name="MappingTableRow" type="xs:int" use="required" />
+    <xs:attribute name="MappingTableCol" type="xs:int" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMappingFieldAssignment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FieldAssignment" nillable="true" type="MappingFieldAssignment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MappingFieldAssignment">
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="MappingName" type="xs:string" />
+    <xs:attribute name="FieldPosition" type="FieldPositionType" use="required" />
+    <xs:attribute name="FieldValueType" type="FieldValueType" use="required" />
+    <xs:attribute name="Direction" type="Direction" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="FieldPositionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Hidden" />
+      <xs:enumeration value="NumberedListItem" />
+      <xs:enumeration value="NumberedListItemFirstAddition" />
+      <xs:enumeration value="NumberedListItemSecondAddition" />
+      <xs:enumeration value="NumberedListItemThirdAddition" />
+      <xs:enumeration value="Remainder" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="LinkedItemLinkType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Child" />
+      <xs:enumeration value="Parent" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="WorkItemBindType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NestedTable" />
+      <xs:enumeration value="NumberedList" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfMappingLink">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Link" nillable="true" type="MappingLink" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MappingLink">
+    <xs:attribute name="Type" type="xs:string" />
+    <xs:attribute name="Direction" type="Direction" use="required" />
+    <xs:attribute name="MappingTableRow" type="xs:int" use="required" />
+    <xs:attribute name="MappingTableCol" type="xs:int" use="required" />
+    <xs:attribute name="Overwrite" type="xs:boolean" use="required" />
+    <xs:attribute name="LinkedWorkItemTypes" type="xs:string" />
+    <xs:attribute name="LinkSeparator" type="xs:string" />
+    <xs:attribute name="LinkFormat" type="xs:string" />
+    <xs:attribute name="AutoLinkWorkItemType" type="xs:string" />
+    <xs:attribute name="AutoLinkWorkItemSubtypeField" type="xs:string" />
+    <xs:attribute name="AutoLinkWorkItemSubtypeValue" type="xs:string" />
+    <xs:attribute name="AutoLinkSuppressWarnings" type="xs:boolean" use="required" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMappingConverter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Converter" nillable="true" type="MappingConverter" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MappingConverter">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Values" type="ArrayOfMappingConverterValue" />
+    </xs:sequence>
+    <xs:attribute name="FieldName" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfMappingConverterValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Value" nillable="true" type="MappingConverterValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MappingConverterValue">
+    <xs:attribute name="Text" type="xs:string" />
+    <xs:attribute name="MappingText" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="MappingStateTransition">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Transition" type="MappingStateTransitionItem" />
+    </xs:sequence>
+    <xs:attribute name="FieldName" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="MappingStateTransitionItem">
+    <xs:attribute name="From" type="xs:string" />
+    <xs:attribute name="To" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfOperationConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Operation" nillable="true" type="OperationConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OperationConfiguration">
+    <xs:attribute name="Type" type="OperationType" use="required" />
+  </xs:complexType>
+  <xs:simpleType name="OperationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="InsertParagraph" />
+      <xs:enumeration value="MoveCursorToStart" />
+      <xs:enumeration value="MoveCursorToEnd" />
+      <xs:enumeration value="DeleteCharacterLeft" />
+      <xs:enumeration value="DeleteCharacterRight" />
+      <xs:enumeration value="MoveCursorToLeft" />
+      <xs:enumeration value="MoveCursorToRight" />
+      <xs:enumeration value="InsertNewPage" />
+      <xs:enumeration value="RefreshAllFieldsInDocument" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ArrayOfMappingHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Header" nillable="true" type="MappingHeader" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MappingHeader">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Fields" type="ArrayOfMappingField" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Converters" type="ArrayOfMappingConverter" />
+    </xs:sequence>
+    <xs:attribute name="RelatedTemplate" type="xs:string" />
+    <xs:attribute name="Identifier" type="xs:string" />
+    <xs:attribute name="AssignTo" type="xs:string" />
+    <xs:attribute name="Row" type="xs:int" use="required" />
+    <xs:attribute name="Column" type="xs:int" use="required" />
+    <xs:attribute name="Level" type="xs:int" use="required" />
+    <xs:attribute name="ImageFile" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="TestConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="TestSpecificationConfiguration" type="TestSpecificationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="TestResultConfiguration" type="TestResultConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Templates" type="ArrayOfTemplateConfiguration" />
+    </xs:sequence>
+    <xs:attribute default="false" name="SetHyperlinkBase" type="xs:boolean" />
+    <xs:attribute name="ExpandSharedSteps" type="xs:boolean" use="required" />
+  </xs:complexType>
+  <xs:complexType name="TestSpecificationConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PreOperations" type="ArrayOfOperationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PostOperations" type="ArrayOfOperationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DefaultValues" type="TestSpecRepDefaultValueXml" />
+    </xs:sequence>
+    <xs:attribute name="Available" type="xs:boolean" use="required" />
+    <xs:attribute name="TestPlanTemplate" type="xs:string" />
+    <xs:attribute name="TestSuiteTemplate" type="xs:string" />
+    <xs:attribute name="RootTestSuiteTemplate" type="xs:string" />
+    <xs:attribute name="LeafTestSuiteTemplate" type="xs:string" />
+    <xs:attribute name="TestCaseElementTemplate" type="xs:string" />
+    <xs:attribute name="SharedStepsElementTemplate" type="xs:string" />
+    <xs:attribute name="SummaryPageTemplate" type="xs:string" />
+    <xs:attribute name="TestConfigurationElementTemplate" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="TestSpecRepDefaultValueXml">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="SelectTestPlan" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SelectTestSuite" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="CreateDocumentStructure" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocumentStructureType" type="DocumentStructureType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SkipLevels" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IncludeTestConfigurations" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ConfigurationPositionType" type="ConfigurationPositionType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SortTestCasesBy" type="TestCaseSortType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="DocumentStructureType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="IterationPath" />
+      <xs:enumeration value="AreaPath" />
+      <xs:enumeration value="TestPlanHierarchy" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ConfigurationPositionType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="AboveTestPlan" />
+      <xs:enumeration value="BeneathTestPlan" />
+      <xs:enumeration value="BeneathTestSuites" />
+      <xs:enumeration value="BeneathFirstTestSuite" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="TestCaseSortType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="None" />
+      <xs:enumeration value="IterationPath" />
+      <xs:enumeration value="AreaPath" />
+      <xs:enumeration value="WorkItemId" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TestResultConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BuildQualities" type="ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BuildFilters" type="BuildFilters" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PreOperations" type="ArrayOfOperationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PostOperations" type="ArrayOfOperationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="DefaultValues" type="TestResultRepDefaultValueXml" />
+    </xs:sequence>
+    <xs:attribute name="Available" type="xs:boolean" use="required" />
+    <xs:attribute name="IncludeTestCasesWithoutResults" type="xs:boolean" use="required" />
+    <xs:attribute name="TestPlanTemplate" type="xs:string" />
+    <xs:attribute name="TestSuiteTemplate" type="xs:string" />
+    <xs:attribute name="RootTestSuiteTemplate" type="xs:string" />
+    <xs:attribute name="LeafTestSuiteTemplate" type="xs:string" />
+    <xs:attribute name="TestCaseElementTemplate" type="xs:string" />
+    <xs:attribute name="SharedStepsElementTemplate" type="xs:string" />
+    <xs:attribute name="TestResultElementTemplate" type="xs:string" />
+    <xs:attribute name="TestConfigurationElementTemplate" type="xs:string" />
+    <xs:attribute name="SummaryPageTemplate" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BuildQuality" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="BuildFilters">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="BuildQualities" type="ArrayOfString" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BuildNames" type="ArrayOfString1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BuildAge" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BuildTags" type="ArrayOfString2" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString1">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BuildName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString2">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BuildTag" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TestResultRepDefaultValueXml">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="CreateDocumentStructure" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="DocumentStructureType" type="DocumentStructureType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SelectBuild" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SelectTestConfiguration" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="SelectTestPlan" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SkipLevels" type="xs:int" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IncludeTestConfigurations" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="ConfigurationPositionType" type="ConfigurationPositionType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="SortTestCasesBy" type="TestCaseSortType" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IncludeMostRecentTestResult" type="xs:boolean" />
+      <xs:element minOccurs="1" maxOccurs="1" name="IncludeMostRecentTestResultForAllSelectedConfigurations" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfTemplateConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Template" nillable="true" type="TemplateConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TemplateConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="PreOperations" type="ArrayOfOperationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="PostOperations" type="ArrayOfOperationConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Conditions" type="ArrayOfConditionConfiguration" />
+      <xs:element minOccurs="0" maxOccurs="1" name="Replacements" type="ArrayOfReplacementConfiguration" />
+    </xs:sequence>
+    <xs:attribute name="Name" type="xs:string" />
+    <xs:attribute name="HeaderTemplate" type="xs:string" />
+    <xs:attribute name="FileName" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfConditionConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Condition" nillable="true" type="ConditionConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConditionConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="Values" type="ArrayOfString3" />
+    </xs:sequence>
+    <xs:attribute name="Property" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="ArrayOfString3">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ArrayOfReplacementConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Replacement" nillable="true" type="ReplacementConfiguration" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReplacementConfiguration">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="WorkItemEditorLink" type="WorkItemEditorLink" />
+      <xs:element minOccurs="0" maxOccurs="1" name="WorkItemViewerLink" type="WorkItemViewerLink" />
+      <xs:element minOccurs="0" maxOccurs="1" name="BuildViewerLink" type="BuildViewerLink" />
+      <xs:element minOccurs="0" maxOccurs="1" name="UriLink" type="UriLink" />
+      <xs:element minOccurs="0" maxOccurs="1" name="AttachmentLink" type="AttachmentLink" />
+    </xs:sequence>
+    <xs:attribute name="Bookmark" type="xs:string" />
+    <xs:attribute name="Property" type="xs:string" />
+    <xs:attribute name="Parameters" type="xs:string" />
+    <xs:attribute name="VariableName" type="xs:string" />
+    <xs:attribute default="BasedOnVariable" name="FieldValueType" type="FieldValueType" />
+    <xs:attribute default="PlainText" name="ValueType" type="PropertyValueFormat" />
+    <xs:attribute name="LinkedTemplate" type="xs:string" />
+    <xs:attribute name="WordBookmark" type="xs:string" />
+    <xs:attribute name="ResolveResolutionState" type="xs:boolean" use="required" />
+  </xs:complexType>
+  <xs:complexType name="WorkItemEditorLink">
+    <xs:attribute name="Uri" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="WorkItemViewerLink">
+    <xs:attribute name="Id" type="xs:string" />
+    <xs:attribute name="Revision" type="xs:string" />
+    <xs:attribute default="false" name="AutoText" type="xs:boolean" />
+    <xs:attribute name="Format" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="BuildViewerLink">
+    <xs:attribute name="BuildNumber" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="UriLink">
+    <xs:attribute name="Uri" type="xs:string" />
+  </xs:complexType>
+  <xs:complexType name="AttachmentLink">
+    <xs:attribute default="DownloadAndLinkToLocalFile" name="Mode" type="AttachmentLinkMode" />
+  </xs:complexType>
+  <xs:simpleType name="AttachmentLinkMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DownloadAndLinkToLocalFile" />
+      <xs:enumeration value="DownloadAndLinkToLocalFileWithoutGuid" />
+      <xs:enumeration value="LinkToServerVersion" />
+      <xs:enumeration value="DownloadOnly" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PropertyValueFormat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PlainText" />
+      <xs:enumeration value="HTML" />
+      <xs:enumeration value="HTMLBold" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="AttachmentFolderMode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="WithGuid" />
+      <xs:enumeration value="WithoutGuid" />
+      <xs:enumeration value="BasedOnTestSuite" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

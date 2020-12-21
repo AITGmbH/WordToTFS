@@ -1,0 +1,245 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Attachment_AdjustHyperlinkBaseText" xml:space="preserve">
+    <value>The hyperlink base of this document is different from the document attachment folder. In order for relative attachment links to work, the hyperlink base needs to point to the document attachment location.
+
+If you continue, the hyperlink base will be adjusted automatically. Do you want to continue?</value>
+  </data>
+  <data name="Attachment_AdjustHyperlinkBaseTitle" xml:space="preserve">
+    <value>WordToTFS Plugin</value>
+  </data>
+  <data name="Attachment_DeleteAttachmentFolderText" xml:space="preserve">
+    <value>The attachment folder contains attachments that are not linked to from the document. Do you want to delete these files?</value>
+  </data>
+  <data name="Attachment_DeleteAttachmentFolderTitle" xml:space="preserve">
+    <value>WordToTFS Plugin</value>
+  </data>
+  <data name="Error_CloseWordDocument" xml:space="preserve">
+    <value>Can't close Word document</value>
+  </data>
+  <data name="Error_Convert" xml:space="preserve">
+    <value>Error converting value</value>
+  </data>
+  <data name="Error_FileNotSaved" xml:space="preserve">
+    <value>File not saved</value>
+  </data>
+  <data name="Error_LoadWordWI" xml:space="preserve">
+    <value>Error loading document work items</value>
+  </data>
+  <data name="Error_OpenWordDocument" xml:space="preserve">
+    <value>Can't open Word document</value>
+  </data>
+  <data name="ExceptionText_DoubleIds" xml:space="preserve">
+    <value>The work item Id '{0}' exists multiple times.</value>
+  </data>
+  <data name="ExceptionText_DoubleIdsExplanation" xml:space="preserve">
+    <value>Please check and ensure that each work item Id is unique.</value>
+  </data>
+  <data name="ExceptionText_NoCell" xml:space="preserve">
+    <value>Error occurred on content request in table cell row {0},  column {1}.</value>
+  </data>
+  <data name="ExceptionText_SkipInvalidTable" xml:space="preserve">
+    <value>The table of this work item is different from the related template. Make sure you did not add or delete rows or accidentally merged two tables.</value>
+  </data>
+  <data name="Attachment_InconsistentFolderStructureText" xml:space="preserve">
+    <value>At least one of the hyperlinks within this document points to a file that does not exist. If you move the document or save it to a different location, make sure to move the attachment subfolder as well. If that does not solve the problem, please regenerate the document.</value>
+  </data>
+  <data name="Attachment_InconsistentFolderStructureTitle" xml:space="preserve">
+    <value>WordToTFS Plugin</value>
+  </data>
+  <data name="Info_NothingToImport" xml:space="preserve">
+    <value>Nothing to import</value>
+  </data>
+  <data name="Info_NothingToImportDetail" xml:space="preserve">
+    <value>Document doesn't contain valid work items to import.</value>
+  </data>
+  <data name="LogService_Export_NoFile" xml:space="preserve">
+    <value>Exporting work item failed. Cannot find corresponding template file.</value>
+  </data>
+  <data name="LogService_Export_NoTable" xml:space="preserve">
+    <value>Exporting work item failed. Cannot find table in document.</value>
+  </data>
+  <data name="LogService_Export_NoWorkItem" xml:space="preserve">
+    <value>Exporting work item failed. Work item type does not exist in the current template.</value>
+  </data>
+  <data name="LogService_TableToWorkItemException" xml:space="preserve">
+    <value>Ignoring table because work item type cannot be determined. Check your configuration</value>
+  </data>
+  <data name="ReferenceNameId" xml:space="preserve">
+    <value>System.Id</value>
+  </data>
+  <data name="TestReportError_BookmarkNotFound" xml:space="preserve">
+    <value>Bookmark '{0}' not found.</value>
+  </data>
+  <data name="TestReportError_CursorInTable" xml:space="preserve">
+    <value>It is not possible to insert test report into a table.</value>
+  </data>
+  <data name="TestReportError_FileNotFound" xml:space="preserve">
+    <value>File '{0}' not found.</value>
+  </data>
+  <data name="Attachment_MoveAttachmentFolderText" xml:space="preserve">
+    <value>The attachment folder path
+'{0}'
+is different from the document location
+'{1}'.
+It is suggested to keep the attachments folder at the same location as the document. Should the folder be moved to
+{1}?</value>
+  </data>
+  <data name="ShapeOnlyAutoText" xml:space="preserve">
+    <value> </value>
+    <comment>This is a space character!</comment>
+  </data>
+  <data name="NumberedListItemsTemplate" xml:space="preserve">
+    <value> [] [] []</value>
+  </data>
+  <data name="InteropException_ErrorDuringFileInsert" xml:space="preserve">
+    <value>An error occurred during the insertion of file: {0}. The detailed error message from word is: {1}</value>
+  </data>
+  <data name="ReferenceNameRevision" xml:space="preserve">
+    <value>System.Rev</value>
+  </data>
+  <data name="LogService_AccessToLinkMessage" xml:space="preserve">
+    <value>WI{0}w: Access to link {1}\n'{2}'\nresults in\n{3}</value>
+  </data>
+  <data name="ResultIfTextIsNotHtml" xml:space="preserve">
+    <value>Automatically surrounded text with span tags.</value>
+  </data>
+  <data name="TitleOfErrorDuringInitOfWordInstance" xml:space="preserve">
+    <value>An error occured during the initialization of an additional word instance for file:{0}, the Word specific error was: {1}</value>
+  </data>
+  <data name="CreateWorkItemBasedOnTemplate" xml:space="preserve">
+    <value>Creating work item with template file...</value>
+  </data>
+  <data name="FullPathOfTemplateFile" xml:space="preserve">
+    <value>Full path of template file is </value>
+  </data>
+  <data name="OpenWordAdapter" xml:space="preserve">
+    <value>Opening the word adapter...</value>
+  </data>
+  <data name="SelectionNotExists" xml:space="preserve">
+    <value>The selection is null.</value>
+  </data>
+  <data name="TheReferencesTableIdentifierCellNotExists" xml:space="preserve">
+    <value>Skipping table because the references table identifier cell (Row={0}, Col={1}) does not exist.</value>
+  </data>
+  <data name="Shape_Scale100_Failed" xml:space="preserve">
+    <value>Setting ScaleWidth and ScaleHeight to 100 failed with message: {0}</value>
+  </data>
+</root>

@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<MappingConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="W2T.xsd" ShowName="Microsoft Visual Studio Scrum (2013)" RelatedSchema="MSFForCMMI.Schema.xsd" DefaultMapping="false" EnableRefresh="true" EnableAreaIterationPath="true" IgnoreFormatting="true" UseStackRank="false">
+  <Mappings ExcludeRegularExpression="^((_EXCLUDE_)|(_exclude_))">
+    <Mapping WorkItemType="Bug" MappingWorkItemType="Bug" RelatedTemplate="MicrosoftVisualStudioScrum.Bug.xml" AssignRegularExpression="Bug" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.TCM.ReproSteps" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Steps To Reproduce">Steps To Reproduce</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.BacklogPriority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Backlog Priority">1000</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+	
+	<Mapping WorkItemType="Feature" MappingWorkItemType="Feature" RelatedTemplate="TFSFeature(2013).xml" AssignRegularExpression="Feature" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. These values correspond to 'FieldValueType' enum. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. These values correspond to 'Direction' enum. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+		<Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Feature Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Requirement Description</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters />
+    </Mapping>
+	
+	
+    <Mapping WorkItemType="Product Backlog Item" MappingWorkItemType="Product Backlog Item" RelatedTemplate="MicrosoftVisualStudioScrum.ProductBacklogItem.xml" AssignRegularExpression="Product Backlog Item" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.BacklogPriority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Backlog Priority">1000</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+  </Mappings>
+  
+  <Headers>
+    <Header Identifier="HEADER" Level="1" Row="1" Column="1" RelatedTemplate="MicrosoftVisualStudioScrum.Header.xml" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.AreaPath" Direction="OtherToTfs" FieldValueType="PlainText" MappingTableRow="3" MappingTableCol="1" />
+        <Field Name="System.IterationPath" Direction="OtherToTfs" FieldValueType="PlainText" MappingTableRow="5" MappingTableCol="1" />
+      </Fields>
+    </Header>
+  </Headers>
+  
+  <TestConfiguration>
+    <!-- Configuration for test specification report -->
+    <!-- If 'Available="false" - button is not shown in gui -->
+    <TestSpecificationConfiguration
+      Available="true"
+      TestPlanTemplate="TestPlan"
+      TestSuiteTemplate="TestSuite"
+      TestCaseElementTemplate="SpecificationReportTestCaseRow"/>
+    <!-- Configuration for test result report -->
+    <!-- If 'Available="false" - button is not shown in gui -->
+    <TestResultConfiguration
+      Available="true"
+      TestPlanTemplate="TestPlan"
+      TestSuiteTemplate="TestSuite"
+      TestCaseElementTemplate="ResultReportTestCaseRow"
+      TestResultElementTemplate="ResultReportTestResultRow"
+      TestConfigurationElementTemplate="ResultReportTestConfigurationRow">
+      <BuildQualities>
+        <!-- EN: "Initial Test Passed"     / "Lab Test Passed"       / "Ready for Deployment"              / "Ready for Initial Test"
+               "Rejected"                / "Released"              / "UAT Passed"                        / "Under Investigation" -->
+        <!-- DE: "Erster Test erfolgreich" / "Labortest erfolgreich" / "Bereit für Bereitstellung"         / "Bereit für ersten Test"
+               "Abgelehnt"               / "Freigegeben"           / "Benutzerfunktionstest erfolgreich" / "Wird untersucht" -->
+        <!-- Build qualities with '1' -->
+        <!--<BuildQuality>.*1.*</BuildQuality>-->
+        <!-- Any build quality with at leas one character -->
+        <!--<BuildQuality>.+</BuildQuality>-->
+        <!-- Any build quality containing word 'Released' -->
+        <!--<BuildQuality>Released</BuildQuality>-->
+        <BuildQuality>Released</BuildQuality>
+        <BuildQuality>Passed</BuildQuality>
+        <BuildQuality>Ready</BuildQuality>
+      </BuildQualities>
+    </TestResultConfiguration>
+    <!-- Definition of all templates with replacement -->
+    <Templates>
+      <Template Name="TestPlan" FileName="MicrosoftVisualStudioScrum.Test.Common.TestPlan.xml">
+        <Replacements>
+          <Replacement Bookmark="Name" Property="Name"/>
+          <Replacement Bookmark="AreaPath" Property="AreaPath"/>
+          <Replacement Bookmark="Iteration" Property="Iteration"/>
+          <Replacement Bookmark="Description" Property="Description"/>
+          <Replacement Bookmark="StartDateDate" Property="StartDate.Date"/>
+          <Replacement Bookmark="EndDateDate" Property="EndDate.Date"/>
+          <Replacement Bookmark="BuildDirectory" Property="BuildDirectory"/>
+          <Replacement Bookmark="RootSuiteTitle" Property="RootSuite.Title"/>
+          <Replacement Bookmark="OwnerDisplayName" Property="Owner.DisplayName"/>
+        </Replacements>
+      </Template>
+      <Template Name="TestSuite" FileName="MicrosoftVisualStudioScrum.Test.Common.TestSuite.xml">
+        <Replacements>
+          <Replacement Bookmark="Title" Property="Title"/>
+          <Replacement Bookmark="Description" Property="Description"/>
+          <Replacement Bookmark="AllTestCasesCount" Property="AllTestCases.Count"/>
+          <Replacement Bookmark="TestCasesCount" Property="TestCases.Count"/>
+        </Replacements>
+      </Template>
+      <Template Name="SpecificationReportTestCaseRow"
+                HeaderTemplate="SpecificationReportTestCaseHeader"
+                FileName="MicrosoftVisualStudioScrum.Test.Specification.TestCaseRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="Title" Property="WorkItem.Title"/>
+          <Replacement Bookmark="IdRev" Property="WorkItem.Id">
+            <WorkItemViewerLink Id="WorkItem.Id" Revision="WorkItem.Rev"/>
+          </Replacement>
+          <Replacement Bookmark="LinkListAffectedBy" Property="Links" LinkedTemplate="LinkSimpleListAffectedBy"/>
+          <Replacement Bookmark="LinkListAffects" Property="Links" LinkedTemplate="LinkSimpleListAffects"/>
+          <Replacement Bookmark="ActionList" Property="Actions" LinkedTemplate="ActionSimpleList"/>
+        </Replacements>
+      </Template>
+      <Template Name="ResultReportTestCaseRow"
+                HeaderTemplate=""
+                FileName="MicrosoftVisualStudioScrum.Test.Result.TestCase.xml">
+        <Replacements>
+          <Replacement Bookmark="WorkItemId" Property="WorkItem.Id">
+            <WorkItemViewerLink Id="WorkItem.Id" Revision="WorkItem.Rev"/>
+          </Replacement>
+          <Replacement Bookmark="IterationPath" Property="WorkItem.IterationPath"/>
+          <Replacement Bookmark="AreaPath" Property="WorkItem.AreaPath"/>
+          <Replacement Bookmark="WorkItemTitle" Property="WorkItem.Title"/>
+          <Replacement Bookmark="ActionList" Property="Actions" LinkedTemplate="ActionSimpleList"/>
+        </Replacements>
+      </Template>
+      <Template Name="ResultReportTestResultRow"
+                HeaderTemplate="ResultReportTestResultHeader"
+                FileName="MicrosoftVisualStudioScrum.Test.Result.TestResultRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="RunId" Property="TestRunId"/>
+          <Replacement Bookmark="ResultId" Property="TestResultId"/>
+          <Replacement Bookmark="Outcome" Property="Outcome"/>
+          <Replacement Bookmark="Duration" Property="Duration"/>
+          <Replacement Bookmark="State" Property="State"/>
+          <Replacement Bookmark="ConfigName" Property="TestConfigurationName"/>
+          <Replacement Bookmark="BuildNumber" Property="BuildNumber">
+            <BuildViewerLink BuildNumber="BuildNumber"/>
+          </Replacement>
+        </Replacements>
+      </Template>
+      <Template Name="ResultReportTestConfigurationRow"
+                HeaderTemplate="ResultReportTestConfigurationHeader"
+                FileName="MicrosoftVisualStudioScrum.Test.Result.TestConfigurationRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="MainName" Property="Name"/>
+          <Replacement Bookmark="Name" Property="Name"/>
+          <Replacement Bookmark="State" Property="State"/>
+          <Replacement Bookmark="Revision" Property="Revision"/>
+          <Replacement Bookmark="ValuesKeys" Property="Values" LinkedTemplate="ConfigurationVariableList"/>
+        </Replacements>
+      </Template>
+
+      <!-- ================ -->
+      <!-- Header templates -->
+      <!-- ================ -->
+      <Template Name="SpecificationReportTestCaseHeader" FileName="MicrosoftVisualStudioScrum.Test.Specification.TestCaseHeader.xml"/>
+      <Template Name="ResultReportTestResultHeader" FileName="MicrosoftVisualStudioScrum.Test.Result.TestResultHeader.xml"/>
+      <Template Name="ResultReportTestConfigurationHeader" FileName="MicrosoftVisualStudioScrum.Test.Result.TestConfigurationHeader.xml"/>
+      <Template Name="ConfigurationVariableListHeader" FileName="MicrosoftVisualStudioScrum.Test.Link.TestConfigurationHeader.xml"/>
+      <Template Name="LinkListAffectedBy" FileName="MicrosoftVisualStudioScrum.Test.Link.AffectedByHeader.xml"/>
+      <Template Name="LinkListAffects" FileName="MicrosoftVisualStudioScrum.Test.Link.AffectsHeader.xml"/>
+
+      <!-- ================ -->
+      <!-- Linked templates -->
+      <!-- ================ -->
+      <!-- Link template for 'RelatedLink' / 'Affected By' -->
+      <Template Name="LinkSimpleListAffectedBy"
+                HeaderTemplate="LinkListAffectedBy"
+                FileName="MicrosoftVisualStudioScrum.Test.Link.LinkSimpleList.xml">
+        <Conditions>
+          <!-- Use only link of type 'RelatedLink'-->
+          <Condition Property="BaseType">
+            <Values>
+              <Value>RelatedLink</Value>
+            </Values>
+          </Condition>
+          <!-- Use only link type end of type 'Affectded By'-->
+          <Condition Property="LinkTypeEnd.Name">
+            <Values>
+              <Value>Affected By</Value>
+            </Values>
+          </Condition>
+        </Conditions>
+        <Replacements>
+          <Replacement Bookmark="LinkedWorkItem" Property="RelatedWorkItemId">
+            <WorkItemViewerLink Id="RelatedWorkItemId" AutoText="true"/>
+          </Replacement>
+        </Replacements>
+      </Template>
+      <!-- Link template for 'RelatedLink' / 'Affects' -->
+      <Template Name="LinkSimpleListAffects"
+                HeaderTemplate="LinkListAffects"
+                FileName="MicrosoftVisualStudioScrum.Test.Link.LinkSimpleList.xml">
+        <Conditions>
+          <!-- Use only link of type 'RelatedLink'-->
+          <Condition Property="BaseType">
+            <Values>
+              <Value>RelatedLink</Value>
+            </Values>
+          </Condition>
+          <!-- Use only link type end of type 'Affectded By'-->
+          <Condition Property="LinkTypeEnd.Name">
+            <Values>
+              <Value>Affects</Value>
+            </Values>
+          </Condition>
+        </Conditions>
+        <Replacements>
+          <Replacement Bookmark="LinkedWorkItem" Property="RelatedWorkItemId">
+            <WorkItemViewerLink Id="RelatedWorkItemId" AutoText="true"/>
+          </Replacement>
+        </Replacements>
+      </Template>
+      <Template Name="ActionSimpleList" FileName="MicrosoftVisualStudioScrum.Test.Link.ActionSimpleList.xml">
+        <PostOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PostOperations>
+        <Replacements>
+          <Replacement Bookmark="Title" Property="Title.ToPlainText()"/>
+          <Replacement Bookmark="ExpectedResult" Property="ExpectedResult.ToPlainText()"/>
+          <Replacement Bookmark="Attachments" Property="Attachments" LinkedTemplate="AttachmentSimpleList"/>
+        </Replacements>
+      </Template>
+      <Template Name="AttachmentSimpleList" FileName="MicrosoftVisualStudioScrum.Test.Link.AttachmentSimpleList.xml">
+        <Replacements>
+          <Replacement Bookmark="Name" Property="Name"/>
+          <Replacement Bookmark="Comment" Property="Comment"/>
+        </Replacements>
+      </Template>
+      <Template Name="ConfigurationVariableList"
+                HeaderTemplate="ConfigurationVariableListHeader"
+                FileName="MicrosoftVisualStudioScrum.Test.Link.TestConfigurationRow.xml">
+        <PreOperations>
+          <Operation Type="DeleteCharacterLeft"/>
+        </PreOperations>
+        <Replacements>
+          <Replacement Bookmark="Key" Property="Key"/>
+          <Replacement Bookmark="Value" Property="Value"/>
+        </Replacements>
+      </Template>
+    </Templates>
+  </TestConfiguration>
+</MappingConfiguration>

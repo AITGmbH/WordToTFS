@@ -1,0 +1,81 @@
+trigger:
+  branches:
+    include:
+      - master
+      - features/*
+      - bugfix/*
+
+pool:
+  name: 'Internal'
+  demands:
+    - DotNetFramework
+    - msbuild
+    - VisualStudio -equals 2017
+
+variables:
+  solution: '**/WordToTFS.sln'
+  BuildPlatform: 'any cpu'
+  BuildConfiguration: 'release'
+  DeploymentType: 'Preview'
+  MajorVersion: 7
+  MinorVersion: 0
+  
+name: $(MajorVersion).$(MinorVersion).$(Date:yyMM).$(Date:dd)$(Rev:rr)
+  
+steps:  
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+  
+- task: colinsalmcorner.colinsalmcorner-buildtasks.version-assemblies-task.VersionAssemblies@2
+  displayName: 'Version AssemblyInfo.* files'
+  inputs:
+      filePattern: '**\GlobalAssemblyInfo.*'
+      failIfNoMatchFound: true
+
+- task: PowerShell@1
+  displayName: 'Update ClickOnce Offline Manifest Settings'
+  inputs:
+    scriptName: 'Scripts/updatemanifest_offline.ps1'
+    arguments: '-ProjectFile $(build.sourcesdirectory)\Sources\TFS.SyncService.View.Word2007\TFS.SyncService.View.Word.csproj'
+  
+- task: VSBuild@1
+  displayName: 'Build ClickOnce Offline Package'
+  inputs:
+      solution: '$(solution)'
+      vsVersion: '15.0'
+      msbuildArgs: '/p:PublishDir=$(build.artifactstagingdirectory)\Offline\ /t:clean,rebuild,publish'
+      platform: '$(BuildPlatform)'
+      configuration: '$(BuildConfiguration)'
+    
+- task: PublishPipelineArtifact@1
+  displayName: 'Publish Artifact: VSTO / Offline'
+  inputs:
+      targetPath: '$(build.artifactstagingdirectory)\Offline'
+      artifact: '$(DeploymentType)-OfflineVSTO'
+
+- task: colinsalmcorner.colinsalmcorner-buildtasks.replace-tokens-task.ReplaceTokens@1
+  displayName: 'Replace Placeholders in Local.runsettings'
+  inputs:
+    sourcePath: '$(Build.SourcesDirectory)/Sources/'
+    filePattern: Local.runsettings
+    secretTokens: 'TfsServerName:$(TfsServerName);TfsServerFQDN:$(TfsServerFQDN);TfsTeamProjectCollectionUrl:$(TfsTeamProjectCollectionUrl);TfsTeamProjectCollectionName:$(TfsTeamProjectCollectionName);TeamProjectName:$(TeamProjectName)'
+
+- task: VSTest@2
+  displayName: 'Test Assemblies **\$(BuildConfiguration)\*test*.dll;-:**\obj\**'
+  inputs:
+    testAssemblyVer2: |
+     **\*test*.dll
+     !**\obj\**
+     !**\microsoft*
+    testFiltercriteria: '$(TestFilter)'
+    runOnlyImpactedTests: false
+    runSettingsFile: '$(Build.SourcesDirectory)/Sources//Local.runsettings'
+    runInParallel: false
+    codeCoverageEnabled: true
+    testRunTitle: 'All Tests'
+    platform: '$(BuildPlatform)'
+    configuration: '$(BuildConfiguration)'
+    diagnosticsEnabled: True

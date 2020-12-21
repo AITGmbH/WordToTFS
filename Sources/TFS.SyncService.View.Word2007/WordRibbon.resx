@@ -1,0 +1,973 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="buttonBindUnbind.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="buttonBindUnbind.Label" xml:space="preserve">
+    <value>DIS/CONNECT</value>
+  </data>
+  <data name="&gt;&gt;buttonBindUnbind.Name" xml:space="preserve">
+    <value>buttonBindUnbind</value>
+  </data>
+  <data name="&gt;&gt;buttonBindUnbind.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonBindUnbind.Parent" xml:space="preserve">
+    <value>groupTFS</value>
+  </data>
+  <data name="&gt;&gt;buttonBindUnbind.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelServer.Label" xml:space="preserve">
+    <value>Server:</value>
+  </data>
+  <data name="&gt;&gt;labelServer.Name" xml:space="preserve">
+    <value>labelServer</value>
+  </data>
+  <data name="&gt;&gt;labelServer.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.LabelView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;labelServer.Parent" xml:space="preserve">
+    <value>boxServer</value>
+  </data>
+  <data name="&gt;&gt;labelServer.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelServerText.Label" xml:space="preserve">
+    <value> ---server---</value>
+  </data>
+  <data name="&gt;&gt;labelServerText.Name" xml:space="preserve">
+    <value>labelServerText</value>
+  </data>
+  <data name="&gt;&gt;labelServerText.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.LabelView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;labelServerText.Parent" xml:space="preserve">
+    <value>boxServer</value>
+  </data>
+  <data name="&gt;&gt;labelServerText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;boxServer.Name" xml:space="preserve">
+    <value>boxServer</value>
+  </data>
+  <data name="&gt;&gt;boxServer.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.BoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;boxServer.Parent" xml:space="preserve">
+    <value>groupTFS</value>
+  </data>
+  <data name="&gt;&gt;boxServer.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="labelProject.Label" xml:space="preserve">
+    <value>Project:</value>
+  </data>
+  <data name="&gt;&gt;labelProject.Name" xml:space="preserve">
+    <value>labelProject</value>
+  </data>
+  <data name="&gt;&gt;labelProject.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.LabelView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;labelProject.Parent" xml:space="preserve">
+    <value>boxProject</value>
+  </data>
+  <data name="&gt;&gt;labelProject.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelProjectText.Label" xml:space="preserve">
+    <value> ---project---</value>
+  </data>
+  <data name="&gt;&gt;labelProjectText.Name" xml:space="preserve">
+    <value>labelProjectText</value>
+  </data>
+  <data name="&gt;&gt;labelProjectText.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.LabelView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;labelProjectText.Parent" xml:space="preserve">
+    <value>boxProject</value>
+  </data>
+  <data name="&gt;&gt;labelProjectText.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;boxProject.Name" xml:space="preserve">
+    <value>boxProject</value>
+  </data>
+  <data name="&gt;&gt;boxProject.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.BoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;boxProject.Parent" xml:space="preserve">
+    <value>groupTFS</value>
+  </data>
+  <data name="&gt;&gt;boxProject.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupTFS.Label" xml:space="preserve">
+    <value>TFS</value>
+  </data>
+  <data name="&gt;&gt;groupTFS.Name" xml:space="preserve">
+    <value>groupTFS</value>
+  </data>
+  <data name="&gt;&gt;groupTFS.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupTFS.Parent" xml:space="preserve">
+    <value>tabAITRM</value>
+  </data>
+  <data name="&gt;&gt;groupTFS.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonPublishSelected.Label" xml:space="preserve">
+    <value>Publish Selected</value>
+  </data>
+  <data name="buttonPublishSelected.ScreenTip" xml:space="preserve">
+    <value>Publish selected work items</value>
+  </data>
+  <data name="buttonPublishSelected.SuperTip" xml:space="preserve">
+    <value>Publishes changes to work items within the selection of the current document.</value>
+  </data>
+  <data name="&gt;&gt;buttonPublishSelected.Name" xml:space="preserve">
+    <value>buttonPublishSelected</value>
+  </data>
+  <data name="&gt;&gt;buttonPublishSelected.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonPublishSelected.Parent" xml:space="preserve">
+    <value>splitButtonPublish.Items</value>
+  </data>
+  <data name="&gt;&gt;buttonPublishSelected.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonForcePublish.Label" xml:space="preserve">
+    <value>Force Publish</value>
+  </data>
+  <data name="buttonForcePublish.SuperTip" xml:space="preserve">
+    <value>Publishes changes and overwrites work items on the server in case there is a revision conflict.</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="buttonForcePublish.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonForcePublish.Name" xml:space="preserve">
+    <value>buttonForcePublish</value>
+  </data>
+  <data name="&gt;&gt;buttonForcePublish.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonForcePublish.Parent" xml:space="preserve">
+    <value>splitButtonPublish.Items</value>
+  </data>
+  <data name="&gt;&gt;buttonForcePublish.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="splitButtonPublish.Label" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="splitButtonPublish.ScreenTip" xml:space="preserve">
+    <value>Publish all work items</value>
+  </data>
+  <data name="splitButtonPublish.SuperTip" xml:space="preserve">
+    <value>Publishes changes to work items in the current document to the connected TFS.</value>
+  </data>
+  <data name="&gt;&gt;splitButtonPublish.Name" xml:space="preserve">
+    <value>splitButtonPublish</value>
+  </data>
+  <data name="&gt;&gt;splitButtonPublish.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.SplitButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;splitButtonPublish.Parent" xml:space="preserve">
+    <value>groupPublish</value>
+  </data>
+  <data name="&gt;&gt;splitButtonPublish.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonRefreshSelected.Label" xml:space="preserve">
+    <value>Refresh selected</value>
+  </data>
+  <data name="buttonRefreshSelected.ScreenTip" xml:space="preserve">
+    <value>Refreshes all work items within the current selection of the document.</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshSelected.Name" xml:space="preserve">
+    <value>buttonRefreshSelected</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshSelected.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshSelected.Parent" xml:space="preserve">
+    <value>splitButtonRefresh.Items</value>
+  </data>
+  <data name="&gt;&gt;buttonRefreshSelected.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitButtonRefresh.Label" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="splitButtonRefresh.ScreenTip" xml:space="preserve">
+    <value>Refresh all work items</value>
+  </data>
+  <data name="splitButtonRefresh.SuperTip" xml:space="preserve">
+    <value>Refreshes all work items within the current document.</value>
+  </data>
+  <data name="&gt;&gt;splitButtonRefresh.Name" xml:space="preserve">
+    <value>splitButtonRefresh</value>
+  </data>
+  <data name="&gt;&gt;splitButtonRefresh.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.SplitButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;splitButtonRefresh.Parent" xml:space="preserve">
+    <value>groupPublish</value>
+  </data>
+  <data name="&gt;&gt;splitButtonRefresh.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonGetWorkItems.Label" xml:space="preserve">
+    <value>Get Work Items</value>
+  </data>
+  <data name="buttonGetWorkItems.ScreenTip" xml:space="preserve">
+    <value>Get Work Items</value>
+  </data>
+  <data name="buttonGetWorkItems.SuperTip" xml:space="preserve">
+    <value>Get work items from connected TFS.</value>
+  </data>
+  <data name="&gt;&gt;buttonGetWorkItems.Name" xml:space="preserve">
+    <value>buttonGetWorkItems</value>
+  </data>
+  <data name="&gt;&gt;buttonGetWorkItems.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonGetWorkItems.Parent" xml:space="preserve">
+    <value>groupPublish</value>
+  </data>
+  <data name="&gt;&gt;buttonGetWorkItems.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonSynchronizationState.Label" xml:space="preserve">
+    <value>Compare</value>
+  </data>
+  <data name="&gt;&gt;buttonSynchronizationState.Name" xml:space="preserve">
+    <value>buttonSynchronizationState</value>
+  </data>
+  <data name="&gt;&gt;buttonSynchronizationState.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonSynchronizationState.Parent" xml:space="preserve">
+    <value>groupPublish</value>
+  </data>
+  <data name="&gt;&gt;buttonSynchronizationState.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupPublish.Label" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="&gt;&gt;groupPublish.Name" xml:space="preserve">
+    <value>groupPublish</value>
+  </data>
+  <data name="&gt;&gt;groupPublish.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupPublish.Parent" xml:space="preserve">
+    <value>tabAITRM</value>
+  </data>
+  <data name="&gt;&gt;groupPublish.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="dropDownSelectTemplate.Label" xml:space="preserve">
+    <value> </value>
+  </data>
+  <data name="dropDownSelectTemplate.ScreenTip" xml:space="preserve">
+    <value>Select Template</value>
+  </data>
+  <data name="dropDownSelectTemplate.SizeString" xml:space="preserve">
+    <value>WWFWWFWWFWWFWWFWWF</value>
+  </data>
+  <data name="dropDownSelectTemplate.SuperTip" xml:space="preserve">
+    <value>Select the work item template to map fields between Word and TFS</value>
+  </data>
+  <data name="&gt;&gt;dropDownSelectTemplate.Name" xml:space="preserve">
+    <value>dropDownSelectTemplate</value>
+  </data>
+  <data name="&gt;&gt;dropDownSelectTemplate.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.DropDownView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;dropDownSelectTemplate.Parent" xml:space="preserve">
+    <value>groupTemplate</value>
+  </data>
+  <data name="&gt;&gt;dropDownSelectTemplate.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="chkIgnoreFormatting.Label" xml:space="preserve">
+    <value>Ignore Formatting</value>
+  </data>
+  <data name="chkIgnoreFormatting.ScreenTip" xml:space="preserve">
+    <value>Ignore formatting for HTML fields</value>
+  </data>
+  <data name="chkIgnoreFormatting.SuperTip" xml:space="preserve">
+    <value>If checked, the formatting of html fields is ignored and only fields that differ in their actual text are published to TFS.</value>
+  </data>
+  <data name="&gt;&gt;chkIgnoreFormatting.Name" xml:space="preserve">
+    <value>chkIgnoreFormatting</value>
+  </data>
+  <data name="&gt;&gt;chkIgnoreFormatting.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.CheckBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;chkIgnoreFormatting.Parent" xml:space="preserve">
+    <value>groupTemplate</value>
+  </data>
+  <data name="&gt;&gt;chkIgnoreFormatting.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chkConflictOverwrite.Label" xml:space="preserve">
+    <value>Ignore Conflicts</value>
+  </data>
+  <data name="chkConflictOverwrite.ScreenTip" xml:space="preserve">
+    <value>Ignore revision conflicts</value>
+  </data>
+  <data name="chkConflictOverwrite.SuperTip" xml:space="preserve">
+    <value>If checked, work items are published to TFS even if there are revision conflicts. Remote changes are overwritten with local values.</value>
+  </data>
+  <data name="&gt;&gt;chkConflictOverwrite.Name" xml:space="preserve">
+    <value>chkConflictOverwrite</value>
+  </data>
+  <data name="&gt;&gt;chkConflictOverwrite.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.CheckBoxView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;chkConflictOverwrite.Parent" xml:space="preserve">
+    <value>groupTemplate</value>
+  </data>
+  <data name="&gt;&gt;chkConflictOverwrite.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonTemplateManager.Label" xml:space="preserve">
+    <value>Template Manager</value>
+  </data>
+  <data name="&gt;&gt;buttonTemplateManager.Name" xml:space="preserve">
+    <value>buttonTemplateManager</value>
+  </data>
+  <data name="&gt;&gt;buttonTemplateManager.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonTemplateManager.Parent" xml:space="preserve">
+    <value>groupTemplate</value>
+  </data>
+  <data name="&gt;&gt;buttonTemplateManager.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonInsertTemplate.Label" xml:space="preserve">
+    <value>Insert Template</value>
+  </data>
+  <data name="buttonInsertTemplate.ScreenTip" xml:space="preserve">
+    <value>Tip text that appears in bold</value>
+  </data>
+  <data name="buttonInsertTemplate.SuperTip" xml:space="preserve">
+    <value>Multiline tip text that appears when the pointer moves over the control</value>
+  </data>
+  <data name="buttonInsertTemplate.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonInsertTemplate.Name" xml:space="preserve">
+    <value>buttonInsertTemplate</value>
+  </data>
+  <data name="&gt;&gt;buttonInsertTemplate.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonInsertTemplate.Parent" xml:space="preserve">
+    <value>groupTemplate</value>
+  </data>
+  <data name="&gt;&gt;buttonInsertTemplate.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonCustomizeStyle.Label" xml:space="preserve">
+    <value>Customize Style</value>
+  </data>
+  <data name="buttonCustomizeStyle.ScreenTip" xml:space="preserve">
+    <value>Tip text that appears in bold</value>
+  </data>
+  <data name="buttonCustomizeStyle.SuperTip" xml:space="preserve">
+    <value>Multiline tip text that appears when the pointer moves over the control</value>
+  </data>
+  <data name="buttonCustomizeStyle.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonCustomizeStyle.Name" xml:space="preserve">
+    <value>buttonCustomizeStyle</value>
+  </data>
+  <data name="&gt;&gt;buttonCustomizeStyle.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonCustomizeStyle.Parent" xml:space="preserve">
+    <value>groupTemplate</value>
+  </data>
+  <data name="&gt;&gt;buttonCustomizeStyle.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonDeleteStyle.Label" xml:space="preserve">
+    <value>Delete Style</value>
+  </data>
+  <data name="buttonDeleteStyle.ScreenTip" xml:space="preserve">
+    <value>Tip text that appears in bold</value>
+  </data>
+  <data name="buttonDeleteStyle.SuperTip" xml:space="preserve">
+    <value>Multiline tip text that appears when the pointer moves over the control</value>
+  </data>
+  <data name="buttonDeleteStyle.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteStyle.Name" xml:space="preserve">
+    <value>buttonDeleteStyle</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteStyle.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteStyle.Parent" xml:space="preserve">
+    <value>groupTemplate</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteStyle.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="groupTemplate.Label" xml:space="preserve">
+    <value>Template</value>
+  </data>
+  <data name="&gt;&gt;groupTemplate.Name" xml:space="preserve">
+    <value>groupTemplate</value>
+  </data>
+  <data name="&gt;&gt;groupTemplate.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupTemplate.Parent" xml:space="preserve">
+    <value>tabAITRM</value>
+  </data>
+  <data name="&gt;&gt;groupTemplate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="menuNewEmptyWorkItem.Label" xml:space="preserve">
+    <value>Empty Work Item</value>
+  </data>
+  <data name="&gt;&gt;menuNewEmptyWorkItem.Name" xml:space="preserve">
+    <value>menuNewEmptyWorkItem</value>
+  </data>
+  <data name="&gt;&gt;menuNewEmptyWorkItem.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.MenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;menuNewEmptyWorkItem.Parent" xml:space="preserve">
+    <value>groupRequirements</value>
+  </data>
+  <data name="&gt;&gt;menuNewEmptyWorkItem.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="menuNewWorkItem.Label" xml:space="preserve">
+    <value>New Work Item</value>
+  </data>
+  <data name="&gt;&gt;menuNewWorkItem.Name" xml:space="preserve">
+    <value>menuNewWorkItem</value>
+  </data>
+  <data name="&gt;&gt;menuNewWorkItem.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.MenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;menuNewWorkItem.Parent" xml:space="preserve">
+    <value>groupRequirements</value>
+  </data>
+  <data name="&gt;&gt;menuNewWorkItem.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="menuNewHeader.Label" xml:space="preserve">
+    <value>Insert Header</value>
+  </data>
+  <data name="&gt;&gt;menuNewHeader.Name" xml:space="preserve">
+    <value>menuNewHeader</value>
+  </data>
+  <data name="&gt;&gt;menuNewHeader.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.MenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;menuNewHeader.Parent" xml:space="preserve">
+    <value>groupRequirements</value>
+  </data>
+  <data name="&gt;&gt;menuNewHeader.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="buttonEditDefVals.Label" xml:space="preserve">
+    <value>Edit Default Values</value>
+  </data>
+  <data name="buttonEditDefVals.ScreenTip" xml:space="preserve">
+    <value>Edit default values</value>
+  </data>
+  <data name="buttonEditDefVals.SuperTip" xml:space="preserve">
+    <value>Edit the default values of work items specified in the selected template or reset them.</value>
+  </data>
+  <data name="&gt;&gt;buttonEditDefVals.Name" xml:space="preserve">
+    <value>buttonEditDefVals</value>
+  </data>
+  <data name="&gt;&gt;buttonEditDefVals.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonEditDefVals.Parent" xml:space="preserve">
+    <value>groupRequirements</value>
+  </data>
+  <data name="&gt;&gt;buttonEditDefVals.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonDeleteIds.Label" xml:space="preserve">
+    <value>Delete Ids</value>
+  </data>
+  <data name="buttonDeleteIds.ScreenTip" xml:space="preserve">
+    <value>Delete all work item ids.</value>
+  </data>
+  <data name="buttonDeleteIds.SuperTip" xml:space="preserve">
+    <value>Delete all work item ids from the document. This allows the user to publish the document to another Team Foundation Server or another Team Project.</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteIds.Name" xml:space="preserve">
+    <value>buttonDeleteIds</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteIds.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteIds.Parent" xml:space="preserve">
+    <value>groupRequirements</value>
+  </data>
+  <data name="&gt;&gt;buttonDeleteIds.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonAreaIterationPath.Label" xml:space="preserve">
+    <value>Area and Iteration Path</value>
+  </data>
+  <data name="buttonAreaIterationPath.ScreenTip" xml:space="preserve">
+    <value>Area and Iteration Path</value>
+  </data>
+  <data name="buttonAreaIterationPath.SuperTip" xml:space="preserve">
+    <value>Insert Area or Iteration Path into document.</value>
+  </data>
+  <data name="&gt;&gt;buttonAreaIterationPath.Name" xml:space="preserve">
+    <value>buttonAreaIterationPath</value>
+  </data>
+  <data name="&gt;&gt;buttonAreaIterationPath.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonAreaIterationPath.Parent" xml:space="preserve">
+    <value>groupRequirements</value>
+  </data>
+  <data name="&gt;&gt;buttonAreaIterationPath.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupRequirements.Label" xml:space="preserve">
+    <value>Work Items</value>
+  </data>
+  <data name="&gt;&gt;groupRequirements.Name" xml:space="preserve">
+    <value>groupRequirements</value>
+  </data>
+  <data name="&gt;&gt;groupRequirements.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupRequirements.Parent" xml:space="preserve">
+    <value>tabAITRM</value>
+  </data>
+  <data name="&gt;&gt;groupRequirements.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="buttonPreserveReqID.Label" xml:space="preserve">
+    <value>Preserve Requirement ID</value>
+  </data>
+  <data name="buttonPreserveReqID.ScreenTip" xml:space="preserve">
+    <value>Tip text that appears in bold</value>
+  </data>
+  <data name="buttonPreserveReqID.SuperTip" xml:space="preserve">
+    <value>Multiline tip text that appears when the pointer moves over the control</value>
+  </data>
+  <data name="&gt;&gt;buttonPreserveReqID.Name" xml:space="preserve">
+    <value>buttonPreserveReqID</value>
+  </data>
+  <data name="&gt;&gt;buttonPreserveReqID.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonPreserveReqID.Parent" xml:space="preserve">
+    <value>groupConfiguration</value>
+  </data>
+  <data name="&gt;&gt;buttonPreserveReqID.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupConfiguration.Label" xml:space="preserve">
+    <value>Configuration</value>
+  </data>
+  <data name="groupConfiguration.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;groupConfiguration.Name" xml:space="preserve">
+    <value>groupConfiguration</value>
+  </data>
+  <data name="&gt;&gt;groupConfiguration.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupConfiguration.Parent" xml:space="preserve">
+    <value>tabAITRM</value>
+  </data>
+  <data name="&gt;&gt;groupConfiguration.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="buttonTestSpecificationReportByQuery.Label" xml:space="preserve">
+    <value>Test Spec Report By Query</value>
+  </data>
+  <data name="buttonTestSpecificationReportByQuery.ScreenTip" xml:space="preserve">
+    <value>Creates test specification report</value>
+  </data>
+  <data name="&gt;&gt;buttonTestSpecificationReportByQuery.Name" xml:space="preserve">
+    <value>buttonTestSpecificationReportByQuery</value>
+  </data>
+  <data name="&gt;&gt;buttonTestSpecificationReportByQuery.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonTestSpecificationReportByQuery.Parent" xml:space="preserve">
+    <value>splitButtonTestSpecificationReport.Items</value>
+  </data>
+  <data name="&gt;&gt;buttonTestSpecificationReportByQuery.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="splitButtonTestSpecificationReport.Label" xml:space="preserve">
+    <value>Test Spec Report</value>
+  </data>
+  <data name="splitButtonTestSpecificationReport.SuperTip" xml:space="preserve">
+    <value>Creates test specification report</value>
+  </data>
+  <data name="&gt;&gt;splitButtonTestSpecificationReport.Name" xml:space="preserve">
+    <value>splitButtonTestSpecificationReport</value>
+  </data>
+  <data name="&gt;&gt;splitButtonTestSpecificationReport.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.SplitButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;splitButtonTestSpecificationReport.Parent" xml:space="preserve">
+    <value>groupTestManagement</value>
+  </data>
+  <data name="&gt;&gt;splitButtonTestSpecificationReport.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonTestResultReport.Label" xml:space="preserve">
+    <value>Test Result Report</value>
+  </data>
+  <data name="buttonTestResultReport.SuperTip" xml:space="preserve">
+    <value>Creates test result report</value>
+  </data>
+  <data name="&gt;&gt;buttonTestResultReport.Name" xml:space="preserve">
+    <value>buttonTestResultReport</value>
+  </data>
+  <data name="&gt;&gt;buttonTestResultReport.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ToggleButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonTestResultReport.Parent" xml:space="preserve">
+    <value>groupTestManagement</value>
+  </data>
+  <data name="&gt;&gt;buttonTestResultReport.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupTestManagement.Label" xml:space="preserve">
+    <value>Test Management</value>
+  </data>
+  <data name="&gt;&gt;groupTestManagement.Name" xml:space="preserve">
+    <value>groupTestManagement</value>
+  </data>
+  <data name="&gt;&gt;groupTestManagement.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupTestManagement.Parent" xml:space="preserve">
+    <value>tabAITRM</value>
+  </data>
+  <data name="&gt;&gt;groupTestManagement.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="buttonHelp.Label" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="buttonHelp.SuperTip" xml:space="preserve">
+    <value>Displays the WordToTFS help.</value>
+  </data>
+  <data name="&gt;&gt;buttonHelp.Name" xml:space="preserve">
+    <value>buttonHelp</value>
+  </data>
+  <data name="&gt;&gt;buttonHelp.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonHelp.Parent" xml:space="preserve">
+    <value>groupHelp</value>
+  </data>
+  <data name="&gt;&gt;buttonHelp.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="buttonAbout.Label" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="buttonAbout.SuperTip" xml:space="preserve">
+    <value>About this application.</value>
+  </data>
+  <data name="&gt;&gt;buttonAbout.Name" xml:space="preserve">
+    <value>buttonAbout</value>
+  </data>
+  <data name="&gt;&gt;buttonAbout.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonAbout.Parent" xml:space="preserve">
+    <value>groupHelp</value>
+  </data>
+  <data name="&gt;&gt;buttonAbout.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="buttonUpdate.Label" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="buttonUpdate.ScreenTip" xml:space="preserve">
+    <value>Check for a newer version of WordToTFS and install automatically</value>
+  </data>
+  <data name="&gt;&gt;buttonUpdate.Name" xml:space="preserve">
+    <value>buttonUpdate</value>
+  </data>
+  <data name="&gt;&gt;buttonUpdate.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;buttonUpdate.Parent" xml:space="preserve">
+    <value>groupHelp</value>
+  </data>
+  <data name="&gt;&gt;buttonUpdate.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="FeedbackButton.Label" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="FeedbackButton.SuperTip" xml:space="preserve">
+    <value>Send a feedback to help us improving WordToTfs</value>
+  </data>
+  <data name="&gt;&gt;FeedbackButton.Name" xml:space="preserve">
+    <value>FeedbackButton</value>
+  </data>
+  <data name="&gt;&gt;FeedbackButton.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.ButtonView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;FeedbackButton.Parent" xml:space="preserve">
+    <value>groupHelp</value>
+  </data>
+  <data name="&gt;&gt;FeedbackButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupHelp.Label" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="&gt;&gt;groupHelp.Name" xml:space="preserve">
+    <value>groupHelp</value>
+  </data>
+  <data name="&gt;&gt;groupHelp.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.GroupView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;groupHelp.Parent" xml:space="preserve">
+    <value>tabAITRM</value>
+  </data>
+  <data name="&gt;&gt;groupHelp.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="tabAITRM.Label" xml:space="preserve">
+    <value>WordToTFS</value>
+  </data>
+  <data name="&gt;&gt;tabAITRM.Name" xml:space="preserve">
+    <value>tabAITRM</value>
+  </data>
+  <data name="&gt;&gt;tabAITRM.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.TabView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="&gt;&gt;WordRibbon.OfficeMenu.Name" xml:space="preserve">
+    <value>WordRibbon.OfficeMenu</value>
+  </data>
+  <data name="&gt;&gt;WordRibbon.OfficeMenu.Type" xml:space="preserve">
+    <value>Microsoft.VisualStudio.Tools.Office.Ribbon.View.OfficeMenuView, Microsoft.VisualStudio.Tools.Office.Designer, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="&gt;&gt;WordRibbon.OfficeMenu.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;WordRibbon.OfficeMenu.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+</root>

@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="AIT.TFS.SyncService.View.Controls.SynchronizationStatePanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="491" d:DesignWidth="400">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources/Dictionaries/StringResources.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/Styles.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/Brushes.xaml" />
+                <ResourceDictionary Source="Resources/Dictionaries/DataTemplates.xaml" />         
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition x:Name="MainRowTop" Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="5"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0">
+                <TextBlock>Set of Work Items to compare</TextBlock>
+                <ComboBox IsEnabled="{Binding CanFindWorkItems}" x:Name="QueryBox" Grid.Row="0" HorizontalAlignment="Stretch" Width="auto" PreviewMouseDown="QueryBox_PreviewMouseDown" />
+            </StackPanel>
+            
+            <!-- QuerySelection Popup -->
+            <Popup Placement="Left" HorizontalOffset="{Binding ActualWidth, ElementName=QueryBox}" VerticalOffset="{Binding ActualHeight, ElementName=QueryBox}" Grid.Row="1" Name="TreeViewPopup" AllowsTransparency="True" IsOpen="False" StaysOpen="True" PlacementTarget="{x:Reference QueryBox}">
+                <Popup.Resources>
+                    <CompositeCollection x:Key="CompCollection">
+                        <TreeViewItem>
+                            <TreeViewItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Source="Resources/Images/view.ico" Width="16" />
+                                    <TextBlock VerticalAlignment="Center" FontWeight="Bold">All Work Items in the document</TextBlock>
+                                </StackPanel>
+                            </TreeViewItem.Header>
+                        </TreeViewItem>
+                        <CollectionContainer Collection="{Binding Path=DataContext.QueryHierarchy, Source={x:Reference TreeViewPopup}}" />
+                    </CompositeCollection>
+                </Popup.Resources>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                    <TreeView x:Name="QueryTree" Height="auto" ItemsSource="{StaticResource CompCollection}" TreeViewItem.Selected="QueryTree_OnSelected">
+                        <TreeView.ItemContainerStyle>
+                            <Style TargetType="{x:Type TreeViewItem}">
+                                <Setter Property="IsExpanded" Value="True" />
+                            </Style>
+                        </TreeView.ItemContainerStyle>
+                    </TreeView>
+                </ScrollViewer>
+            </Popup>
+            
+            <Expander Grid.Row="2" Margin="0,5" VerticalAlignment="Center" Header="Hierarchy">
+                <Border BorderThickness="1" BorderBrush="Gray">
+                    <DockPanel LastChildFill="True" Margin="5">
+                        <CheckBox DockPanel.Dock="Top" VerticalContentAlignment="Center" IsChecked="{Binding UseLinkedWorkItems, Mode=TwoWay}">Include linked Work Items</CheckBox>
+                        <StackPanel DockPanel.Dock="Top" Orientation="Vertical" IsEnabled="{Binding UseLinkedWorkItems, Mode=OneWay}">
+                            <RadioButton Margin="25,2,0,0" IsChecked="{Binding IsAnyLinkType}" >All linked Work Items</RadioButton>
+                            <RadioButton Margin="25,2,0,0" IsChecked="{Binding IsCustomLinkType, Mode=OneWay}" >Work Items of relation</RadioButton>
+                        </StackPanel>
+                        <ListBox x:Name="CustomLinkTypesList" Height="Auto" MaxHeight="200" Margin="42,2,0,2" ItemTemplate="{StaticResource CheckableTfsWorkItemLink}" ItemsSource="{Binding LinkTypes}" IsEnabled="{Binding IsCustomLinksListEnabled}" />
+                    </DockPanel>
+                </Border>
+            </Expander>
+        </Grid>
+        <Grid Grid.Row="2" Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" MinWidth="70" Margin="0, 0, 0, 10" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding CanFindWorkItems}" Click="Find_Click">Compare</Button>
+            <Border Grid.Row="1">
+                <ListBox Grid.IsSharedSizeScope="True" x:Name="FoundList" Grid.Row="0" ItemsSource="{Binding FoundWorkItems}" ItemTemplate="{StaticResource FoundWorkItemsTemplate}" SelectionChanged="FoundList_SelectionChanged" />
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

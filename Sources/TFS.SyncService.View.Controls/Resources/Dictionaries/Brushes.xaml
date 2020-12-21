@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush Color="Black" x:Key="BorderBrush" /> 
+    <SolidColorBrush Color="White" x:Key="FormBackgroundBrush" />
+    
+    <LinearGradientBrush x:Key="MouseOverBorderBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#ccc" Offset="0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="SelectedListViewItemBrush" StartPoint="1,0" EndPoint="0,0" >
+        <GradientStop Color="#ddd" Offset="0" />
+        <GradientStop Color="#eee" Offset="1" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="SelectedBorderBackgroundBrush" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#ccc" Offset="0" />
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="MouseOverListViewItemBrush" StartPoint="0,0" EndPoint="0,1" >
+        <GradientStop Color="#ddd" Offset="0" />
+        <GradientStop Color="#eee" Offset="1" />
+    </LinearGradientBrush>
+    
+    <SolidColorBrush Color="white" x:Key="DefaultTaskPaneBackgroundBrush" />
+</ResourceDictionary>

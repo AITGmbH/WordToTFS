@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MappingConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="W2T.xsd" ShowName="MSF For Agile (2010)" DefaultMapping="false" EnableRefresh="true" UseStackRank="false">
+  <Mappings>
+    <Mapping WorkItemType="User Story" MappingWorkItemType="User Story" RelatedTemplate="MSFForAgile(2010).UserStory.xml" AssignRegularExpression="User Story" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. These values correspond to 'FieldValueType' enum. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. These values correspond to 'Direction' enum. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">User Story Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">User Story Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Scheduling.StoryPoints" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Story Points">Story Points</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters />
+    </Mapping>
+
+    <Mapping WorkItemType="Issue" MappingWorkItemType="Issue" RelatedTemplate="MSFForAgile(2010).Issue.xml" AssignRegularExpression="Issue" AssignCellRow="1" AssignCellCol="1"  ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'.-->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="5" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Issue Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Issue Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">Priority</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Scheduling.DueDate" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="3">
+          <DefaultValue ShowName="Due Date">Due Date</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters>
+      </Converters>
+    </Mapping>
+
+    <Mapping WorkItemType="Task" MappingWorkItemType="Task" RelatedTemplate="MSFForAgile(2010).Task.xml" AssignRegularExpression="Task" AssignCellRow="1" AssignCellCol="1"  ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Task Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Task Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Activity" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Activity">Requirements</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters>
+        <Converter FieldName="Microsoft.VSTS.Common.Activity">
+          <Values>
+            <Value Text="Deployment" MappingText="Deployment" />
+            <Value Text="Design" MappingText="Design" />
+            <Value Text="Development" MappingText="Development" />
+            <Value Text="Documentation" MappingText="Documentation" />
+            <Value Text="Requirements" MappingText="Requirements" />
+            <Value Text="Testing" MappingText="Testing" />
+          </Values>
+        </Converter>
+      </Converters>
+    </Mapping>
+  </Mappings>
+  <TestConfiguration>
+    <TestSpecificationConfiguration Available="false" />
+    <TestResultConfiguration Available="false"/>
+  </TestConfiguration>
+</MappingConfiguration>

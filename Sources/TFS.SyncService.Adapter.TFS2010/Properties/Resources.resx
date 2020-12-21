@@ -1,0 +1,424 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AlertSettingsDialogErrorInvalidDisplayName" xml:space="preserve">
+    <value>TF210005: Your display name from Active Directory cannot be used to subscribe for work item events. It contains both ‘ and “ characters. Remove these characters from your display name to subscribe for work item events.</value>
+  </data>
+  <data name="AlertSettingsDialogValidationError" xml:space="preserve">
+    <value>TF20003: Could not validate one or more e-mail addresses. Correct the e-mail addresses and try again.</value>
+  </data>
+  <data name="AttachmentAddDialogInvalidFile" xml:space="preserve">
+    <value>TF20004: Could not find the specified file "{0}". \nCheck the file name and try again.</value>
+  </data>
+  <data name="DirectoryDoesNotExist" xml:space="preserve">
+    <value>TF20005: Could not find the specified directory.</value>
+  </data>
+  <data name="ErrorNoControl" xml:space="preserve">
+    <value>TF210004: The control could not be loaded from the assembly.</value>
+  </data>
+  <data name="ErrorSavingQuery" xml:space="preserve">
+    <value>TF20006: Could not save the query.</value>
+  </data>
+  <data name="Error_ConnectTFS" xml:space="preserve">
+    <value>Error connect to TFS</value>
+  </data>
+  <data name="Error_GetQueryHierarchy" xml:space="preserve">
+    <value>Error getting query hierarchy</value>
+  </data>
+  <data name="Error_LoadTFSWorkItems" xml:space="preserve">
+    <value>Error getting TFS work items</value>
+  </data>
+  <data name="Error_QueryDoesNotExists_Long" xml:space="preserve">
+    <value>The Query '{0}' does not exist.</value>
+  </data>
+  <data name="Error_QueryDoesNotExists_Short" xml:space="preserve">
+    <value>Query does not exist.</value>
+  </data>
+  <data name="FieldChooserWidthError" xml:space="preserve">
+    <value>TF20007: The value for Width is not supported. Choose a Width between 0 and 65536.</value>
+  </data>
+  <data name="FieldControlInvalidDouble" xml:space="preserve">
+    <value>TF20008: The value for field '{0}' is not supported. Specify the value as a decimal number.</value>
+  </data>
+  <data name="FieldControlInvalidInteger" xml:space="preserve">
+    <value>TF20009: The value for field '{0}' is not supported. Specify the value as a whole number between -2147483648 to 2147483647.</value>
+  </data>
+  <data name="FieldStatusInvalidCharacters" xml:space="preserve">
+    <value>TF20010: The value for field '{0}' has unsupported characters.</value>
+  </data>
+  <data name="FieldStatusInvalidComputedField" xml:space="preserve">
+    <value>The value for field '{0}' is computed and cannot be changed.</value>
+  </data>
+  <data name="FieldStatusInvalidDate" xml:space="preserve">
+    <value>TF20001: The value for field '{0}' is not a recognized date.</value>
+  </data>
+  <data name="FieldStatusInvalidEmpty" xml:space="preserve">
+    <value>TF20012: Field '{0}' cannot be empty.</value>
+  </data>
+  <data name="FieldStatusInvalidEmptyOrOldValue" xml:space="preserve">
+    <value>TF20013: Field '{0}' cannot be empty, and must be different from the original value.</value>
+  </data>
+  <data name="FieldStatusInvalidFormat" xml:space="preserve">
+    <value>TF20014: The value for field '{0}' is not in a recognized format.</value>
+  </data>
+  <data name="FieldStatusInvalidListValue" xml:space="preserve">
+    <value>TF20015: The field '{0}' contains a value that is not in the list of supported values.</value>
+  </data>
+  <data name="FieldStatusInvalidNotEmpty" xml:space="preserve">
+    <value>The value for field '{0}' must be empty.</value>
+  </data>
+  <data name="FieldStatusInvalidNotEmptyOrOldValue" xml:space="preserve">
+    <value>The value for field '{0}' must be empty or the same as the original value.</value>
+  </data>
+  <data name="FieldStatusInvalidNotOldValue" xml:space="preserve">
+    <value>The value for field '{0}' must be the same as the original value.</value>
+  </data>
+  <data name="FieldStatusInvalidNotOldValue2" xml:space="preserve">
+    <value>Field '{0}' is read only. You may have to change the state of the work item.</value>
+    <comment>The same value is also in SyncService. didnt want to add reference</comment>
+  </data>
+  <data name="FieldStatusInvalidOldValue" xml:space="preserve">
+    <value>TF20016: The value for field '{0}' must be updated, the current value is no longer supported.</value>
+  </data>
+  <data name="FieldStatusInvalidPath" xml:space="preserve">
+    <value>TF20017: The area or iteration provided for field '{0}' could not be found.</value>
+  </data>
+  <data name="FieldStatusInvalidTooLong" xml:space="preserve">
+    <value>The value for field '{0}' is too long.</value>
+  </data>
+  <data name="FieldStatusInvalidTooLongWithDetails" xml:space="preserve">
+    <value>TF207011: The value for field '{0}' is {1} characters long, which exceeds the maximum length of {2} characters.</value>
+  </data>
+  <data name="FieldStatusInvalidType" xml:space="preserve">
+    <value>The value for field '{0}' is not of the right type.</value>
+  </data>
+  <data name="FieldStatusInvalidUnknown" xml:space="preserve">
+    <value>There is an unknown problem with field '{0}'.</value>
+  </data>
+  <data name="FieldStatusInvalidValueInOtherField" xml:space="preserve">
+    <value>TF20018: The field '{0}' is unsupported because of a value in another field.</value>
+  </data>
+  <data name="FieldStatusInvalidValueNotInOtherField" xml:space="preserve">
+    <value>TF20019: The field '{0}' is unsupported because a value is missing in another field.</value>
+  </data>
+  <data name="FieldStatusNoWritePermissionToAreaNode" xml:space="preserve">
+    <value>TF20034: The area does not exist or you do not have permission to save work items in the area '{0}'. Change the value for field '{1}' to an area where you have write permissions.</value>
+  </data>
+  <data name="FieldStatusValidFieldStatusValid" xml:space="preserve">
+    <value>The field '{0}' is valid.</value>
+  </data>
+  <data name="FilterGridInvalidMacro" xml:space="preserve">
+    <value>TF20036: The macro '{0}' is not recognized. Available macros include @Me, @Project, and @Today.</value>
+  </data>
+  <data name="FilterGridOperatorMissing" xml:space="preserve">
+    <value>TF20032: The operator for row {0} is not recognized or missing.</value>
+  </data>
+  <data name="GoToWorkItemDialogZeroId" xml:space="preserve">
+    <value>TF20022: Zero is not a supported work item ID. Enter a positive integer and try again.</value>
+  </data>
+  <data name="LinkDialogErrorWorkitemIdShouldBeNumeric" xml:space="preserve">
+    <value>TF20024: The work item ID must be a positive integer.</value>
+  </data>
+  <data name="LinkError_OneToManyViolation" xml:space="preserve">
+    <value>The link '{0}' does not support multiple linked work items. Please add one link only!</value>
+  </data>
+  <data name="LinksControlCannotRelateToSelfError" xml:space="preserve">
+    <value>TF20026: A work item cannot contain a related link to itself.</value>
+  </data>
+  <data name="LinksControlErrorCouldNotToOpenLink" xml:space="preserve">
+    <value>TF20027: Could not open the link.</value>
+  </data>
+  <data name="LinksControlInvalidArtifactUrl" xml:space="preserve">
+    <value>TF20028: Could not open the link. The linked item may not be registered in the system.</value>
+  </data>
+  <data name="LinkWarning_WorkItemTypeViolation" xml:space="preserve">
+    <value>The link to the work item with the id '{0}' could not be created, since the work item has the type '{1}', which is not supported by the link definition.</value>
+  </data>
+  <data name="LoadWIs_Querying" xml:space="preserve">
+    <value>Querying TFS Work Items ...</value>
+  </data>
+  <data name="LoadWIs_Sorting" xml:space="preserve">
+    <value>Sorting and querying linked Work Items: {0} of {1}</value>
+  </data>
+  <data name="QueryAdapterErrorInvalidFilter" xml:space="preserve">
+    <value>TF20029: The query is not complete. Please correct and try again.</value>
+  </data>
+  <data name="TestReport_DetermineValueFailed" xml:space="preserve">
+    <value>Failed to access property '{0}' of object '{1}'.</value>
+  </data>
+  <data name="UnknownField" xml:space="preserve">
+    <value>Unknown Field</value>
+  </data>
+  <data name="WorkItemErrorNoWritePermission" xml:space="preserve">
+    <value>TF20033: You do not have permission to modify work items in the area '{0}'. Contact your Team Foundation System administrator.</value>
+  </data>
+  <data name="TestSuiteNameCouldNotBeFound" xml:space="preserve">
+    <value>The test suite with the name '{0}' could not be found.</value>
+  </data>
+  <data name="TestSuitePathCouldNotBeFound" xml:space="preserve">
+    <value>The test suite path '{0}' could not be found.</value>
+  </data>
+  <data name="TestSuiteSearchError" xml:space="preserve">
+    <value>An unexpected error occured when searching a test suite via  tree path.</value>
+  </data>
+  <data name="Error_BuildQualityIsNotInsideBuildFilters" xml:space="preserve">
+    <value>Filter &lt;BuildQualities&gt; must be inside of &lt;BuildFilters&gt;.</value>
+  </data>
+  <data name="Error_BuildAgeDouble" xml:space="preserve">
+    <value>Filter &lt;BuildAge&gt; must be a number.</value>
+  </data>
+  <data name="AttachingMicroDocument" xml:space="preserve">
+    <value>WI{0}T - Attaching micro document / image {1}</value>
+  </data>
+  <data name="AvailableBuildNotExists" xml:space="preserve">
+    <value>There are no available builds.</value>
+  </data>
+  <data name="AvailableTestConfigurationNotExists" xml:space="preserve">
+    <value>There are no available test configuration.</value>
+  </data>
+  <data name="AvailableTestPlanNotExists" xml:space="preserve">
+    <value>There are no available test plan.</value>
+  </data>
+  <data name="BuildIsLinkedTo" xml:space="preserve">
+    <value>Build: {0} is linked to testResult: {1}</value>
+  </data>
+  <data name="CannotSaveTestSteps" xml:space="preserve">
+    <value>Cannot save test steps for {0} because a previous save failed.</value>
+  </data>
+  <data name="CannotUpdateImageSource" xml:space="preserve">
+    <value>W{0}: Cannot update image source for {1}. Attachment {2} not found.</value>
+  </data>
+  <data name="ConfigurationNotExists" xml:space="preserve">
+    <value>Configuration not exists. </value>
+  </data>
+  <data name="ExpectedResultIsOnlyImplementedForTestStepResults" xml:space="preserve">
+    <value>The extension property 'ExpectedResult' is only implemented for TestStepResults.</value>
+  </data>
+  <data name="GetAllTestCasesBasedOnTestSuite" xml:space="preserve">
+    <value>Geting all test cases based on test suite ...</value>
+  </data>
+  <data name="GetAllTestConfigurationsForTestPlan" xml:space="preserve">
+    <value>Getting the available test configurations for given test plan...</value>
+  </data>
+  <data name="GetAllTestResultsBasedOnTestCase" xml:space="preserve">
+    <value>Getting all test results that belongs to the given test case...</value>
+  </data>
+  <data name="GetAssignedTestConfigurationsForTestCases" xml:space="preserve">
+    <value>Getting the available assigned test configurations for test cases of given test plan...</value>
+  </data>
+  <data name="GetAssignedTestConfigurationsForTestPlan" xml:space="preserve">
+    <value>Getting the available assigned test configurations for given test plan...</value>
+  </data>
+  <data name="GetTestPointIds" xml:space="preserve">
+    <value>Getting a dictionary of test point IDs with latest Test Run ID</value>
+  </data>
+  <data name="GetTestPointsForTestCases" xml:space="preserve">
+    <value>Getting test points for test cases...</value>
+  </data>
+  <data name="GetTestPointsForTestPlan" xml:space="preserve">
+    <value>Getting test points for test plan...</value>
+  </data>
+  <data name="GetTestPointsForTestSuite" xml:space="preserve">
+    <value>Getting test points for test suite...</value>
+  </data>
+  <data name="GetTfsWorkItemById" xml:space="preserve">
+    <value>Getting tfs work item by id...</value>
+  </data>
+  <data name="LoadWorkItems" xml:space="preserve">
+    <value>Loading work items from TFS ...</value>
+  </data>
+  <data name="LoadWorkItemsById" xml:space="preserve">
+    <value>Loading work items by id ...</value>
+  </data>
+  <data name="LoadWorkItemsByTitle" xml:space="preserve">
+    <value>Loading work items by title ...</value>
+  </data>
+  <data name="LoadWorkItemsFromSavedQuery" xml:space="preserve">
+    <value>Loading work items from saved query ...</value>
+  </data>
+  <data name="LoadWorkItemsWithoutConfiguration" xml:space="preserve">
+    <value>Loading work items without configuration ...</value>
+  </data>
+  <data name="NoMappingEntryFound" xml:space="preserve">
+    <value>No mapping entry could be found for the work item type ({0}) when tried to map work item id ({1}).</value>
+  </data>
+  <data name="NumberOfAssociatedWorkItems" xml:space="preserve">
+    <value>Found {0} associated work items.</value>
+  </data>
+  <data name="NumberOfAvailableTestPlans" xml:space="preserve">
+    <value>Number of available test plans:</value>
+  </data>
+  <data name="NumberOfAvailableTestRuns" xml:space="preserve">
+    <value>Number of available test runs:</value>
+  </data>
+  <data name="NumberOfMatchedAssociatedWorkItems" xml:space="preserve">
+    <value>{0} associated work items match the given conditions</value>
+  </data>
+  <data name="NumberOfTestPoints" xml:space="preserve">
+    <value>Number of test points:</value>
+  </data>
+  <data name="NumberOfTestResultForTestPlan" xml:space="preserve">
+    <value>Found {0} test results for test plan {1}.</value>
+  </data>
+  <data name="NumberOfTestResults" xml:space="preserve">
+    <value>Found {0} test results.</value>
+  </data>
+  <data name="NumberOfWorkItems" xml:space="preserve">
+    <value>Number of work items:</value>
+  </data>
+  <data name="ParameterizedStringFailed" xml:space="preserve">
+    <value>ParameterizedString failed to replace parameter '{0}' in string '{1}' with '{2}'.</value>
+  </data>
+  <data name="ParsingTestStepFailed" xml:space="preserve">
+    <value>Failed to parse test step '{0}'. The string does not contain at least one element separated by {1}.</value>
+  </data>
+  <data name="ReplacingParameters" xml:space="preserve">
+    <value>Replacing parameters in string '{0}' - {1}</value>
+  </data>
+  <data name="SearchAllLinkedWorkItemsForTestResult" xml:space="preserve">
+    <value>Searching all linked work items for test result associated to test case:{0}</value>
+  </data>
+  <data name="SearchBuildsForTestCase" xml:space="preserve">
+    <value>Search builds for test case: {0} with latestTestResults set to: {1} and latestTestResultsForAllConfigurations set to: {2}</value>
+  </data>
+  <data name="SearchingTestSuiteByName" xml:space="preserve">
+    <value>Searching test suite by name ...</value>
+  </data>
+  <data name="SearchingTestSuiteByPath" xml:space="preserve">
+    <value>Searching test suite by path...</value>
+  </data>
+  <data name="TestCasesForTestPlanNotExist" xml:space="preserve">
+    <value>Test cases for given test plan not exist.</value>
+  </data>
+  <data name="TestConfigurationNotExists" xml:space="preserve">
+    <value>Given test configuration not exists.</value>
+  </data>
+  <data name="TestPlanNotExists" xml:space="preserve">
+    <value>Given test plan not exists.</value>
+  </data>
+  <data name="TestSuiteNotExist" xml:space="preserve">
+    <value>Given test suite not exists.</value>
+  </data>
+  <data name="TestSuitesNotExist" xml:space="preserve">
+    <value>Test suites not exist.</value>
+  </data>
+  <data name="WorkItemIsNotAvailable" xml:space="preserve">
+    <value>Work item {0} not available.</value>
+  </data>
+</root>

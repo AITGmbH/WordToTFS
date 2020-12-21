@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MappingConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="W2T.xsd" ShowName="MSF For CMMI (2010)" DefaultMapping="false" EnableRefresh="true" UseStackRank="false">
+  <Mappings>
+    <Mapping WorkItemType="Requirement" MappingWorkItemType="Requirement" RelatedTemplate="MSFForCMMI(2010).Requirement.xml" AssignRegularExpression="Requirement" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. These values correspond to 'FieldValueType' enum. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. These values correspond to 'Direction' enum. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Requirement Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Requirement Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.RequirementType" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Requirement Type">Functional</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+
+      </Fields>
+      <Converters />
+    </Mapping>
+
+    <Mapping WorkItemType="Risk" MappingWorkItemType="Risk" RelatedTemplate="MSFForCMMI(2010).Risk.xml" AssignRegularExpression="Risk" AssignCellRow="1" AssignCellCol="1"  ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'.-->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="5" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Risk Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Risk Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.Probability" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Probability">Probability</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Severity" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="3">
+          <DefaultValue ShowName="Severity">Severity</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters>
+        <Converter FieldName="Microsoft.VSTS.Common.Severity">
+          <Values>
+            <Value Text="1 - Critical" MappingText="1" />
+            <Value Text="2 - High" MappingText="2" />
+            <Value Text="3 - Medium" MappingText="3" />
+            <Value Text="4 - Low" MappingText="4" />
+            <Value Text="4 - Low" MappingText="" />
+          </Values>
+        </Converter>
+      </Converters>
+    </Mapping>
+
+    <Mapping WorkItemType="Task" MappingWorkItemType="Task" RelatedTemplate="MSFForCMMI(2010).Task.xml" AssignRegularExpression="Task" AssignCellRow="1" AssignCellCol="1"  ImageFile="standard.png">
+      <Fields>
+        <!-- Possible values for FieldValueType: 'PlainText' or 'HTML'. -->
+        <!-- Possible values for Direction: 'TfsToOther' or 'OtherToTfs'. -->
+        <!-- 'DefaultValue' node description: -->
+        <!-- Node not defined - default value will be not configurable -->
+        <!-- Node defined with any text - default value will be configurable and the defined text will be used in document if the default value  still not exists -->
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="3" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Task Title</DefaultValue>
+        </Field>
+        <Field Name="System.Description" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Description">Task Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Discipline" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Discipline">Discipline</DefaultValue>
+        </Field>
+        <Field Name="System.AssignedTo" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2">
+          <DefaultValue ShowName="Assigned To">Assigned To</DefaultValue>
+        </Field>
+      </Fields>
+      <Converters>
+        <Converter FieldName="Microsoft.VSTS.Common.Discipline">
+          <Values>
+            <Value Text="Analysis" MappingText="Analysis" />
+            <Value Text="Development" MappingText="Development" />
+            <Value Text="Test" MappingText="Test" />
+            <Value Text="User Education" MappingText="User Education" />
+            <Value Text="User Experience" MappingText="User Experience" />
+          </Values>
+        </Converter>
+      </Converters>
+    </Mapping>
+  </Mappings>
+  <TestConfiguration>
+    <TestSpecificationConfiguration Available="true" />
+    <TestResultConfiguration Available="false"/>
+  </TestConfiguration>
+</MappingConfiguration>

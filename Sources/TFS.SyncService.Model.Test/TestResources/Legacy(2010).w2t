@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MappingConfiguration ShowName="Legacy(2010)" RelatedSchema="MSFForCMMI.Schema.xsd" DefaultMapping="false" EnableRefresh="true" UseStackRank="false" IgnoreFormatting="true">
+  <Mappings ExcludeRegularExpression="^((_EXCLUDE_)|(_exclude_))">
+    <Mapping WorkItemType="Requirement" MappingWorkItemType="Requirement" RelatedTemplate="Legacy(2010).Requirement.xml" AssignRegularExpression="Requirement" AssignCellRow="1" AssignCellCol="1" ImageFile="standard.png">
+      <Fields>
+        <Field Name="System.Id" FieldValueType="HTML" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="3" />
+        <Field Name="System.State" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="1" MappingTableCol="4" />
+        <Field Name="System.Rev" FieldValueType="PlainText" Direction="TfsToOther" MappingTableRow="2" MappingTableCol="4" />
+        <Field Name="System.Title" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="1">
+          <DefaultValue ShowName="Title">Title</DefaultValue>
+        </Field>
+        <Field Name="AIT.Common.Description" FieldValueType="HTML" Direction="OtherToTfs" MappingTableRow="3" MappingTableCol="1">
+          <DefaultValue ShowName="Specification">Description</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.Common.Priority" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="2">
+          <DefaultValue ShowName="Priority">2</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.SubjectMatterExpert1" FieldValueType="PlainText" Direction="OtherToTfs" MappingTableRow="1" MappingTableCol="3">
+          <DefaultValue ShowName="Subject Matter Expert">Expert</DefaultValue>
+        </Field>
+        <Field Name="Microsoft.VSTS.CMMI.RequirementType" Direction="SetInNewTfsWorkItem">
+          <DefaultValue ShowName="Requirement Type">Functional</DefaultValue>
+        </Field>
+      </Fields>
+      <Links>
+        <Link Type="Parent" Direction="OtherToTfs" MappingTableRow="2" MappingTableCol="2" Overwrite="false"/>
+      </Links>
+      <Converters />
+    </Mapping>
+  </Mappings>
+</MappingConfiguration>
