@@ -947,7 +947,7 @@ namespace TFS.SyncService.View.Word2007.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://URL_Help.
+        ///   Looks up a localized string similar to __UrlHelp__.
         /// </summary>
         internal static string WordToTFS_Help {
             get {
@@ -976,7 +976,7 @@ namespace TFS.SyncService.View.Word2007.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to https://URL_Update.
+        ///   Looks up a localized string similar to __UrlUpdate__.
         /// </summary>
         internal static string WordToTFS_Update {
             get {

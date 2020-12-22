@@ -34,7 +34,7 @@
                 <Label Content="{Binding Path=AssemblyDescription}" FontSize="8"></Label>
                 <TextBlock Margin="4">
                     <Hyperlink RequestNavigate="HandleHyperlinkNavigate"
-                               NavigateUri="https://__UrlEula__">License Agreement</Hyperlink>
+                               NavigateUri="__UrlEula__">License Agreement</Hyperlink>
                 </TextBlock>
             </StackPanel>
         </Border>

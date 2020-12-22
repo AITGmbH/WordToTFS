@@ -237,7 +237,7 @@
     <value>http://www.aitgmbh.de/feedback_wordtotfs.0.html</value>
   </data>
   <data name="WordToTFS_Help" xml:space="preserve">
-    <value>https://__UrlHelp__</value>
+    <value>__UrlHelp__</value>
     <comment>Help file web location</comment>
   </data>
   <data name="StyleDelete" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -346,7 +346,7 @@ Do you want to delete all work item ids?</value>
     <value>..\Resources\standard.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="WordToTFS_Update" xml:space="preserve">
-    <value>https://__UrlUpdate__</value>
+    <value>__UrlUpdate__</value>
     <comment>Update web location</comment>
   </data>
   <data name="TestResultReport" type="System.Resources.ResXFileRef, System.Windows.Forms">
