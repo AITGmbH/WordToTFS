@@ -44,10 +44,7 @@
     <DocumentationFile>bin\Release\TFS.SyncService.Common.Test.Unit.XML</DocumentationFile>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>..\AIT.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\Replace\Dummy.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+  </PropertyGroup>  
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>

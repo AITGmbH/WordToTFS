@@ -49,9 +49,6 @@
   <PropertyGroup>
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\Replace\Dummy.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'RunConsole|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>bin\RunConsole\</OutputPath>
