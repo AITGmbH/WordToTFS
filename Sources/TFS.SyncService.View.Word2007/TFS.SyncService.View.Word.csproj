@@ -33,12 +33,8 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <SignManifests>true</SignManifests>
-    <SignAssembly>false</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\Replace\Dummy.snk</AssemblyOriginatorKeyFile>
     <IsWebBootstrapper>True</IsWebBootstrapper>
-    <ManifestTimestampUrl>
-    </ManifestTimestampUrl>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -165,9 +161,6 @@
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>..\AIT.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ManifestCertificateThumbprint>87C0C965D6C3BD2D6E28C9E5637F5DABCE56FAAC</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!--
     This section enables pre- and post-build steps. However, in VSTO use
@@ -748,7 +741,13 @@
     <OutputPath>bin\RunConsoleWithConfigFile\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
     <ManifestKeyFile>TFS.SyncService.View.Word_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>52855C219D0A84DAE37CE64D9F1AAE920E9AC5EB</ManifestCertificateThumbprint>
   </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->
