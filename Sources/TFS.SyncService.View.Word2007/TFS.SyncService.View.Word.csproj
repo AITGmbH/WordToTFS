@@ -740,9 +740,6 @@
     <OutputPath>bin\RunConsoleWithConfigFile\</OutputPath>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
-  </PropertyGroup>
-  <PropertyGroup>
     <ManifestKeyFile>TFS.SyncService.View.Word_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
