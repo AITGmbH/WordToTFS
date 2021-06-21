@@ -16,6 +16,7 @@ Install the following
 Additional
   
 * Add xsd.exe to Windows-Path (A post build is generating a W2T.xsd based on the class structure. The W2T is being used by the WordToTFS templates.)
+* The WordToTFS ClickOnce manifests get signed. Thus to be able to start WordToTFS successfully, a test certificate has to be created first. Therefore open the properties of the TFS.SyncService.View.Word project, select the Signing-tab and click on "Create Test Certificate". 
 
 ## Local Build and Test
 
