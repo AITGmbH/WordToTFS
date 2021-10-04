@@ -745,6 +745,9 @@
   <PropertyGroup>
     <ManifestCertificateThumbprint>52855C219D0A84DAE37CE64D9F1AAE920E9AC5EB</ManifestCertificateThumbprint>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- Include additional build rules for an Office application add-in. -->
   <Import Project="$(VSToolsPath)\OfficeTools\Microsoft.VisualStudio.Tools.Office.targets" Condition="'$(VSToolsPath)' != ''" />
