@@ -85,9 +85,6 @@
     <OutputPath>bin\RunConsoleWithConfigFile\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AngleSharp">
-      <HintPath>..\packages\AngleSharp.0.7.0\lib\portable-windows8+net45+windowsphone8+wpa\AngleSharp.dll</HintPath>
-    </Reference>
     <Reference Include="Ben.Demystifier, Version=0.1.0.0, Culture=neutral, PublicKeyToken=a6d206e05440431a, processorArchitecture=MSIL">
       <HintPath>..\packages\Ben.Demystifier.0.1.6\lib\net45\Ben.Demystifier.dll</HintPath>
     </Reference>

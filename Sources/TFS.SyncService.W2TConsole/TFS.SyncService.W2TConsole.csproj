@@ -91,10 +91,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\MyWorkspace\AIT.WordToTFS\Main\WordToTFS 2017\Sources\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
-    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -140,7 +136,7 @@
       <Name>TFS.SyncService.Adapter.Word2007</Name>
     </ProjectReference>
     <ProjectReference Include="..\TFS.SyncService.Contracts\TFS.SyncService.Contracts.csproj">
-      <Project>{12CDD38A-1C4B-46C9-A7C6-A21219A68CC0}</Project>
+      <Project>{12cdd38a-1c4b-46c9-a7c6-a21219a68cc0}</Project>
       <Name>TFS.SyncService.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\TFS.SyncService.Factory\TFS.SyncService.Factory.csproj">
