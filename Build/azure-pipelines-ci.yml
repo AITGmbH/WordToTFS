@@ -18,7 +18,7 @@ variables:
   BuildConfiguration: 'release'
   DeploymentType: 'Preview'
   MajorVersion: 7
-  MinorVersion: 0
+  MinorVersion: 1
   
 name: $(MajorVersion).$(MinorVersion).$(Date:yyMM).$(Date:dd)$(Rev:rr)
   
