@@ -28,7 +28,7 @@
     <NoStandardLibraries>false</NoStandardLibraries>
     <RootNamespace>TFS.SyncService.View.Word2007</RootNamespace>
     <AssemblyName>AIT.WordToTFS</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
