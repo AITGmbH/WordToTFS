@@ -1,6 +1,8 @@
 ﻿#region Usings
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
 using AIT.TFS.SyncService.Model.WindowModel;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Win32;
@@ -140,6 +142,23 @@ namespace TFS.SyncService.Model.Test.Unit
 
         }
 
+        /// <summary>
+        /// Searches the WordToTFS.exe in the build directory, execuets it and checks return code.
+        /// </summary>
+        [TestMethod]
+        public void TestExecutionOfConsoleExtension_MustNotThrowError(){
+            var testDir = new FileInfo(Assembly.GetExecutingAssembly().Location).Directory;
+            var exeFiles = testDir.GetFiles("WordToTFS.exe");
+
+            Assert.IsTrue(exeFiles.Length == 1, "WordToTFS.exe was found in test build directory.");
+
+            var process = new Process();
+            process.StartInfo.FileName = exeFiles[0].FullName;
+            process.Start();
+
+            Assert.IsTrue(process.ExitCode == 0);
+            
+        }
 
         #endregion
         #region Helpers, Init and Cleanup
