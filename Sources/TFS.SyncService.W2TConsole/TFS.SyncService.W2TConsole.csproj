@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TFS.SyncService.W2TConsole</RootNamespace>
     <AssemblyName>WordToTFS</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
@@ -84,10 +84,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ManyConsole, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\ManyConsole.1.0.0.4\lib\ManyConsole.dll</HintPath>
+      <HintPath>..\packages\ManyConsole.2.0.1\lib\net46\ManyConsole.dll</HintPath>
+    </Reference>
+    <Reference Include="ManyConsoleModeCommand, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ManyConsole.2.0.1\lib\net46\ManyConsoleModeCommand.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Mono.Options, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Mono.Options.5.3.0\lib\net4-client\Mono.Options.dll</HintPath>
+      <HintPath>..\packages\Mono.Options.6.12.0.148\lib\net40\Mono.Options.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -190,12 +194,10 @@
     <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\native\amd64\Microsoft.WITDataStore64.dll">
-      <Link>Microsoft.WITDataStore64.dll</Link>
+    <Content Include="Microsoft.WITDataStore32.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\native\x86\Microsoft.WITDataStore32.dll">
-      <Link>Microsoft.WITDataStore32.dll</Link>
+    <Content Include="Microsoft.WITDataStore64.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
