@@ -95,14 +95,7 @@
     <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\cs\Microsoft.DependencyValidation.Analyzers.resources.dll" />
     <Analyzer Include="..\packages\Microsoft.DependencyValidation.Analyzers.0.11.0\analyzers\dotnet\Microsoft.DependencyValidation.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\native\amd64\Microsoft.WITDataStore64.dll">
-      <Link>Microsoft.WITDataStore64.dll</Link>
-    </Content>
-    <Content Include="..\packages\Microsoft.TeamFoundationServer.ExtendedClient.16.153.0\lib\native\x86\Microsoft.WITDataStore32.dll">
-      <Link>Microsoft.WITDataStore32.dll</Link>
-    </Content>
-  </ItemGroup>
+  <Import Project="..\WITDataStoreNativeLibs.target" />
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -389,12 +389,6 @@
       <Link>ArchitectureOverview.layerdiagram</Link>
       <Visible>False</Visible>
     </AdditionalFiles>
-    <Content Include="Microsoft.WITDataStore32.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Microsoft.WITDataStore64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -402,6 +396,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <Import Project="..\WITDataStoreNativeLibs.target" />
   <ItemGroup>
     <Content Include="Configuration\ConfigurationNew1.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

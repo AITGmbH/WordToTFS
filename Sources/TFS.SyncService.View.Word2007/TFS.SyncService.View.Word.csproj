@@ -588,12 +588,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Templates\CMMI.ChangeRequest%282019%29.xml" />
-    <Content Include="Microsoft.WITDataStore32.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Microsoft.WITDataStore64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Templates\Header.AreaIteration.xml" />
     <Content Include="Templates\MSFForCMMI%282008%29.Requirement.xml" />
     <Content Include="Templates\MSFForCMMI%282010%29.Feature.xml" />
@@ -603,6 +597,7 @@
     <EmbeddedResource Include="Templates\Epic%282019%29.xml" />
     <EmbeddedResource Include="Templates\Basic.Issue%282019%29.xml" />
   </ItemGroup>
+  <Import Project="..\WITDataStoreNativeLibs.target" />
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
