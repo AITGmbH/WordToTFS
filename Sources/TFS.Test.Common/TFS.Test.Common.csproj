@@ -261,8 +261,8 @@
     <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
     </Reference>
-    <Reference Include="System.Reflection.Metadata, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Reflection.Metadata.6.0.0\lib\net461\System.Reflection.Metadata.dll</HintPath>
+    <Reference Include="System.Reflection.Metadata, Version=6.0.0.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reflection.Metadata.6.0.1\lib\net461\System.Reflection.Metadata.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
@@ -351,7 +351,9 @@
       <Link>ArchitectureOverview.layerdiagram</Link>
       <Visible>False</Visible>
     </AdditionalFiles>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
     <None Include="SharedTestFiles\Scripts\backup-collection.bat">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
