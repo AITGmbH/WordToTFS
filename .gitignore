@@ -328,3 +328,15 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+/Sources/TFS.SyncService.Adapter.TFS2010/Microsoft.WITDataStore32.dll
+/Sources/TFS.SyncService.Adapter.TFS2010/Microsoft.WITDataStore64.dll
+/Sources/TFS.SyncService.IntegrationTests/Microsoft.WITDataStore32.dll
+/Sources/TFS.SyncService.IntegrationTests/Microsoft.WITDataStore64.dll
+/Sources/TFS.SyncService.Model.Tests.Integration/Microsoft.WITDataStore32.dll
+/Sources/TFS.SyncService.Model.Tests.Integration/Microsoft.WITDataStore64.dll
+/Sources/TFS.SyncService.Test/Microsoft.WITDataStore32.dll
+/Sources/TFS.SyncService.Test/Microsoft.WITDataStore64.dll
+/Sources/TFS.SyncService.View.Word2007/Microsoft.WITDataStore32.dll
+/Sources/TFS.SyncService.View.Word2007/Microsoft.WITDataStore64.dll
+/Sources/TFS.SyncService.W2TConsole/Microsoft.WITDataStore32.dll
+/Sources/TFS.SyncService.W2TConsole/Microsoft.WITDataStore64.dll

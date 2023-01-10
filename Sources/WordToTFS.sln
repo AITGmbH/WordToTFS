@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Local.runsettings = Local.runsettings
 		..\README.md = ..\README.md
 		Settings.StyleCop = Settings.StyleCop
+		WITDataStoreNativeLibs.target = WITDataStoreNativeLibs.target
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TFS.SyncService", "TFS.SyncService", "{793AF583-3F77-4231-8E3C-8C4DE542B6BB}"
