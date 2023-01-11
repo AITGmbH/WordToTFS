@@ -4,7 +4,7 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("AIT GmbH & Co. KG")]
 [assembly: AssemblyProduct("WordToTFS")]
-[assembly: AssemblyCopyright("Copyright © 2022, AIT GmbH & Co. KG")]
+[assembly: AssemblyCopyright("Copyright © 2023, AIT GmbH & Co. KG")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 [assembly: AssemblyVersion("7.1.0.0")]
