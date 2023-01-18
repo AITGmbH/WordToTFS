@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:config="clr-namespace:AIT.TFS.SyncService.Contracts.Configuration;assembly=TFS.SyncService.Contracts"
              xmlns:converter="clr-namespace:AIT.TFS.SyncService.View.Controls.Converter"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="491" d:DesignWidth="355">
     <UserControl.Resources>
         <ResourceDictionary>
@@ -27,12 +27,14 @@
             <CollectionViewSource x:Key="workItemTypes" Source="{Binding AllWorkItemTypes}"/>
         </ResourceDictionary>
     </UserControl.Resources>
-    <ScrollViewer VerticalScrollBarVisibility="Auto">
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition x:Name="MainRowTop" Height="Auto" MinHeight="100"/>
             <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" MinHeight="200"/>
+            <RowDefinition Height="Auto" MinHeight="20"/>
             <RowDefinition Height="Auto" MinHeight="20"/>
         </Grid.RowDefinitions>
 
@@ -41,7 +43,6 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
-                    <!--<ColumnDefinition Width="Auto"></ColumnDefinition>-->
                     <ColumnDefinition Width="Auto"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Button Name="ClosePopupButton" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" IsEnabled="{Binding TreeViewPopup.IsOpen}" Visibility="{Binding TreeViewPopup.IsOpen}" Click="ClosePopupButton_OnClick">
@@ -58,12 +59,13 @@
                             <Setter Property="IsExpanded" Value="True" />
                         </Style>
                     </TreeView.ItemContainerStyle>
-                </TreeView> 
+                </TreeView>
             </Grid>
         </Popup>
 
-        <Grid Grid.Row="0" Margin="5">
+        <Grid Grid.Row="0" Margin="10, 5, 10, 0">
             <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -71,6 +73,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <TextBlock Margin="0, 5" Grid.Row="0" Text="Find Work Items by" />
+
             <StackPanel Grid.Row="1" Orientation="Vertical" Margin="0,5">
                 <RadioButton x:Name="RadioSavedQuery" GroupName="opt1"
                              IsChecked="{Binding ImportOption, Converter={StaticResource EnumToBooleanConv}, ConverterParameter={x:Static config:QueryImportOption.SavedQuery}, Mode=TwoWay}">Saved Query</RadioButton>
@@ -111,7 +114,7 @@
             <Expander Grid.Row="4" Margin="0,5" Header="Hierarchy" >
                 <Border BorderThickness="1" BorderBrush="Gray">
                     <DockPanel LastChildFill="True" Margin="5">
-                        <CheckBox VerticalContentAlignment="Center" DockPanel.Dock="Top" IsChecked="{Binding UseLinkedWorkItems, Mode=TwoWay}">Include linked Work Items</CheckBox>                       
+                        <CheckBox VerticalContentAlignment="Center" DockPanel.Dock="Top" IsChecked="{Binding UseLinkedWorkItems, Mode=TwoWay}">Include linked Work Items</CheckBox>
                         <StackPanel DockPanel.Dock="Top" Orientation="Vertical" IsEnabled="{Binding UseLinkedWorkItems, Mode=OneWay}">
                             <CheckBox Margin="25,2,0,0"  IsChecked="{Binding IsDirectLinkOnlyMode}">Get direct links only</CheckBox>
                             <RadioButton Margin="25,2,0,0" IsChecked="{Binding IsAnyLinkType}" >All linked Work Items</RadioButton>
@@ -121,51 +124,52 @@
                     </DockPanel>
                 </Border>
             </Expander>
-        </Grid>
-        <GridSplitter Background="LightGray" Grid.Row="1" HorizontalAlignment="Stretch" Height="3"/>
-        <Grid Grid.Row="2" Margin="5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Button Grid.Row="0" MinWidth="70" Margin="5, 5, 0, 15" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding CanFindWorkItems}" Click="Find_Click">Find</Button>
-            <StackPanel Grid.Row="1" Margin="0 0 0 5"  Orientation="Horizontal" Visibility="{Binding IsExistNotShownWorkItems, Converter={StaticResource VisibilityConverter}}" >
-                <Label Content="{Binding AmountOfWorkItems}"></Label>
-                <Image Height="24" Source="{Binding SynchronizationState, Converter={StaticResource SynchronizationStateToImageConverter}}">
-                    <Image.ToolTip>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                                <RowDefinition Height="Auto"/>
-                            </Grid.RowDefinitions>
-                                <Label Grid.Row="0" Content="{StaticResource ResultsOfComparingMessageFirstLine}"></Label>
-                                <Label Grid.Row="1" Content="{Binding ResultOfComparing}"></Label>
-                        </Grid>
-                    </Image.ToolTip>
-                </Image>
-            
-            </StackPanel>
-            <Border Grid.Row="2">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="Auto"/>
-                    </Grid.RowDefinitions>
-                    <ListBox Grid.IsSharedSizeScope="true" x:Name="FoundList" Grid.Row="0" ItemsSource="{Binding FoundWorkItems}" CheckBox.Checked="FoundWorkItemCheckBox_CheckChanged" ItemTemplate="{StaticResource FoundWorkItemsTemplateCheckable}"/>
-                    <StackPanel Grid.Row="1" Orientation="Horizontal">
-                        <Button Margin="5, 2" MinWidth="70" Click="SelectAll_Click" IsEnabled="{Binding CanSelectFoundWorkItems}">Select All</Button>
-                        <Button Margin="0, 2" MinWidth="70" Click="UnselecteAll_Click" IsEnabled="{Binding CanUnselectFoundWorkItems}">Unselect All</Button>
-                    </StackPanel>
-                </Grid>
-            </Border>
+            <Button Grid.Row="5" MinWidth="70" HorizontalAlignment="Left" VerticalAlignment="Center" IsEnabled="{Binding CanFindWorkItems}" Click="Find_Click">Find</Button>
 
         </Grid>
-        <StackPanel Grid.Row="3" Orientation="Horizontal">
-            <Button MinWidth="70" Margin="10, 5, 0, 5" IsEnabled="{Binding CanImport}" Click="Import_Click" >Import</Button>
-            <Button MinWidth="70" Padding="5, 0, 5, 0"  Margin="5" IsEnabled="{Binding CanImport}" Click="CreateHyperlink_Click">Create Hyperlink</Button>
+
+        <GridSplitter Background="LightGray" Grid.Row="1" HorizontalAlignment="Stretch" Height="3" Margin="0 10 0 0"/>
+
+        <StackPanel Grid.Row="2" Margin="10"  Orientation="Horizontal" Visibility="{Binding IsExistNotShownWorkItems, Converter={StaticResource VisibilityConverter}}" >
+            <Label Content="{Binding AmountOfWorkItems}"></Label>
+            <Image Height="24" Source="{Binding SynchronizationState, Converter={StaticResource SynchronizationStateToImageConverter}}">
+                <Image.ToolTip>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Content="{StaticResource ResultsOfComparingMessageFirstLine}"></Label>
+                        <Label Grid.Row="1" Content="{Binding ResultOfComparing}"></Label>
+                    </Grid>
+                </Image.ToolTip>
+            </Image>
+        </StackPanel>
+
+        <!--<ScrollViewer x:Name="scrollViewer" VerticalScrollBarVisibility="Auto" Grid.Row="3" Margin="10, 5, 10, 0" BorderThickness="1">-->
+        <Grid Grid.Row="3" Margin="10, 5, 10, 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+
+                </Grid.RowDefinitions>
+                <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto" Grid.IsSharedSizeScope="true" x:Name="FoundList" Grid.Row="0" ItemsSource="{Binding FoundWorkItems}" CheckBox.Checked="FoundWorkItemCheckBox_CheckChanged" ItemTemplate="{StaticResource FoundWorkItemsTemplateCheckable}"/>
+            </Grid>
+        </Grid>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal">
+            <Button Margin="10 5 5 5"  MinWidth="70" Click="SelectAll_Click" IsEnabled="{Binding CanSelectFoundWorkItems}">Select All</Button>
+            <Button Margin="10 5 5 5"  MinWidth="70" Click="UnselecteAll_Click" IsEnabled="{Binding CanUnselectFoundWorkItems}">Unselect All</Button>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <Button Margin="10 5 5 5" MinWidth="70" IsEnabled="{Binding CanImport}" Click="Import_Click" >Import</Button>
+            <Button Margin="10 5 5 5" MinWidth="70" IsEnabled="{Binding CanImport}" Click="CreateHyperlink_Click">Create Hyperlink</Button>
         </StackPanel>
     </Grid>
-    </ScrollViewer>
+
 </UserControl>

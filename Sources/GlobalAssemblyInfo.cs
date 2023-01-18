@@ -4,11 +4,11 @@ using System.Resources;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("AIT GmbH & Co. KG")]
 [assembly: AssemblyProduct("WordToTFS")]
-[assembly: AssemblyCopyright("Copyright © 2020, AIT GmbH & Co. KG")]
+[assembly: AssemblyCopyright("Copyright © 2023, AIT GmbH & Co. KG")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
-[assembly: AssemblyVersion("7.0.0.0")]
-[assembly: AssemblyFileVersion("7.0.0.0")]
+[assembly: AssemblyVersion("7.1.0.0")]
+[assembly: AssemblyFileVersion("7.1.0.0")]
 
 // [assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]
 
