@@ -47,6 +47,8 @@ using IWin32Window = System.Windows.Forms.IWin32Window;
 using MessageBox = System.Windows.Forms.MessageBox;
 using MessageBoxOptions = System.Windows.Forms.MessageBoxOptions;
 using AIT.TFS.SyncService.Contracts.Adapter;
+using Microsoft.Win32;
+using System.Net;
 
 namespace TFS.SyncService.View.Word2007
 {
@@ -79,6 +81,7 @@ namespace TFS.SyncService.View.Word2007
         private const string WordClassName = "OpusApp";
         private IWordSyncAdapter _refreshWordAdapter;
         private IWordSyncAdapter _publishWordAdapter;
+        private SecurityProtocolType? _initialSecurityProtocol;
 
         #endregion Fields
 
@@ -100,6 +103,28 @@ namespace TFS.SyncService.View.Word2007
 
             _templateManager = new TemplateManager();
             _templateManager.TemplatesChanged += (s, a) => _dispatcher.BeginInvoke((Action)(() => UpdateTemplateSelection(WordApplicationModel.GetModel(Globals.ThisAddIn.Application.ActiveDocument))));
+
+            EnablingTls12AndTls13();
+        }
+
+        /// <summary>
+        /// Enabling TLS 1.2 for not properly configured OS.
+        /// It check's first if strong cryptography is enabled by the OS. In this case it should work since TLS 1.2 is then suppurted by the .NET Framework. Otherwise not.
+        /// For further details check https://learn.microsoft.com/en-us/dotnet/framework/network-programming/tls?source=recommendations
+        /// WordToTFS is loaded differently as COM-Addin and TLS and SSL3 are not anymore supported and OS decission leads to errors for AzureDevOps Service.
+        /// </summary>
+        private void EnablingTls12AndTls13()
+        {            
+            bool schUseStrong64 = (bool)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\.NetFramework\v4.0.30319", "SchUseStrongCrypto", false);
+            bool schUseStrong32 = (bool)Registry.GetValue(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NetFramework\v4.0.30319", "SchUseStrongCrypto", false);
+
+            if (schUseStrong32 != true || schUseStrong64 == true)
+            {
+                if (_initialSecurityProtocol == null)
+                { _initialSecurityProtocol = ServicePointManager.SecurityProtocol; } // for debugging purposes. values were SecurityProtocolType.Tls and SecurityProtocolType.Ssl3
+
+                ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12 | SecurityProtocolType.Tls13;
+            }
         }
 
         /// <summary>
